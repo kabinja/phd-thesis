@@ -1,0 +1,43 @@
+\documentclass{report}
+\usepackage[utf8]{inputenc}
+
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage[roman]{parnotes}
+
+\usepackage{subfigure}
+\usepackage{graphicx}
+
+\newcommand{\etal}{\textit{et al. }}
+\newcommand{\mercator}{\emph{Mercator}}
+\newcommand{\code}[1]{\scriptsize{\texttt{#1}}}
+
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\renewcommand{\algorithmicfor}{\textbf{for each}}
+
+\title{Maintenance and Evolution of System User Interactive Tests}
+\author{Renaud Rwemalika}
+\date{May 2021}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\input{introduction}
+\input{related}
+\input{evolution}
+\input{smells}
+\input{hpath}
+\input{ikora}
+\input{conclusion}
+
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+\end{document}

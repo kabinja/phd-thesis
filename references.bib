@@ -1,0 +1,693 @@
+@article{Ukkonen1985,
+abstract = {The edit distance between strings a1 ... am and b1 ... bn is the minimum cost s of a sequence of editing steps (insertions, deletions, changes) that convert one string into the other. A well-known tabulating method computes s as well as the corresponding editing sequence in time and in space O(mn) (in space O(min(m, n)) if the editing sequence is not required). Starting from this method, we develop an improved algorithm that works in time and in space O(s ?? min(m, n)). Another improvement with time O(s ?? min(m, n)) and space O(s ?? min(s, m, n)) is given for the special case where all editing steps have the same cost independently of the characters involved. If the editing sequence that gives cost s is not required, our algorithms can be implemented in space O(min(s, m, n)). Since s = O(max(m, n)), the new methods are always asymptotically as good as the original tabulating method. As a by-product, algorithms are obtained that, given a threshold value t, test in time O(t ?? min(m, n)) and in space O(min(t, m, n)) whether s ??? t. Finally, different generalized edit distances are analyzed and conditions are given under which our algorithms can be used in conjunction with extended edit operation sets, including, for example, transposition of adjacent characters. ?? 1985 Academic Press, Inc.},
+author = {Ukkonen, Esko},
+doi = {10.1016/S0019-9958(85)80046-2},
+isbn = {0019-9958},
+issn = {00199958},
+journal = {Information and Control},
+month = {jan},
+number = {1-3},
+pages = {100--118},
+title = {{Algorithms for approximate string matching}},
+volume = {64},
+year = {1985}
+}
+
+@inproceedings{Baker1995,
+author={Baker, B.S.},
+booktitle={Reverse Engineering, 1995., Proceedings of 2nd Working Conference on},
+title={On finding duplication and near-duplication in large software systems},
+year=1995,
+pages={86-95},
+keywords={program debugging;software tools;system documentation;systems analysis;systems re-engineering;constants;debugging;dup;experimental results;large software systems;redocumentation;software duplication;system reengineering;systematic substitution;variable names;Application software;Computer bugs;Programming profession;Reverse engineering;Scattering parameters;Sections;Software systems;Terminology;White spaces},
+doi={10.1109/WCRE.1995.514697},
+month={Jul},
+}
+
+@inproceedings{Chawathe1996,
+ author = {Chawathe, Sudarshan S. and Rajaraman, Anand and Garcia-Molina, Hector and Widom, Jennifer},
+ title = {Change Detection in Hierarchically Structured Information},
+ booktitle = {Proceedings of the 1996 ACM SIGMOD International Conference on Management of Data},
+ series = {SIGMOD '96},
+ year = 1996,
+ isbn = {0-89791-794-4},
+ location = {Montreal, Quebec, Canada},
+ pages = {493--504},
+ numpages = 12,
+ doi = {10.1145/233269.233366},
+ acmid = 233366,
+ publisher = {ACM},
+ address = {New York, NY, USA},
+}
+
+@article{Gottlob2002,
+abstract = {Several important decision problems on conjunctive queries (CQs) are NP-complete in general but become tractable, and actually highly parallelizable, if restricted to acyclic or nearly acyclic queries. Examples are the evaluation of Boolean CQs and query containment. These problems were shown tractable for conjunctive queries of bounded treewidth (Ch. Chekuri and A. Rajaraman, Theoret. Comput. Sci. 239 (2000), 211-229), and of bounded degree of cyclicity (M. Gyssens et al., Artif. Intell. 66 (1994), 57-89; M. Gyssens and J. Paredaens, in "Advances in Database Theory," Vol. 2, pp. 85-122, Plenum Press, New York, 1984). The so far most general concept of nearly acyclic queries was the notion of queries of bounded query-width introduced by Chekuri and Rajaraman (2000). While CQs of bounded query-width are tractable, it remained unclear whether such queries are efficiently recognizable. Chekuri and Rajaraman (2000) stated as an open problem whether for each constant k it can be determined in polynomial time if a query has query-width at most k. We give a negative answer by proving the NP-completeness of this problem (specifically, for k = 4). In order to circumvent this difficulty, we introduce the new concept of hypertree decomposition of a query and the corresponding notion of hypertree-width. We prove: (a) for each k, the class of queries with query-width bounded by k is properly contained in the class of queries whose hypertree-width is bounded by k; (b) unlike query-width, constant hypertree-width is efficiently recognizable; and (c) Boolean queries of bounded hypertree-width can be efficiently evaluated. {\textcopyright} 2002 Elsevier Science (USA).},
+author = {Gottlob, Georg and Leone, Nicola and Scarcello, Francesco},
+journal = {Journal of Computer and System Sciences},
+month = {may},
+number = {3},
+pages = {579--627},
+title = {{Hypertree Decompositions and Tractable Queries}},
+volume = {64},
+year = {2002}
+}
+
+@inproceedings{Barton2003,
+abstract = {We present a streaming algorithm for evaluating XPath expressions that use backward axes (parent and ancestor) and forward axes in a single document-order traversal of an XML document. Other streaming XPath processors handle only forward axes. We show through experiments that our algorithm significantly outperforms (by more than a factor of two) a traditional non-streaming XPath engine. Furthermore, our algorithm scales better because it retains only the relevant portions of the input document in memory. Our engine successfully processes documents over 1GB in size, whereas the traditional XPath engine degrades considerably in performance for documents over 100 MB in size and fails to complete for documents of size over 200 MB.},
+author = {Barton, Charles and Charles, Philippe and {Deepak Goyal} and {Mukund Raghavachari} and Fontoura, Marcus and Josifovski, Vanja},
+booktitle = {Proceedings 19th International Conference on Data Engineering (Cat. No.03CH37405)},
+pages = {455--466},
+publisher = {IEEE},
+title = {{Streaming XPath processing with forward and backward axes}},
+year = {2003}
+}
+
+@inproceedings{Skoglund2004,
+author = {Skoglund, Mats and Runeson, Per},
+booktitle = {IEEE International Conference on Software Maintenance, ICSM},
+doi = {10.1109/ICSM.2004.1357831},
+isbn = {0-7695-2213-0},
+issn = {1063-6773},
+pages = {438--442},
+title = {{A case study on regression test suite maintenance in system evolution}},
+year = {2004}
+}
+
+@online{W3C2004,
+url={https://www.w3.org/TR/DOM-Level-3-Core/introduction.html},
+title={What is the Document Object Model?},
+author={World Wide Web Consortium},
+year={2004},
+month={apr},
+addendum = {(accessed: 15.01.2021)}
+}
+
+@article{Anton2005,
+abstract = {We introduce a wrapper induction algorithm for extracting information from tree-structured docu- ments like HTML or XML. It derives XPath- compatible extraction rules from a set of anno- tated example documents. The approach builds a minimally generalized tree traversal pattern, and augments it with conditions. Another variant se- lects a subset of conditions so that (a) the pattern is consistent with the training data, (b) the pat- tern's document coverage is minimized, and (c) conditions that match structures preceding the target nodes are preferred. We discuss the ro- bustness of rules induced by this selection strat- egy and we illustrate how these rules exhibit knowledge of the target concept.},
+author = {Anton, Tobias},
+journal = {LWA 2005 - Workshopwoche der GI-Fachgruppen/Arbeitskreise},
+pages = {126--133},
+title = {{XPath-Wrapper Induction by generalizing tree traversal patterns}},
+year = {2005}
+}
+
+@article{Gottlob2005,
+abstract = {We study the complexity of two central XML processing problems. The first is XPath 1.0 query processing, which has been shown to be in PTIME in previous work. We prove that both the data complexity and the query complexity of XPath 1.0 fall into lower (highly parallelizable) complexity classes, while the combined complexity is PTIME-hard. Subsequently, we study the sources of this hardness and identify a large and practically important fragment of XPath 1.0 for which the combined complexity is LOGCFL-complete and, therefore, in the highly parallelizable complexity class NC2. The second problem is the complexity of validating XML documents against various typing schemes like Document Type Definitions (DTDs), XML Schema Definitions (XSDs), and tree automata, both with respect to data and to combined complexity. For data complexity, we prove that validation is in LOGSPACE and depends crucially on how XML data is represented. For the combined complexity, we show that the complexity ranges from LOGSPACE to LOGCFL, depending on the typing scheme. {\textcopyright} 2005 ACM.},
+author = {Gottlob, Georg and Koch, Christoph and Pichler, Reinhard and Segoufin, Luc},
+journal = {Journal of the ACM},
+keywords = {Complexity,DTD,LOGCFL,XML,XPath},
+pages = {284--335},
+title = {{The complexity of XPath query evaluation and XML typing}},
+volume = {52},
+year = {2005}
+}
+
+@article{Fluri2007,
+author={B. Fluri and M. Wuersch and M. PInzger and H. Gall},
+journal={IEEE Transactions on Software Engineering},
+title={Change Distilling:Tree Differencing for Fine-Grained Source Code Change Extraction},
+year=2007,
+volume=33,
+number=11,
+pages={725-743},
+keywords={software maintenance;software prototyping;tree data structures;minimum edit script;abstract syntax trees;software evolution analysis;fine-grained source code change extraction;change distilling tree differencing algorithm;Data mining;Taxonomy;Software maintenance;Programming profession;Software algorithms;Algorithm design and analysis;Software tools;Maintenance engineering;Software systems;History;Source code change extraction;tree differencing algorithms;software repositories;software evolution analysis},
+doi={10.1109/TSE.2007.70731},
+ISSN={0098-5589},
+month={Nov},
+}
+
+@inproceedings{Tang2008,
+abstract = {This paper presents an adaptive framework of keyword-driven automation testing to support the conversion of the keyword-based test cases into different kinds of test scripts automatically to be executed by different test applications under different test environments (such as GUI environment, database environment, etc.). XML is used to describe the keyword-based commands for the test case. An engine is provided in this framework to parse the XML file and dispatch the command sequences to the different test drivers according to the driver type pre-defined in the command. The test driver is responsible for dispatching the commands to the corresponding test applications to generate the test scripts automatically according to the keywords in the commands. The test scripts will be executed by the test applications on the system-under-test under different test environments. All the test results will be recorded into a log repository for generating all kinds of the test reports.},
+author = {{Jingfan Tang} and {Xiaohua Cao} and Ma, Albert},
+booktitle = {2008 IEEE International Conference on Automation and Logistics},
+doi = {10.1109/ICAL.2008.4636415},
+isbn = {978-1-4244-2502-0},
+keywords = {Adaptive,Automation testing,Keyword driven},
+month = {sep},
+pages = {1631--1636},
+publisher = {IEEE},
+title = {{Towards adaptive framework of keyword driven automation testing}},
+year = {2008}
+}
+
+@inproceedings{Dalvi2009,
+abstract = {On script-generated web sites, many documents share com- mon HTML tree structure, allowing wrappers to effectively extract information of interest. Of course, the scripts and thus the tree structure evolve over time, causing wrappers to break repeatedly, and resulting in a high cost of maintaining wrappers. In this paper, we explore a novel approach: we use temporal snapshots of web pages to develop a tree-edit model of HTML, and use this model to improve wrapper construction. We view the changes to the tree structure as suppositions of a series of edit operations: deleting nodes, inserting nodes and substituting labels of nodes. The tree structures evolve by choosing these edit operations stochas- tically. Our model is attractive in that the probability that a
+source tree has evolved into a target tree can be estimated efficiently—in quadratic time in the size of the trees—making it a potentially useful tool for a variety of tree-evolution problems. We give an algorithm to learn the probabilistic model from training examples consisting of pairs of trees, and apply this algorithm to collections of web-page snap- shots to derive HTML-specific tree edit models. Finally, we describe a novel wrapper-construction framework that takes the tree-edit model into account, and compare the quality of resulting wrappers to that of traditional wrappers on syn- thetic and real HTML document examples.
+Categories},
+address = {New York, New York, USA},
+author = {Dalvi, Nilesh and Bohannon, Philip and Sha, Fei},
+booktitle = {Proceedings of the 35th SIGMOD international conference on Management of data - SIGMOD '09},
+keywords = {all or part of,is granted without fee,or hard copies of,permission to make digital,personal or classroom use,probabilistic tree-edit model,provided that copies are,this work for,wrappers,xpath},
+pages = {335-347},
+publisher = {ACM Press},
+title = {{Robust web extraction}},
+year = {2009}
+}
+
+@inproceedings{Grechanik2009,
+abstract = {Since manual black-box testing of GUI-based APplications (GAPs) is tedious and laborious, test engineers create test scripts to automate the testing process. These test scripts interact with GAPs by performing actions on their GUI objects. As GAPs evolve, testers should fix their corresponding test scripts so that they can reuse them to test successive releases of GAPs. Currently, there are two main modes of maintaining test scripts: tool-based and manual. In practice, there is no consensus what approach testers should use to maintain test scripts. Test managers make their decisions ad hoc, based on their personal experience and perceived benefits of the tool-based approach versus the manual. In this paper we describe a case study with forty five professional programmers and test engineers to experimentally assess the tool-based approach for maintaining GUIdirected test scripts versus the manual approach. Based on the results of our case study and considering the high cost of the programmers' time and the lower cost of the time of test engineers, and considering that programmers often modify GAP objects in the process of developing software we recommend organizations to supply programmers with testing tools that enable them to fix test scripts faster so that these scripts can unit test software. The other side of our recommendation is that experienced test engineers are likely to be as productive with the manual approach as with the tool-based approach, and we consequently recommend that organizations do not need to provide each tester with an expensive tool license to fix test scripts.},
+author = {Grechanik, Mark and Xie, Qing and Fu, Chen},
+booktitle = {2009 IEEE International Conference on Software Maintenance},
+doi = {10.1109/ICSM.2009.5306345},
+isbn = {978-1-4244-4897-5},
+issn = {1063-6773},
+month = {sep},
+pages = {9--18},
+publisher = {IEEE},
+title = {{Experimental assessment of manual versus tool-based maintenance of GUI-directed test scripts}},
+year = {2009}
+}
+
+@article{Roy2009,
+abstract = {Over the last decade many techniques and tools for software clone detection have been proposed. In this paper, we provide a qualitative comparison and evaluation of the current state-of-the-art in clone detection techniques and tools, and organize the large amount of information into a coherent conceptual framework. We begin with background concepts, a generic clone detection process and an overall taxonomy of current techniques and tools. We then classify, compare and evaluate the techniques and tools in two different dimensions. First, we classify and compare approaches based on a number of facets, each of which has a set of (possibly overlapping) attributes. Second, we qualitatively evaluate the classified techniques and tools with respect to a taxonomy of editing scenarios designed to model the creation of Type-1, Type-2, Type-3 and Type-4 clones. Finally, we provide examples of how one might use the results of this study to choose the most appropriate clone detection tool or technique in the context of a particular set of goals and constraints. The primary contributions of this paper are: (1) a schema for classifying clone detection techniques and tools and a classification of current clone detectors based on this schema, and (2) a taxonomy of editing scenarios that produce different clone types and a qualitative evaluation of current clone detectors based on this taxonomy.},
+author = {Roy, Chanchal K. and Cordy, James R. and Koschke, Rainer},
+doi = {10.1016/j.scico.2009.02.007},
+isbn = {0167-6423},
+issn = {01676423},
+journal = {Science of Computer Programming},
+keywords = {Clone detection,Comparison,Scenario-based evaluation,Software clone},
+month = {may},
+number = {7},
+pages = {470--495},
+publisher = {Elsevier B.V.},
+title = {{Comparison and evaluation of code clone detection techniques and tools: A qualitative approach}},
+volume = {74},
+year = {2009}
+}
+
+@inproceedings{Shewchuk2010,
+abstract = {Most of the modern software systems are being maintained and evolved through numerous versions. Thus, effective co-maintenance and co-evolution of their test suites along with their source code becomes an important and challenging issue. In this context, issues such as the types and extent of required maintenance activities on test suites, change in size/complexity, fault and cost effectiveness of multi-version functional test suites are among the most important issues. To study, analyze and get insights into co-maintenance and co-evolution of functional test suites with software systems w.r.t. the above issues, we have performed a case study on a functional GUI test suite of a popular open source project (jEdit). We chose as our test tool the IBM Rational Functional Tester, one of the leading commercial functional testing tools. The case study reveals interesting practical/empirical insights into the subject, e.g., developing a functional test suite in an earlier version and maintaining it might be a cost effective approach.},
+address = {Redwood City, San Francisco Bay, CA, USA},
+author = {Shewchuk, Yuri and Garousi, Vahid},
+booktitle = {Proceedings of the 22nd International Conference on Software Engineering {\&} Knowledge Engineering (SEKE'2010)},
+isbn = {1891706268},
+keywords = {functional testing,evolution,test maintenance and,tool evaluation},
+pages = {489--494},
+title = {{Experience with Maintenance of a Functional GUI Test Suite using IBM Rational Functional Tester}},
+year = {2010}
+}
+
+@inproceedings{Choudhary2011,
+abstract = {Web applications tend to evolve quickly, resulting in errors and fail- ures in test automation scripts that exercise them. Repairing such scripts to work on the updated application is essential for maintain- ing the quality of the test suite. Updating such scripts manually is a time consuming task, which is often difficult and is prone to errors if not performed carefully. In this paper, we propose a tech- nique to automatically suggest repairs for such web application test scripts. Our technique is based on differential testing and compares the behavior of the test case on two successive versions of the web application: first version in which the test script runs successfully and the second version in which the script results in an error or fail- ure. By analyzing the difference between these two executions, our technique suggests repairs that can be applied to repair the scripts. To evaluate our technique, we implemented it in a tool calledWA- TER and exercised it on real web applications with test cases. Our experiments show thatWATER can suggest meaningful repairs for practical test cases, many of which correspond to those made later by developers themselves.},
+address = {New York, New York, USA},
+author = {Choudhary, Shauvik Roy and Zhao, Dan and Versee, Husayn and Orso, Alessandro},
+booktitle = {Proceedings of the First International Workshop on End-to-End Test Script Engineering - ETSE '11},
+keywords = {test repair,web testing},
+pages = {24--29},
+publisher = {ACM Press},
+title = {{WATER}},
+year = {2011}
+}
+
+@book{Goldstein2011,
+title = {HTML5 \& CSS3 for the Real World},
+author = {Goldstein, Alexis and Lazais, Louis and Weyl, Estelle},
+year = {2011},
+publisher = {Sitepoint}
+}
+
+@article{Montoto2011,
+abstract = {Web automation applications are widely used for different purposes such as B2B integration, automated testing of web applications or technology and business watch. One crucial part in web automation applications is for them to easily generate and reproduce navigation sequences. This problem is specially complicated in the case of the new breed of AJAX-based websites. Although recently some tools have also addressed the problem, they show some limitations either in usability or their ability to deal with complex websites. In this paper, we propose a set of new techniques to build an automatic web navigation system able to deal with these complexities. Our main contributions are: a new method for recording navigation sequences able to scale to a wider range of events, an algorithm to identify in a change-resilient manner the target element of a user action, and a novel method to detect when the effects caused by a user action (including the effects of scripting code and AJAX requests) have finished. In addition, we have also tested our approach with a high number of real web sources and have compared it with other relevant web automation tools obtaining very good results. {\textcopyright} 2010 Elsevier B.V. All rights reserved.},
+author = {Montoto, Paula and Pan, Alberto and Raposo, Juan and Bellas, Fernando and L{\'{o}}pez, Javier},
+issn = {0169023X},
+journal = {Data {\&} Knowledge Engineering},
+keywords = {Web automation,Web integration,[28.8] Technologies of DBs/mediators and wrappers,[30.3] Web web-based information systems,[8.3] Data mining/web-based information},
+month = {mar},
+pages = {269--283},
+publisher = {Elsevier B.V.},
+title = {{Automated browsing in AJAX websites}},
+volume = {70},
+year = {2011}
+}
+
+@article{Zaidman2011,
+abstract = {Many software production processes advocate rigorous development testing alongside functional code writing, which implies that both test code and production code should co-evolve. To gain insight in the nature of this co-evolution, this paper proposes three views (realized by a tool called TeMo) that combine information from a software project's versioning system, the size of the various artifacts and the test coverage reports. We validate these views against two open source and one industrial software project and evaluate our results both with the help of log messages, code inspections and the original developers of the software system. With these views we could recognize different co-evolution scenarios (i.e., synchronous and phased) and make relevant observations for both developers as well as test engineers.},
+author = {Zaidman, Andy and {Van Rompaey}, Bart and van Deursen, Arie and Demeyer, Serge},
+doi = {10.1007/s10664-010-9143-7},
+isbn = {13823256 (ISSN)},
+issn = {1382-3256},
+journal = {Empirical Software Engineering},
+keywords = {Co-evolution,Software evolution,Software repository mining,Software testing,Test coverage},
+month = {jun},
+number = {3},
+pages = {325--364},
+title = {{Studying the co-evolution of production and test code in open source and industrial developer test processes through repository mining}},
+volume = {16},
+year = {2011}
+}
+
+@article{Pinto2012,
+abstract = {Test suites, once created, rarely remain static. Just like the application they are testing, they evolve throughout their lifetime. Test obsolescence is probably the most known reason for test-suite evolution---test cases cease to work because of changes in the code and must be suitably repaired. Repairing existing test cases manually, however, can be extremely time consuming, especially for large test suites, which has motivated the recent development of automated test-repair techniques. We believe that, for developing effective repair techniques that are applicable in real-world scenarios, a fundamental prerequisite is a thorough understanding of how test cases evolve in practice. Without such knowledge, we risk to develop techniques that may work well for only a small number of tests or, worse, that may not work at all in most realistic cases. Unfortunately, to date there are no studies in the literature that investigate how test suites evolve. To tackle this problem, in this paper we present a technique for studying test-suite evolution, a tool that implements the technique, and an extensive empirical study in which we used our technique to study many versions of six real-world programs and their unit test suites. This is the first study of this kind, and our results reveal several interesting aspects of test-suite evolution. In particular, our findings show that test repair is just one possible reason for test-suite evolution, whereas most changes involve refactorings, deletions, and additions of test cases. Our results also show that test modifications tend to involve complex, and hard-to-automate, changes to test cases, and that existing test-repair techniques that focus exclusively on assertions may have limited practical applicability. More generally, our findings provide initial insight on how test cases are added, removed, and modified in practice, and can guide future research efforts in the area of test-suite evolution.},
+author = {Pinto, Leandro Sales and Sinha, Saurabh and Orso, Alessandro},
+doi = {10.1145/2393596.2393634},
+isbn = {978-1-4503-1614-9},
+journal = {Proceedings of the ACM SIGSOFT 20th International Symposium on the Foundations of Software Engineering},
+keywords = {test-suite evolution,test-suite maintenance,unit testing},
+pages = {33:1--33:11},
+title = {{Understanding Myths and Realities of Test-suite Evolution}},
+volume = {1},
+year = {2012}
+}
+
+@inproceedings{Alegroth2013,
+author = {Alegroth, Emil and Feldt, Robert and Olsson, Helena H},
+booktitle = {2013 IEEE Sixth International Conference on Software Testing, Verification and Validation},
+doi = {10.1109/ICST.2013.14},
+isbn = {978-0-7695-4968-2},
+keywords = {-visual gui testing,company saab ab,empirical,entirely by industrial practitioners,industrial case study,into vgt at the,nance,subdivision security and,test automation,test mainte-,transition,with the goal to},
+month = {mar},
+pages = {56--65},
+publisher = {IEEE},
+title = {{Transitioning Manual System Test Suites to Automated Testing: An Industrial Case Study}},
+year = {2013}
+}
+
+@article{Kan2013,
+abstract = {Through reusing software test components, automated software testing generally costs less than manual software testing. There has been much research on how to develop the reusable test components, but few fall on how to estimate the reusability of test components for automated testing. The purpose of this paper is to present a method of minimum reusability estimation for automated testing based on the return on investment (ROI) model. Minimum reusability is a benchmark for the whole automated testing process. If the reusability in one test execution is less than the minimum reusability, some new strategies must be adopted in the next test execution to increase the reusability. Only by this way, we can reduce unnecessary costs and finally get a return on the investment of automated testing. {\textcopyright} 2013 Shanghai Jiaotong University and Springer-Verlag Berlin Heidelberg.},
+author = {Kan, Hong Xing and Wang, Guo Qiang and Wang, Zong Dian and Ding, Shuai},
+doi = {10.1007/s12204-013-1406-1},
+issn = {10071172},
+journal = {Journal of Shanghai Jiaotong University (Science)},
+keywords = {automated software testing,manual software testing,mean maintenance costs multiplier,minimum reusability estimation,reusable software test components,threshold},
+number = {3},
+pages = {360--365},
+title = {{A method of minimum reusability estimation for automated software testing}},
+volume = {18},
+year = {2013}
+}
+
+@inproceedings{Leotta2013,
+abstract = {There are several approaches for automated func- tional web testing and the choice among them depends on a number of factors, including the tools used for web testing and the costs associated with their adoption. In this paper, we present an empirical cost/benefit analysis of two different categories of automated functional web testing approaches: (1) capture- replay web testing (in particular, using Selenium IDE); and, (2) programmable web testing (using Selenium WebDriver). On a set of six web applications, we evaluated the costs of applying these testing approaches both when developing the initial test suites from scratch and when the test suites are maintained, upon the release of a new software version. Results indicate that, on the one hand, the development of the test suites is more expensive in terms of time required (between 32{\%} and 112{\%}) when the programmable web testing approach is adopted, but on the other hand, test suite maintenance is less expensive when this approach is used (with a saving between 16{\%} and 51{\%}). We found that, in the majority of the cases, after a small number of releases (from one to three), the cumulative cost of programmable web testing becomes lower than the cost involved with capture-replay web testing and the cost saving gets amplified over the successive releases. Index Terms—Test Case Evolution, Test Case Repair, Empiri- cal Study, Selenium IDE, Selenium WebDriver.},
+author = {Leotta, Maurizio and Clerissi, Diego and Ricca, Filippo and Tonella, Paolo},
+booktitle = {2013 20th Working Conference on Reverse Engineering (WCRE)},
+keywords = {Empiri-,Selenium IDE,Selenium WebDriver,Test Case Evolution,Test Case Repair,cal Study},
+month = {oct},
+pages = {272--281},
+publisher = {IEEE},
+title = {{Capture-replay vs. programmable web testing: An empirical assessment during test case evolution}},
+year = {2013}
+}
+
+@article{Rattan2013,
+title = "Software clone detection: A systematic review ",
+journal = "Inf. Softw. Tech. ",
+volume = 55,
+number = 7,
+pages = "1165 - 1199",
+year = 2013,
+issn = "0950-5849",
+doi = "10.1016/j.infsof.2013.01.008",
+author = "Dhavleesh Rattan and Rajesh Bhatia and Maninder Singh",
+keywords = "Software clone",
+keywords = "Clone detection",
+keywords = "Systematic literature review",
+keywords = "Semantic clones",
+keywords = "Model based clone ",
+}
+
+@inproceedings{Thummalapenta2013,
+abstract = {Test automation, which involves the conversion of manual test$\backslash$ncases to executable test scripts, is necessary to carry out efficient$\backslash$nregression testing of GUI-based applications. However, test automation$\backslash$ntakes significant investment of time and skilled effort. Moreover, it is$\backslash$nnot a one-time investment: as the application or its environment$\backslash$nevolves, test scripts demand continuous patching. Thus, it is$\backslash$nchallenging to perform test automation in a cost-effective manner. At$\backslash$nIBM, we developed a tool, called ATA [1], [2], to meet this challenge.$\backslash$nATA has novel features that are designed to lower the cost of initial$\backslash$ntest automation significantly. Moreover, ATA has the ability to patch$\backslash$nscripts automatically for certain types of application or environment$\backslash$nchanges. How well does ATA meet its objectives in the real world? In$\backslash$nthis paper, we present a detailed case study in the context of a$\backslash$nchallenging production environment: an enterprise web application that$\backslash$nhas over 6500 manual test cases, comes in two variants, evolves$\backslash$nfrequently, and needs to be tested on multiple browsers in$\backslash$ntime-constrained and resource-constrained regression cycles. We measured$\backslash$nhow well ATA improved the efficiency in initial automation. We also$\backslash$nevaluated the effectiveness of ATA's change-resilience along multiple$\backslash$ndimensions: application versions, browsers, and browser versions. Our$\backslash$nstudy highlights several lessons for test-automation practitioners as$\backslash$nwell as open research problems in test automation.},
+address = {San Francisco, CA, USA},
+author = {Thummalapenta, Suresh and Devaki, Pranavadatta and Sinha, Saurabh and Chandra, Satish and Gnanasundaram, Sivagami and Nagaraj, Deepa D. and Kumar, Sampath and Kumar, Sathish},
+booktitle = {2013 35th International Conference on Software Engineering (ICSE)},
+month = {may},
+pages = {1002--1011},
+publisher = {IEEE},
+title = {{Efficient and change-resilient test automation: An industrial case study}},
+year = {2013}
+}
+
+@book{Bosch2014,
+abstract = {This book provides essential insights on the adoption of modern software engineering practices at large companies producing software-intensive systems, where hundreds or even thousands of engineers collaborate to deliver on new systems and new versions of already deployed ones. It is based on the findings collected and lessons learned at the Software Center (SC), a unique collaboration between research and industry, with Chalmers University of Technology, Gothenburg University and Malm{\"{o}} University as academic partners and Ericsson, AB Volvo, Volvo Car Corporation, Saab Electronic Defense Systems, Grundfos, Axis Communications, Jeppesen (Boeing) and Sony Mobile as industrial partners. The 17 chapters present the "Stairway to Heaven" model, which represents the typical evolution path companies move through as they develop and mature their software engineering capabilities. The chapters describe theoretical frameworks, conceptual models and, most importantly, the industrial experiences gained by the partner companies in applying novel software engineering techniques. The book's structure consists of six parts. Part I describes the model in detail and presents an overview of lessons learned in the collaboration between industry and academia. Part II deals with the first step of the Stairway to Heaven, in which R{\&}D adopts agile work practices. Part III of the book combines the next two phases, i.e., continuous integration (CI) and continuous delivery (CD), as they are closely intertwined. Part IV is concerned with the highest level, referred to as "R{\&}D as an innovation system," while Part V addresses a topic that is separate from the Stairway to Heaven and yet critically important in large organizations: organizational performance metrics that capture data, and visualizations of the status of software assets, defects and teams. Lastly, Part VI presents the perspectives of two of the SC partner companies. The book is intended for practitioners and professionals in the software-intensive systems industry, providing concrete models, frameworks and case studies that show the specific challenges that the partner companies encountered, their approaches to overcoming them, and the results. Researchers will gain valuable insights on the problems faced by large software companies, and on how to effectively tackle them in the context of successful cooperation projects.},
+address = {Cham},
+author = {Bosch, Jan},
+booktitle = {Continuous software engineering},
+editor = {Bosch, Jan},
+pages = {1--226},
+publisher = {Springer International Publishing},
+title = {{Continuous Software Engineering}},
+year = {2014}
+}
+
+@inproceedings{Christophe2014,
+abstract = {Functional testing requires executing particular sequences of user actions. Test automation tools enable scripting user actions such that they can be repeated more easily. SELENIUM, for instance, enables testing web applications through scripts that interact with a web browser and assert properties about its observable state. However, little is known about how common such tests are in practice. We therefore present a cross-sectional quantitative study of the prevalence of SELENIUM-based tests among open-source web applications, and of the extent to which such tests are used within individual applications. Automating functional tests also brings about the problem of maintaining test scripts. As the system under test evolves, its test scripts are bound to break. Even less is known about the way test scripts change over time. We therefore also present a longitudinal quantitative study of whether and for how long test scripts are maintained, as well as a longitudinal qualitative study of the kind of changes they undergo. To the former's end, we propose two new metrics based on whether a commit to the application's version repository touches a test file. To the latter's end, we propose to categorize the changes within each commit based on the elements of the test upon which they operate. As such, we are able to identify the elements of a test that are most prone to change.},
+author = {Christophe, Laurent and Stevens, Reinout and {De Roover}, Coen and {De Meuter}, Wolfgang},
+booktitle = {2014 IEEE International Conference on Software Maintenance and Evolution},
+keywords = {Functional testing,Selenium,Test automation},
+month = {sep},
+pages = {141--150},
+publisher = {IEEE},
+title = {{Prevalence and Maintenance of Automated Functional Tests for Web Applications}},
+year = {2014}
+}
+
+@inproceedings{Falleri2014,
+address = {New York, New York, USA},
+author = {Falleri, Jean-R{\'{e}}my and Morandat, Flor{\'{e}}al and Blanc, Xavier
+and Martinez, Matias and Monperrus, Martin},
+booktitle = {Proceedings of the 29th ACM/IEEE international conference on
+Automated software engineering - ASE '14},
+doi = {10.1145/2642937.2642982},
+isbn = {9781450330138},
+keywords = {ast,program comprehension,software evolution,tree differencing},
+pages = {313--324},
+publisher = {ACM Press},
+title = {{Fine-grained and accurate source code differencing}},
+year = {2014}
+}
+
+@inproceedings{Leotta2014,
+abstract = {In the context of web regression testing, the main aging factor for a test suite is related to the continuous evolution of the underlying web application that makes the test cases broken. This rapid decay forces the quality experts to evolve the test ware. One of the major costs of test case evolution is due to the manual effort necessary to repair broken web page element locators. Locators are lines of source code identifying the web elements the test cases interact with. Web test cases rely heavily on locators, for instance to identify and fill the input portions of a web page (e.g., The form fields), to execute some computations (e.g., By locating and clicking on buttons) and to verify the correctness of the output (by locating the web page elements showing the results). In this paper we present ROBULA (ROBUst Locator Algorithm), a novel algorithm able to partially prevent and thus reduce the aging of web test cases by automatically generating robust XPath-based locators that are likely to work also when new releases of the web application are created. Preliminary results show that XPath locators produced by ROBULA are substantially more robust than absolute and relative locators, generated by state of the practice tools such as Fire Path. Fragility of the test suites is reduced on average by 56{\%} for absolute locators and 41{\%} for relative locators.},
+author = {Leotta, Maurizio and Stocco, Andrea and Ricca, Filippo and Tonella, Paolo},
+booktitle = {2014 IEEE International Symposium on Software Reliability Engineering Workshops},
+keywords = {Robust locators,Test cases aging,Web testing},
+month = {nov},
+pages = {449--454},
+publisher = {IEEE},
+title = {{Reducing Web Test Cases Aging by Means of Robust XPath Locators}},
+year = {2014}
+}
+
+
+@online{W3C2014,
+url={https://www.w3.org/WAI/GL/wiki/Using_ARIA_landmarks_to_identify_regions_of_a_page},
+title={Using ARIA landmarks to identify regions of a page},
+author={World Wide Web Consortium},
+year={2014},
+month={jan},
+urldate={2021-01-16}
+}
+
+@article{Yandrapally2014,
+abstract = {Despite the seemingly obvious advantage of test automation, significant skepticism exists in the industry regarding its cost-benefit tradeoffs. Test scripts for web applications are fragile: even small changes in the page layout can break a number of tests, requiring the expense of re-automating them. Moreover, a test script created for one browser cannot be relied upon to run on a different web browser: it requires duplicate effort to create and maintain versions of tests for a variety of browsers. Because of these hidden costs, organizations often fall back to manual testing. We present a fresh solution to the problem of test-script fragility. Often, the root cause of test-script fragility is that, to identify UI elements on a page, tools typically record some metadata that depends on the internal representation of the page in a browser. Our technique eliminates metadata almost entirely. Instead, it identifies UI elements relative to other prominent elements on the page. The core of our technique automatically identifies a series of contextual clues that unambiguously identify a UI element, without recording anything about the internal representation. Empirical evidence shows that our technique is highly accurate in computing contextual clues, and outperforms existing techniques in its resilience to UI changes as well as browser changes.},
+author = {Yandrapally, Rahulkrishna and Thummalapenta, Suresh and Sinha, Saurabh and Chandra, Satish},
+journal = {2014 International Symposium on Software Testing and Analysis, ISSTA 2014 - Proceedings},
+keywords = {GUI test automation,Test-script fragility},
+pages = {304--314},
+title = {{Robust test automation using contextual clues}},
+year = {2014}
+}
+
+@article{Zanoni2014,
+author = {Zanoni, Marco and Perin, Fabrizio and Arcelli Fontana, Francesca and Viscusi, Gianluigi},
+year = {2014},
+month = {12},
+pages = {},
+title = {Pattern Detection for Conceptual Schema Recovery in Data-Intensive Systems},
+volume = {26},
+journal = {Journal of Software: Evolution and Process},
+doi = {10.1002/smr.1656}
+}
+
+@article{Alegroth2015,
+abstract = {In today's software development industry, high-level tests such as Graphical User Interface (GUI) based system and acceptance tests are mostly performed with manual practices that are often costly, tedious and error prone. Test automation has been proposed to solve these problems but most automation techniques approach testing from a lower level of system abstraction. Their suitability for high-level tests has therefore been questioned. High-level test automation techniques such as Record and Replay exist, but studies suggest that these techniques suffer from limitations, e.g. sensitivity to GUI layout or code changes, system implementation dependencies, etc. Visual GUI Testing (VGT) is an emerging technique in industrial practice with perceived higher flexibility and robustness to certain GUI changes than previous high-level (GUI) test automation techniques. The core of VGT is image recognition which is applied to analyze and interact with the bitmap layer of a system's front end. By coupling image recognition with test scripts, VGT tools can emulate end user behavior on almost any GUI-based system, regardless of implementation language, operating system or platform. However, VGT is not without its own challenges, problems and limitations (CPLs) but, like for many other automated test techniques, there is a lack of empirically-based knowledge of these CPLs and how they impact industrial applicability. Crucially, there is also a lack of information on the cost of applying this type of test automation in industry. This manuscript reports an empirical, multi-unit case study performed at two Swedish companies that develop safety-critical software. It studies their transition from manual system test cases into tests automated with VGT. In total, four different test suites that together include more than 300 high-level system test cases were automated for two multi-million lines of code systems. The results show that the transitioned test cases could find defects in the tested systems and that all applicable test cases could be automated. However, during these transition projects a number of hurdles had to be addressed; a total of 58 different CPLs were identified and then categorized into 26 types. We present these CPL types and an analysis of the implications for the transition to and use of VGT in industrial software development practice. In addition, four high-level solutions are presented that were identified during the study, which would address about half of the identified CPLs. Furthermore, collected metrics on cost and return on investment of the VGT transition are reported together with information about the VGT suites' defect finding ability. Nine of the identified defects are reported, 5 of which were unknown to testers with extensive experience from using the manual test suites. The main conclusion from this study is that even though there are many challenges related to the transition and usage of VGT, the technique is still valuable, flexible and considered cost-effective by the industrial practitioners. The presented CPLs also provide decision support in the use and advancement of VGT and potentially other automated testing techniques similar to VGT, e.g. Record and Replay.},
+author = {Al{\'{e}}groth, Emil and Feldt, Robert and Ryrholm, Lisa},
+journal = {Empirical Software Engineering},
+keywords = {Challenges,Development cost,Industrial case study,Problems and Limitations,System and acceptance test automation,Visual GUI Testing},
+month = {jun},
+number = {3},
+pages = {694--744},
+title = {{Visual GUI testing in practice: challenges, problemsand limitations}},
+volume = {20},
+year = {2015}
+}
+
+
+@article{Cohen2015,
+abstract = {We discuss a key problem in information extraction which deals with wrapper failures due to changing content templates. A good proportion of wrapper failures are due to HTML templates changing to cause wrappers to become incompatible after element inclusion or removal in a DOM (Tree representation of HTML). We perform a large-scale empirical analyses of the causes of shift and mathematically quantify the levels of domain difficulty based on entropy. We propose the XTreePath annotation method to captures contextual node information from the training DOM. We then utilize this annotation in a supervised manner at test time with our proposed Recursive Tree Matching method which locates nodes most similar in context recursively using the tree edit distance. The search is based on a heuristic function that takes into account the similarity of a tree compared to the structure that was present in the training data. We evaluate XTreePath using 117,422 pages from 75 diverse websites in 8 vertical markets. Our XTreePath method consistently outperforms XPath and a current commercial system in terms of successful extractions in a blackbox test. We make our code and datasets publicly available online.},
+author = {Cohen, Joseph Paul and Ding, Wei and Bagherjeiran, Abraham},
+journal = {arXiv: Information Retrieval},
+month = {may},
+title = {{XTreePath: A generalization of XPath to handle real world structural variation}},
+year = {2015}
+}
+
+@inproceedings{Leotta2015,
+abstract = {The main reason for the fragility of web test cases is the inability of web element locators to work correctly when the web page DOM evolves. Web elements locators are used in web test cases to identify all the GUI objects to operate upon and eventually to retrieve web page content that is compared against some oracle in order to decide whether the test case has passed or not. Hence, web element locators play an extremely important role in web testing and when a web element locator gets broken developers have to spend substantial time and effort to repair it. While algorithms exist to produce robust web element locators to be used in web test scripts, no algorithm is perfect and different algorithms are exposed to different fragilities when the software evolves. Based on such observation, we propose a new type of locator, named multi-locator, which selects the best locator among a candidate set of locators produced by different algorithms. Such selection is based on a voting procedure that assigns different voting weights to different locator generation algorithms. Experimental results obtained on six web applications, for which a subsequent release was available, show that the multi-locator is more robust than the single locators (about -30{\%} of broken locators w.r.t. the most robust kind of single locator) and that the execution overhead required by the multiple queries done with different locators is negligible (2-3{\%} at most).},
+author = {Leotta, Maurizio and Stocco, Andrea and Ricca, Filippo and Tonella, Paolo},
+booktitle = {2015 IEEE 8th International Conference on Software Testing, Verification and Validation (ICST)},
+keywords = {Test Case Robustness,Testware Evolution,Web Element Locators,Web Testing,XPath Locators},
+month = {apr},
+pages = {1--10},
+publisher = {IEEE},
+title = {{Using Multi-Locators to Increase the Robustness of Web Test Cases}},
+year = {2015}
+}
+
+@article{Alegroth2016,
+abstract = {Context: Verification and validation (V{\&}V) activities make up 20-50{\%} of the total development costs of a software system in practice. Test automation is proposed to lower these V{\&}V costs but available research only provides limited empirical data from industrial practice about the maintenance costs of automated tests and what factors affect these costs. In particular, these costs and factors are unknown for automated GUI-based testing. Objective: This paper addresses this lack of knowledge through analysis of the costs and factors associated with the maintenance of automated GUI-based tests in industrial practice. Method: An empirical study at two companies, Siemens and Saab, is reported where interviews about, and empirical work with, Visual GUI Testing is performed to acquire data about the technique's maintenance costs and feasibility. Results: 13 factors are observed that affect maintenance, e.g. tester knowledge/experience and test case complexity. Further, statistical analysis shows that developing new test scripts is costlier than maintenance but also that frequent maintenance is less costly than infrequent, big bang maintenance. In addition a cost model, based on previous work, is presented that estimates the time to positive return on investment (ROI) of test automation compared to manual testing. Conclusions: It is concluded that test automation can lower overall software development costs of a project while also having positive effects on software quality. However, maintenance costs can still be considerable and the less time a company currently spends on manual testing, the more time is required before positive, economic, ROI is reached after automation.},
+archivePrefix = {arXiv},
+arxivId = {1602.01226},
+author = {Al{\'{e}}groth, Emil and Feldt, Robert and Kolstr{\"{o}}m, Pirjo},
+doi = {10.1016/j.infsof.2016.01.012},
+eprint = {1602.01226},
+issn = {09505849},
+journal = {Information and Software Technology},
+keywords = {Empirical,Industrial,Maintenance,Return on investment,Visual GUI Testing},
+pages = {66--80},
+title = {{Maintenance of automated test suites in industry: An empirical study on Visual GUI Testing}},
+volume = {73},
+year = {2016}
+}
+
+@inproceedings{Hammoudi2016,
+abstract = {Software engineers often use record/replay tools to enable the automated testing of web applications. Tests created in this manner can then be used to regression test new versions of the web applications as they evolve. Web application tests recorded by record/replay tools, however, can be quite brittle, they can easily break as applications change. For this reason, researchers have begun to seek approaches for automatically repairing record/replay tests. To date, however, there have been no comprehensive attempts to characterize the causes of breakagesin record/replay tests for web applications. In this work, wepresent a taxonomy classifying the ways in which record/replay tests for web applications break, based on an analysis of 453 versions of popular web applications for which 1065 individual test breakages were recognized. The resulting taxonomy can help direct researchers in their attempts to repair such tests. It can also help practitioners by suggesting best practices when creating tests or modifying programs, and can help researchers with other tasks such as test robustness analysis and IDE design.},
+author = {Hammoudi, Mouna and Rothermel, Gregg and Tonella, Paolo},
+booktitle = {2016 IEEE International Conference on Software Testing, Verification and Validation (ICST)},
+keywords = {Record/replay testing,test breakages,test repair,web applications},
+month = {apr},
+pages = {180--190},
+publisher = {IEEE},
+title = {{Why do Record/Replay Tests of Web Applications Break?}},
+year = {2016}
+}
+
+
+@article{Leotta2016,
+abstract = {Automated test scripts are used with success in many web development projects, so as to automatically verify key functionalities of the web application under test, reveal possible regressions and run a large number of tests in short time. However, the adoption of automated web testing brings advantages but also novel problems, among which the test code fragility problem. During the evolution of the web application, existing test code may easily break and testers have to correct it. In the context of automated DOM-based web testing, one of the major costs for evolving the test code is the manual effort necessary to repair broken web page element locators – lines of source code identifying the web elements (e.g. form fields and buttons) to interact with. In this work, we present ROBULA+, a novel algorithm able to generate robust XPath-based locators – locators that are likely to work correctly on new releases of the web application. We compared ROBULA+ with several state of the practice/art XPath locator generator tools/algorithms. Results show that XPath locators produced by ROBULA+ are by far the most robust. Indeed, ROBULA+ reduces the locators' fragility on average by 90{\%} w.r.t. absolute locators and by 63{\%} w.r.t. Selenium IDE locators. Copyright},
+author = {Leotta, Maurizio and Stocco, Andrea and Ricca, Filippo and Tonella, Paolo},
+journal = {Journal of Software: Evolution and Process},
+keywords = {DOM selector,maintenance effort reduction,rbust XPath locator,test cases fragility,web testing},
+month = {mar},
+number = {3},
+pages = {177--204},
+title = {{Robula+: an algorithm for generating robust XPath locators for web testing}},
+volume = {28},
+year = {2016}
+}
+
+@online{W3C2016,
+url={https://www.w3.org/TR/1999/REC-xpath-19991116/},
+title={XML Path Language (XPath)},
+author={World Wide Web Consortium},
+year={1999},
+month={nov},
+urldate={2021-01-16}
+}
+
+@inproceedings{Aldalur2017,
+abstract = {Web locators uniquely identify elements on the Web Content. They are heavily used in different scenarios, from Web harvesting to Web testing and browser extensions. Locators' Achilles heel is their fragility upon Website upgrades. This work tackles locator fragility in the context of browser extensions. We introduce regenerative locator, i.e. traditional structure-based locators which are supplemented with contingency data from the target node. The aim: keeping browser extensions up and running for as long as possible. Eight case studies are analysed by considering real Website upgrades taken from Wayback Machine. Figures indicate a 70{\%} success in regenerating broken locators without interrupting extension functioning.},
+address = {New York, NY, USA},
+author = {Aldalur, Inigo and Diaz, Oscar},
+booktitle = {Proceedings of the ACM SIGCHI Symposium on Engineering Interactive Computing Systems},
+month = {jun},
+pages = {45--50},
+publisher = {ACM},
+title = {{Addressing web locator fragility}},
+year = {2017}
+}
+
+@article{Labuschagne2017,
+abstract = {Software defects cost time and money to diagnose and fix. Consequently, developers use a variety of techniques to avoid introducing defects into their systems. However, these tech- niques have costs of their own; the benefit of using a technique must outweigh the cost of applying it. In this paper we investigate the costs and benefits of auto- mated regression testing in practice. Specifically, we studied 61 projects that use Travis CI, a cloud-based continuous integration tool, in order to examine real test failures that were encountered by the developers of those projects. We determined how the developers resolved the failures they encountered and used this information to classify the failures as being caused by a flaky test, by a bug in the system under test, or by a broken or obsolete test. We consider that test failures caused by bugs represent a benefit of the test suite, while failures caused by broken or obsolete tests represent a test suite maintenance cost. We found that 18{\%} of test suite executions fail and that 13{\%} of these failures are flaky. Of the non-flaky failures, only 74{\%} were caused by a bug in the system under test; the remaining 26{\%} were due to incorrect or obsolete tests. In addition, we found that, in the failed builds, only 0.38{\%} of the test case executions failed and 64{\%} of failed builds contained more than one failed test. Our findings contribute to a wider understanding of the unforeseen costs that can impact the overall cost effectiveness of regression testing in practice. They can also inform re- search into test case selection techniques, as we have provided an approximate empirical bound on the practical value that could be extracted from such techniques. This value appears to be large, as the 61 systems under study contained nearly 3 million lines of test code and yet over 99{\%} of test case executions could have been eliminated with a perfect oracle.},
+author = {Labuschagne, Adriaan and Inozemtseva, Laura and Holmes, Reid},
+doi = {10.1145/3106237.3106288},
+isbn = {9781450351058},
+journal = {Proceedings of the 2017 11th Joint Meeting on Foundations of Software Engineering  - ESEC/FSE 2017},
+pages = {821--830},
+title = {{Measuring the cost of regression testing in practice: a study of Java projects using continuous integration}},
+year = {2017}
+}
+
+@article{Lavoie2017,
+abstract = {Context: This paper presents a novel experiment focused on detecting and analyzing clones in test suites written in TTCN-3, a standard telecommunication test script language, for different industrial projects. Objective: This paper investigates frequencies, types, and similarity distributions of TTCN-3 clones in test scripts from three industrial projects in telecommunication. We also compare the distribution of clones in TTCN-3 test scripts with the distribution of clones in C/C++ and Java projects from the telecommunication domain. We then perform a statistical analysis to validate the significance of differences between these distributions. Method: Similarity is computed using CLAN, which compares metrics syntactically derived from script fragments. Metrics are computed from the Abstract Syntax Trees produced by a TTCN-3 parser called Titan developed by Ericsson as an Eclipse plugin. Finally, clone classification of similar script pairs is computed using the Longest Common Subsequence algorithm on token types and token images. Results: This paper presents figures and diagrams reporting TTCN-3 clone frequencies, types, and similarity distributions. We show that the differences between the distribution of clones in test scripts and the distribution of clones in applications are statistically significant. We also present and discuss some lessons that can be learned about the transferability of technology from this study. Conclusion: About 24{\%} of fragments in the test suites are cloned, which is a very high proportion of clones compared to what is generally found in source code. The difference in proportion of Type-1 and Type-2 clones is statistically significant and remarkably higher in TTCN-3 than in source code. Type-1 and Type-2 clones represent 82.9{\%} and 15.3{\%} of clone fragments for a total of 98.2{\%}. Within the projects this study investigated, this represents more and easier potential re-factoring opportunities for test scripts than for code.},
+author = {Lavoie, Thierry and M{\'{e}}rineau, Mathieu and Merlo, Ettore and Potvin, Pascal},
+doi = {10.1016/j.infsof.2017.01.008},
+issn = {09505849},
+journal = {Information and Software Technology},
+keywords = {Clone detection,Telecommunications software,Test},
+month = {jul},
+pages = {32--45},
+publisher = {Elsevier B.V.},
+title = {{A case study of TTCN-3 test scripts clone analysis in an industrial telecommunication setting}},
+volume = {87},
+year = {2017}
+}
+
+@inproceedings{Levin2017,
+author={S. Levin and A. Yehudai},
+booktitle={2017 IEEE International Conference on Software Maintenance and Evolution (ICSME)},
+title={The Co-evolution of Test Maintenance and Code Maintenance through the Lens of Fine-Grained Semantic Changes},
+year=2017,
+pages={35-46},
+doi={10.1109/ICSME.2017.9},
+month={Sept},
+}
+@inproceedings{Alegroth2018,
+abstract = {Continuous integration (CI) is growing in industrial popularity, spurred on by market trends towards faster delivery and higher quality software. A key facilitator of CI is automated testing that should be executed, automatically, on several levels of system abstraction. However, many systems lack the interfaces required for automated testing. Others lack test automation coverage of the system under test's (SUT) graphical user interface (GUI) as it is shown to the user. One technique that shows promise to solve these challenges is Visual GUI Testing (VGT), which uses image recognition to stimulate and assert the SUT's behavior. Research has presented the technique's applicability and feasibility in industry but only limited support, from an academic setting, that the technique is applicable in a CI environment. In this paper we presents a study from an industrial design research study with the objective to help bridge the gap in knowledge regarding VGT's applicability in a CI environment in industry. Results, acquired from interviews, observations and quantitative analysis of 17.567 test executions, collected over 16 weeks, show that VGT provides similar benefits to other automated test techniques for CI. However, several significant drawbacks, such as high costs, are also identified. The study concludes that, although VGT is applicable in an industrial CI environment, its severe challenges require more research and development before the technique becomes efficient in practice.},
+author = {Alegroth, Emil and Karlsson, Arvid and Radway, Alexander},
+booktitle = {2018 IEEE 11th International Conference on Software Testing, Verification and Validation (ICST)},
+keywords = {continuous integration,design research,empirical,industrial study,visual gui testing},
+month = {apr},
+pages = {172--181},
+publisher = {IEEE},
+title = {{Continuous Integration and Visual GUI Testing: Benefits and Drawbacks in Industrial Practice}},
+year = {2018}
+}
+
+@inproceedings{Eladawy2018,
+abstract = {The importance of test automation in the software industry has received a growing attention in recent years and it is continuously increasing. Unfortunately, the maintenance of the test cases is a major problem that faces those who use test automation. This problem becomes bigger when dealing with Graphical User Interface (GUI) tests.In this paper, an algorithm is introduced to maintain GUI tests for web applications. The Genetic algorithm is adopted to automatically repair the locators used to select elements from web pages. The algorithm is evaluated using several applications and results show that the proposed algorithm improves the repair percentage to 87{\%} of the used locators compared to the previous result which was 73{\%}.},
+author = {Eladawy, Hadeel Mohamed and Mohamed, Amr E. and Salem, Sameh A.},
+booktitle = {2018 13th International Conference on Computer Engineering and Systems (ICCES)},
+keywords = {DOM selectors,GUI testing,XPath,XPath locator,genetic algorithm,web testing},
+month = {dec},
+pages = {327--331},
+publisher = {IEEE},
+title = {{A New Algorithm for Repairing Web-Locators using Optimization Techniques}},
+year = {2018}
+}
+
+@techreport{Katalon2018,
+abstract = {Test automation is an essential part of modern software development lifecycles with Agile and DevOps. However, it accounts for a small percentage of test activities performed by software testing community. There are certainly challenges being faced by the community. So, understanding them is an important step to better adopt test automation in organizations. We carried out a study surveying over 2,000 software professionals about the challenges and problems faced in applying test automation. Of over 100 automation tools being used, open-source and free ones like Selenium and Katalon Studio are dominant. Functional and regression testing are the most common types adopting automation. The survey identifies the most striking challenges in applying test automation perceived by professionals with the top two being the frequently changing requirements and the lack of experienced automation resources. As implementing test automation strategies usually involves multiple tools, the difficulty in tool integration is also cited as a top challenge. The survey shows that the cost of commercial tools is the top concern when it comes to the challenges or problems with the existing automation tools. When the application under test changes, test scripts generated and maintained by tools are broken, which is the second highest challenge. The reliability of automation tools is not a key concern for many respondents.},
+author = {Katalon},
+number = {May},
+pages = {16},
+title = {{The most striking problems in test automation : A survey}},
+year = {2018}
+}
+
+@article{Leotta2018,
+author = {Leotta, Maurizio and Stocco, Andrea and Ricca, Filippo and Tonella, Paolo},
+doi = {10.1002/stvr.1665},
+journal = {Software Testing, Verification and Reliability},
+keywords = {DOM-based testing,Selenium WebDriver,Sikuli,Web testing,test automation,visual testing},
+month = {jun},
+number = {4},
+pages = {30},
+title = {Pesto: Automated migration of DOM-based Web tests towards the visual approach}},
+volume = {28},
+year = {2018}
+}
+
+@inproceedings{Stocco2018,
+abstract = {Web tests are prone to break frequently as the application under test evolves, causing much maintenance effort in practice. To detect the root causes of a test breakage, developers typically inspect the test's interactions with the application through the GUI. Existing automated test repair techniques focus instead on the code and entirely ignore visual aspects of the application. We propose a test repair technique that is informed by a visual analysis of the appli- cation. Our approach captures relevant visual information from tests execution and analyzes them through a fast image processing pipeline to visually validate test cases as they re-executed for re- gression purposes. Then, it reports the occurrences of breakages and potential fixes to the testers. Our approach is also equipped with a local crawling mechanism to handle non-trivial breakage scenarios such as the ones that require to repair the test's workflow. We implemented our approach in a tool called Vista. Our empirical evaluation on 2,672 test cases spanning 86 releases of four web applications shows that Vista is able to repair, on average, 81{\%} of the breakages, a 41{\%} increment with respect to existing techniques.},
+address = {Lake Buena Vista, FL, USA},
+author = {Stocco, Andrea and Yandrapally, Rahulkrishna and Mesbah, Ali},
+booktitle = {Proceedings of the 2018 26th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering},
+doi = {10.1145/3236024.3236063},
+file = {:D$\backslash$:/Documents/Renaud/OneDrive/PhD/Papers/Stocco, Yandrapally, Mesbah{\_}Proceedings of the 2018 26th ACM Joint Meeting on European Software Engineering Conference and Symposium on.pdf:pdf},
+isbn = {9781450355735},
+keywords = {computer vision,image analysis ACM,test repair,web testing},
+mendeley-groups = {Software Testing/Maintenance},
+month = {oct},
+pages = {503--514},
+publisher = {ACM},
+title = {{Visual web test repair}},
+url = {https://dl.acm.org/doi/10.1145/3236024.3236063},
+year = {2018}
+}
+
+
+@online{W3C2018,
+url={https://drafts.csswg.org/selectors-3/},
+title={Selectors Level 3 - W3C Candidate Recommendation},
+author={World Wide Web Consortium},
+year={2018},
+month={jan},
+urldate={2021-01-21}
+}
+
+
+@inproceedings{Zheng2018,
+abstract = {Due to the rapid iteration of Web applications, there are some broken test cases in regression tests. The main reason for the appearance of broken test cases is the failure of element location in the new web page. The element locators in the test cases come from various Web element locating tools, which are used to identify the elements to be convenient for testers to operate them and eventually to test the Web application. Therefore, the Web element locating tools play an essential role in web testing. At present, there are some Web element locating tools, which are supported by a single locating algorithm or multiple locating algorithms. Moreover, the Multi-Locators supported by multiple algorithms are obviously more robust than the one supported by a single algorithm. However, when synthesizing all locating algorithm to generate Multi-Locators, a better method can be selected in assigning weights to each algorithm. Based on this observation, we propose a method to optimize Multi-Locators. In assigning weight to each algorithm, it chooses a weight distribution method based on machine learning, named Learned Weights. Through experimental comparison, it is shown that the locating tool supported by algorithm based on machine learning is more robust than these existing locating tools.},
+author = {Zheng, Yu and Huang, Song and Hui, Zhan-wei and Wu, Ya-Ning},
+booktitle = {2018 IEEE International Conference on Software Quality, Reliability and Security Companion (QRS-C)},
+keywords = {Learned Weights,Web Element Locating Tool,Web Locator,Web Testing},
+month = {jul},
+pages = {172--174},
+publisher = {IEEE},
+title = {{A Method of Optimizing Multi-Locators Based on Machine Learning}},
+year = {2018}
+}
+
+
+
+@online{Grigorik2019,
+url={https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction},
+title={Render-tree Construction, Layout, and Paint},
+author={Grigorik, Ilya},
+year={2019},
+month={fev},
+urldate={2021-01-28}
+}
+
+
+@inproceedings{Kirinuki2019,
+abstract = {Test automation tools such as Selenium are commonly used for automating end-to-end tests, but when developers update the software, they often need to modify the test scripts accordingly. However, the costs of modifying these test scripts are a big obstacle to test automation because of the scripts' fragility. In particular, locators in test scripts are prone to change. Some prior methods tried to repair broken locators by using structural clues, but these approaches usually cannot handle radical changes to page layouts. In this paper, we propose a novel approach called COLOR (correct locator recommender) to support repairing broken locators in accordance with software updates. COLOR uses various properties as clues obtained from screens (i.e., attributes, texts, images, and positions). We examined which properties are reliable for recommending locators by examining changes between two release versions of software, and the reliability is adopted as the weight of a property. Our experimental results obtained from four open source web applications show that COLOR can present the correct locator in rst place with a 77{\%}-93{\%} accuracy and is more robust against page layout changes than structure-based approaches.},
+author = {Kirinuki, Hiroyuki and Tanno, Haruto and Natsukawa, Katsuyuki},
+booktitle = {2019 IEEE 26th International Conference on Software Analysis, Evolution and Reengineering (SANER)},
+month = {feb},
+number = {4},
+pages = {310--320},
+publisher = {IEEE},
+title = {{COLOR: Correct Locator Recommender for Broken Test Scripts using Various Clues in Web Application}},
+volume = {36},
+year = {2019}
+}
+
+@inproceedings{Rwemalika2019,
+abstract = {Many companies rely on software testing to verify that their software products meet their requirements. However, test quality and, in particular, the quality of end-to-end testing is relatively hard to achieve. The problem becomes challenging when software evolves, as end-to-end test suites need to adapt and conform to the evolved software. Unfortunately, end-to-end tests are particularly fragile as any change in the application interface, e.g., application flow, location or name of graphical user interface elements, necessitates a change in the tests. This paper presents an industrial case study on the evolution of Keyword-Driven test suites, also known as Keyword-Driven Testing (KDT). Our aim is to demonstrate the problem of test maintenance, identify the benefits of Keyword-Driven Testing and overall improve the understanding of test code evolution (at the acceptance testing level). This information will support the development of automatic techniques, such as test refactoring and repair, and will motivate future research. To this end, we identify, collect and analyze test code changes across the evolution of industrial KDT test suites for a period of eight months. We show that the problem of test maintenance is largely due to test fragility (most commonly-performed changes are due to locator and synchronization issues) and test clones (over 30{\%} of keywords are duplicated). We also show that the better test design of KDT test suites has the potential for drastically reducing (approximately 70{\%}) the number of test code changes required to support software evolution. To further validate our results, we interview testers from BGL BNP Paribas and report their perceptions on the advantages and challenges of keyword-driven testing.},
+address = {Xi'an, China},
+author = {Rwemalika, Renaud and Kintis, Marinos and Papadakis, Mike and {Le Traon}, Yves and Lorrach, Pierre},
+booktitle = {2019 12th IEEE Conference on Software Testing, Validation and Verification (ICST)},
+keywords = {acceptance testing,end-to-end testing,keyword-driven testing,test clone,test code evolution},
+month = {apr},
+pages = {335--345},
+publisher = {IEEE},
+title = {{On the Evolution of Keyword-Driven Test Suites}},
+year = {2019}
+}
+
+@online{MDN2020,
+url={https://developer.mozilla.org/en-US/docs/Web/HTML/Element},
+title={HTML elements reference},
+author={MDN contributors},
+year={2020},
+month={dec},
+urldate={2021-01-16}
+}
+
+@online{RobotFramework2020,
+author = {Robot RobotFramework},
+title = {Introduction},
+year = 2020,
+url = {http://robotframework.org/},
+urldate = {2021-02-15}
+}
+
+@online{WHATWG2021,
+url={https://html.spec.whatwg.org/},
+title={HTML Living Standard},
+author={Web Hypertext Application Technology Working Group},
+year={2021},
+month={jan},
+urldate={2021-01-16}
+}
+
+@online{Selenium2021,
+url={https://www.selenium.dev/documentation/en/getting_started_with_webdriver/locating_elements/},
+title={Locating elements},
+author={Software Freedom Conservancy},
+year={2021},
+month={jan},
+urldate={2021-01-19}
+}
