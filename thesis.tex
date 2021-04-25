@@ -1,43 +1,58 @@
-\documentclass{report}
-\usepackage[utf8]{inputenc}
+  
+\RequirePackage[l2tabu, orthodox]{nag}
+
+\documentclass[review, glossary]{thesis}
+
+\def\UrlBreaks{\do\/\do-}
+
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+\usepackage{amsmath, amsfonts, amsthm, amssymb}
+\usepackage{boxedminipage, xspace}   
+\usepackage[T1]{fontenc}
+\usepackage{changepage}
+\usepackage[export]{adjustbox}
+
+\usepackage{graphics, graphicx}
+\usepackage{subfig}
+
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage[roman]{parnotes}
 
 \usepackage{algorithm}
 \usepackage{algorithmic}
 
-\usepackage{booktabs}
-\usepackage{tabularx}
-\usepackage{multirow}
-\usepackage[roman]{parnotes}
-
-\usepackage{subfigure}
-\usepackage{graphicx}
-
-\newcommand{\etal}{\textit{et al. }}
-\newcommand{\mercator}{\emph{Mercator}}
 \newcommand{\code}[1]{\scriptsize{\texttt{#1}}}
+\newcommand{\mercator}{\emph{Mercator}}
 
-\renewcommand{\algorithmicrequire}{\textbf{Input:}}
-\renewcommand{\algorithmicensure}{\textbf{Output:}}
-\renewcommand{\algorithmicfor}{\textbf{for each}}
+%\newtheorem{operator}{Operator}
 
-\title{Maintenance and Evolution of System User Interactive Tests}
-\author{Renaud Rwemalika}
-\date{May 2021}
+\addbibresource{references.bib}
 
-\begin{document}
-
-\maketitle
-\tableofcontents
-
-\input{introduction}
-\input{related}
-\input{evolution}
-\input{smells}
-\input{hpath}
-\input{ikora}
-\input{conclusion}
-
-\bibliographystyle{unsrt}
-\bibliography{references}
-
+\begin{document}		
+	\frontmatter
+	\pagenumbering{gobble}
+	
+	\input{cover}
+	
+	\linenumbers
+	\input{abstract}	
+	\tableofcontents
+	
+	\cleardoublepage
+	
+	\mainmatter	
+	
+	\input{introduction}
+	\input{related}
+	\input{evolution}
+	\input{hpath}
+	\input{smells}
+	\input{ikora}
+	\input{conclusion}
+	
+	\backmatter
 \end{document}

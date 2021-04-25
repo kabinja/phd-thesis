@@ -17,9 +17,9 @@ Hypertext Markup Language (HTML) is a standard markup derived from the eXtensibl
 The root of an HTML document tree is an \emph{html} element, $e_{html}$. The standard enforces the presence of two unique elements as direct children of $e_{html}$ that can appear only once in the document: a \emph{head} element, $e_{head}$ and a \emph{body} element, $e_{body}$. $e_{body}$ is the sectioning root that represents the content of the document. With HTML5 a lot of semantic has been added to children elements of $e_{body}$. In this work we follow the categories presented in the HTML elements reference \cite{MDN2020,WHATWG2021} (Table~\ref{tab:hpath-introduction-html5}).
 
 \begin{table}
+\centering
 \caption{Categories of elements defined by the HTML elements references. When the scope of our category differs from the HTML element references, the original merged categories are mentioned in footnote.}
 \label{tab:hpath-introduction-html5}
-\begin{center}
 \begin{tabular}{>{\raggedright}m{0.4in}>{\raggedright}m{2.6in}}
 \toprule
 \textbf{\scriptsize{Category}} & \textbf{\scriptsize{Description}}\tabularnewline
@@ -33,7 +33,6 @@ The root of an HTML document tree is an \emph{html} element, $e_{html}$. The sta
 \scriptsize{\textit{Scripting}} & \scriptsize{Elements allowing to integrate scripting in order to create dynamic content and Web application. \emph{e.g.} $E_{canvas}$, $E_{noscript}$ and $E_{script}$} \tabularnewline
 \bottomrule
 \end{tabular}
-\end{center}
 \parnotes
 \end{table}
 
@@ -69,9 +68,9 @@ The intuition behind HPath lies in the fact that, if only visible features are p
 as the reliance on structural properties has been minimized.
 
 \begin{table}
+\centering
 \caption{BNF of HPath.}
 \label{tab:hpath-hpath-grammar}
-\begin{center}
 \begin{tabular}{>{\raggedright}m{0.6in}>{\raggedright}m{0.1in} >{\raggedright}m{1.9in}}
 \toprule
 \code{LocationPath} &\code{:=} &\code{RelLocationPath | '/' RelLocationPath?}\tabularnewline
@@ -85,7 +84,6 @@ as the reliance on structural properties has been minimized.
 \code{NodeType} & \code{:=} & \code{'text'}\tabularnewline
 \bottomrule
 \end{tabular}
-\end{center}
 \end{table}
 
 Table~\ref{tab:hpath-hpath-grammar} presents the grammar of HPath in Backus–Naur form (BNF). HPath is expressed as a location path composed of a series of steps (in a XPath fashion, yet using different predicates). Thus, HPath navigates in the HTML documents based on the properties of the nodes it traverses. Each step comprises a \emph{NameTest}, which defines the type (tag) of the context element associated to an optional \emph{Predicate} or a node $N_D \not\in E_D$. Note that only text nodes are supported since they are the only ones being rendered on the page. \emph{Predicate} returns a boolean value filtering out parts of the tree during path traversal. HPath accepts a textual input for the resolution of the predicate (\emph{Literal}) and returns whether or not the value matches the property of the context node. Our implementation is available as a Chrome Plugin\footnote{Available at \emph{link anonymized for double-blind review}} allowing to generate HPath through the browser.
@@ -160,9 +158,9 @@ To select adequate projects for a case study, we mine repositories from Github, 
 Because of the dynamic nature of our analysis, we need to be able to compile the projects and run them on successive versions. Despite our best effort, most of the projects we gathered could not be executed in our experimental setup (missing dependencies, outdated build tools). Thus, this process yielded 2 large web based open-source systems: OpenOLAT\footnote{https://github.com/OpenOLAT/OpenOLAT}, a web-based e-learning platform and MISO LIMS\footnote{https://github.com/miso-lims/miso-lims}, a lab information management system designed for tracking next-generation sequencing experiments. Both projects rely on a Java backend that is communicating with a relational database management system. For the front end, both use HTML, CSS and Javascript however MISO LIMS is relying on the HTML4 standard while OpenOLAT is using the HTML5 standard. Finally, both project adopt a multi-tier architecture relying on different services working in concert.
 
 \begin{table}
+\centering
 \caption{Web Applications used in our experiments. Column \emph{\#Releases} presents the number of releases collected, \emph{KLOC} is the number of lines of code in the last release, \emph{\#Tests} is the rounded average number of integration tests per release and \emph{\#Locators} is the total number of locators recorded.}
 \label{tab:hpath-protocol-projects}
-\begin{center}
 \begin{tabular}{>{\raggedright}m{0.4in}>{\raggedleft}m{0.4in}>{\raggedleft}m{0.4in}>{\raggedleft}m{0.4in}>{\raggedleft}m{0.4in}}
 \toprule
 \textbf{\scriptsize{Project}} & \textbf{\scriptsize{\#Releases}} & \textbf{\scriptsize{KLOC}} & \textbf{\scriptsize{\#Tests}} & \textbf{\scriptsize{\#Locators}} \tabularnewline
@@ -171,7 +169,6 @@ Because of the dynamic nature of our analysis, we need to be able to compile the
 \scriptsize{\textit{MISO LIMS}} & \scriptsize{57} & \scriptsize{326} & \scriptsize{8} & \scriptsize{15672} \tabularnewline
 \bottomrule
 \end{tabular}
-\end{center}
 \end{table}
 
 Table~\ref{tab:hpath-protocol-projects} presents some key metrics of the projects under study. The 57 version of MISO LIMS were collected between March 2019 and November 2020 and the 8 versions of OpenOLAT span from November 2018 to August 2020. 
@@ -180,7 +177,7 @@ The low number of versions for the OpenOLAT project (8 versions) is due to the f
 
 \begin{figure}
 \centering
-\includegraphics[width=0.8\columnwidth]{figures/locators/selector-per-test-dist.pdf}
+\includegraphics[width=0.8\columnwidth]{figures/hpath/selector-per-test-dist.pdf}
 \caption{Number of actions triggered by test.}  
 \label{fig:hpath-protocol-actions}
 \end{figure}
@@ -275,8 +272,8 @@ Finally, we analyze which locators manage to successfully retrieve the element i
 
 \begin{figure}
 \centering
-\subfigure[Targeted by GUI-based tests]{\includegraphics[width=0.7\textwidth]{figures/hpath/category-target-frequency.pdf}\label{fig:hpath-results-frequency-target}}
-\subfigure[Present in DOM]{\includegraphics[width=0.7\textwidth]{figures/hpath/category-dom-frequency.pdf}\label{fig:hpath-results-frequency-dom}}
+\subfloat[Targeted by GUI-based tests]{\includegraphics[width=0.7\textwidth]{figures/hpath/category-target-frequency.pdf}\label{fig:hpath-results-frequency-target}}
+\subfloat[Present in DOM]{\includegraphics[width=0.7\textwidth]{figures/hpath/category-dom-frequency.pdf}\label{fig:hpath-results-frequency-dom}}
 \caption{Percentages of elements (a) targeted by GUI-based tests and (b) present in the DOM for MISO LIMS and OpenOLAT across all versions aggregated by category.}  
 \label{fig:hpath-results-frequency}
 \end{figure}
@@ -312,9 +309,9 @@ We compare the different distributions $L_{AXPath}$, $L_{Robula+}$ and $L_{HPath
 To conclude this discussion on the length of the location paths, we can see that strategies relying on different properties yield locators with different lengths. Relying on element attributes generates the shortest location path in both approaches and HPath exhibits better performances for OpenOLAT than MISO LIMS, even though the tree is deeper (as shown by the length of the absolute XPath). This is a consequence of OpenOLAT using the HTML5 standard, where MISO LIMS implements HTML4, offering more opportunities for HPath to generate good predicates.
 
 \begin{table}
+\centering
 \caption{Properties of the context element leveraged by HPath and Robula+ predicates. \emph{Count} is the number of locators using a property as a predicate and \emph{\%} is the percentage among all the locators collected.}
 \label{tab:hpath-results-properties}
-\begin{center}
 \begin{tabular}{>{\raggedright}m{0.4in}>{\raggedright}m{0.5in}>{\raggedleft}m{0.25in} >{\raggedleft}m{0.2in}>{\raggedleft}m{0.4in} >{\raggedleft}m{0.2in}}
 \toprule
 \textbf{\scriptsize{Strategy}} & \textbf{\scriptsize{Property}} & \multicolumn{2}{c}{\textbf{\scriptsize{MISO LIMS}}} & \multicolumn{2}{c}{\textbf{\scriptsize{OpenOLAT}}}\tabularnewline
@@ -335,7 +332,6 @@ To conclude this discussion on the length of the location paths, we can see that
 & \scriptsize{\textit{\textbf{total}}} & \scriptsize{\textbf{5780}} & \scriptsize{\textbf{36.88}} & \scriptsize{\textbf{212558}} & \scriptsize{\textbf{99.80}}\tabularnewline
 \bottomrule
 \end{tabular}
-\end{center}
 \end{table}
 
 Therefore, we conduct a fine-grained analysis to understand which properties HPath and Robula+ are able to leverage to compute the location path. Table~\ref{tab:hpath-results-properties} shows which element properties are exploited in the predicates of both approaches. Where HPath relies on properties from the HTML5 semantics, Robula+ exploits mainly attributes of the context element to generate the predicate.
@@ -362,9 +358,9 @@ From Table~\ref{tab:locator_breakage}, for MISO LIMS, Robula+ has the lowest num
 On the other hand, the OpenOLAT project offers a very different picture. When constructing the HTML document to serve to the client, the backend of OpenOLAT automatically generates id, based on the version of the project, in order to ease communication with the database management system. HPath offers in this case the best resilience to change breaking only 0.49\% of the time. Contrarily, Robula+, relying on element attributes, offers very poor performance breaking in 64.99\% of the cases. Figure~\ref{fig:changes_intersect_misolims} shows that there exists an overlap between the different strategies but that in general they all react differently to changes.
 
 \begin{table}
+\centering
 \caption{Locator breakages due to SUT evolution. \emph{Count} is the number of locators that broke because of a change and \emph{\%} is the percentage among all the pairs collected.}
 \label{tab:locator_breakage}
-\begin{center}
 \begin{tabular}{>{\raggedright}m{0.6in}>{\raggedleft}m{0.4in} >{\raggedleft}m{0.2in}>{\raggedleft}m{0.4in} >{\raggedleft}m{0.2in}}
 \toprule
 \textbf{\scriptsize{Strategy}} & \multicolumn{2}{c}{\textbf{\scriptsize{MISO LIMS}}} & \multicolumn{2}{c}{\textbf{\scriptsize{OpenOLAT}}}\tabularnewline
@@ -375,13 +371,12 @@ On the other hand, the OpenOLAT project offers a very different picture. When co
 \scriptsize{\textit{HPath}} & \scriptsize{26} & \scriptsize{0.94} & \scriptsize{135} & \scriptsize{0.49}\tabularnewline
 \bottomrule
 \end{tabular}
-\end{center}
 \end{table}
 
 \begin{figure}
 \centering
-\subfigure[MISO LIMS]{\includegraphics[width=0.7\columnwidth]{figures/hpath/changes-intersect-misolims.pdf}\label{fig:changes_intersect_misolims}}
-\subfigure[OpenOLAT]{\includegraphics[width=0.7\columnwidth]{figures/hpath/changes-intersect-openolat.pdf}\label{fig:changes_intersect_openolat}}
+\subfloat[MISO LIMS]{\includegraphics[width=0.7\columnwidth]{figures/hpath/changes-intersect-misolims.pdf}\label{fig:changes_intersect_misolims}}
+\subfloat[OpenOLAT]{\includegraphics[width=0.7\columnwidth]{figures/hpath/changes-intersect-openolat.pdf}\label{fig:changes_intersect_openolat}}
 \caption{Overlap of locators having breakage for Absolute XPath (green), Robula+ (blue) and HPath (red).}  
 \label{fig:changes_intersect}
 \end{figure}
@@ -390,10 +385,10 @@ To better understand which properties of the elements causes the locators to bre
 
 In the case of MISO LIMS, most of the failures happened in the position predicate, this related to the hierarchy structure of the DOM. Again, in the case of OpenOLAT, the profile is more diverse. Robula+ is not affected by changes in the element types (NameTest) in comparison to the other approaches, but is sensitive to attributes changes, leading to poor resilience to the evolution of the SUT where breakage due to the id contributed to 97.61\% of the breakage. Finally, when HPath is able to compute a predicate, it is resilient and never breaks in our dataset (Row \emph{Any Predicate} from Table~\ref{tab:breakage_cause}).  
 
-\begin{table}[!t]
+\begin{table}
+\centering
 \caption{Properties causing locator breakages. \emph{Count} is the number of locators breaking because of a property and \emph{\%} is the percentage among all the breaking locators for that strategy.}
 \label{tab:breakage_cause}
-\begin{center}
 \begin{tabular}{>{\raggedright}m{0.4in}>{\raggedright}m{0.8in}>{\raggedleft}m{0.25in} >{\raggedleft}m{0.2in}>{\raggedleft}m{0.4in} >{\raggedleft}m{0.2in}}
 \toprule
 \textbf{\scriptsize{Strategy}} & \textbf{\scriptsize{Cause}} & \multicolumn{2}{c}{\textbf{\scriptsize{MISO LIMS}}} & \multicolumn{2}{c}{\textbf{\scriptsize{OpenOLAT}}}\tabularnewline
@@ -414,8 +409,6 @@ In the case of MISO LIMS, most of the failures happened in the position predicat
  & \scriptsize{\textit{Any Predicate}} & \scriptsize{0} & \scriptsize{0.00} & \scriptsize{0} & \scriptsize{0.00}\tabularnewline
 \bottomrule
 \end{tabular}
-\end{center}
-\vspace{-2em}
 \end{table}
 
 In conclusion, when HPath can generate predicates they lead to robust and flexible locators. However, it can be hard for the approach to extract the necessary properties as shown in section~\ref{sec:locator_evolution_analysis_results}. Therefore, while the results are promising, more research needs to be conducted to better exploit the rendering properties present in the HTML5 semantics. Furthermore, better reliance on the standard by developers would improve the performances of tool relying on the semantic of the language.

@@ -293,9 +293,12 @@ During \emph{Maintenance}, the main types of changes performed are the ``update 
 
 \begin{figure}
 \centering
-\subfigure[Keyword Level]{\includegraphics[width=0.7\textwidth]{figures/evolution/boxplot_depth.pdf}\label{fig:boxplot_depth}}
-\subfigure[Keyword Connectivity]{\includegraphics[width=0.7\textwidth]{figures/evolution/boxplot_connectivity.pdf}\label{fig:boxplot_connectivity}}
-\subfigure[Connectivity per level category]{\includegraphics[width=0.7\textwidth]{figures/evolution/boxplot_depth_connectivity.pdf}\label{fig:boxplot_depth_connectivity}}
+\subfloat[Keyword Level \label{fig:boxplot_depth}]
+    {\includegraphics[width=0.7\textwidth]{figures/evolution/boxplot_depth.pdf}}
+\subfloat[Keyword Connectivity\label{fig:boxplot_connectivity}]
+    {\includegraphics[width=0.7\textwidth]{figures/evolution/boxplot_connectivity.pdf}}
+\subfloat[Connectivity per level category \label{fig:boxplot_depth_connectivity}]
+    {\includegraphics[width=0.7\textwidth]{figures/evolution/boxplot_depth_connectivity.pdf}}
 \caption{Understanding KDT Test Suite Complexity}  
 \label{fig:code_metrics}
 \end{figure}
@@ -351,16 +354,16 @@ After examining Figure~\ref{fig:changes_connectivity}, it becomes clear that key
 
 \begin{figure}
 \centering
-\subfigure[Connectivity]{\includegraphics[width=0.7\textwidth]{figures/evolution/changes_connectivity_class_total.pdf}\label{fig:changes_connectivity}}
-\subfigure[Level]{\includegraphics[width=0.7\textwidth]{figures/evolution/changes_depth_total.pdf}\label{fig:changes_depth}}
+\subfloat[Connectivity \label{fig:changes_connectivity}]{\includegraphics[width=0.7\textwidth]{figures/evolution/changes_connectivity_class_total.pdf}}
+\subfloat[Level \label{fig:changes_depth}]{\includegraphics[width=0.7\textwidth]{figures/evolution/changes_depth_total.pdf}}
 \caption{Changes distribution according to level and connectivity}  
 \label{fig:changes}%\setlength{\tabcolsep}{5.1px} 
 \end{figure}
 
 \begin{figure}
 \centering
-\subfigure[Connectivity]{\includegraphics[width=0.7\textwidth]{figures/evolution/barplot_connectivity_class_churn.pdf}\label{fig:churn_connectivity}}
-\subfigure[Level]{\includegraphics[width=0.7\textwidth]{figures/evolution/barplot_depth_churn.pdf}\label{fig:churn_depth}}
+\subfloat[Connectivity \label{fig:churn_connectivity}]{\includegraphics[width=0.7\textwidth]{figures/evolution/barplot_connectivity_class_churn.pdf}}
+\subfloat[Level \label{fig:churn_depth}]{\includegraphics[width=0.7\textwidth]{figures/evolution/barplot_depth_churn.pdf}}
 \caption{Churn distribution according to level and connectivity}  
 \label{fig:churn:analysis}%\setlength{\tabcolsep}{5.1px} 
 \end{figure}

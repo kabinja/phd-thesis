@@ -1,4 +1,12 @@
 \chapter{Introduction}
+
+Today, companies need to produce software faster than ever in order to remain competitive. To do so, they rely mainly on two different strategies: the integration of continuous deployment pipeline and the establishment of agile methodologies within the company. These strategies allow for software producers to increase the release rate while maintaining a high quality for the software that is shipped.
+One of the keystones of the quality process is based on the adoption of automated software testing covering both functional and technical requirements which is providing a rapid feedback to the developers after each change to the system. Hence, practitioners typically rely on the famous test automation pyramid (unit tests, integration tests and system tests) to ensure a good coverage at different levels of abstraction, thus, minimize the feedback time following a change.
+While unit and integration tests are typically reliable, system tests and especially test interacting with the user interface that we call here System User Interactive Tests (SUITs) tend to be fragile (breaking following non-functional changes of the system under test) but also generate non deterministic failure, breaking the build and stopping the deployment process. Therefore, while automated tests are supposed to decrease the maintenance cost of the system, fixing and updating SUITs might in practice become a prohibitive activity.
+
+In this work, we analyze the evolution of SUITs in order to shed light on the reason why these tests require costly maintenance. Then, we propose some solutions as how to create more robust test suites, i.e, test suites that are less likely to break following non-functional evolution of the system under while exhibiting a more stable behavior.
+
+
 \section{Context}
 \subsection{Testing Graphical User Interfaces}
 \subsection{State of System User Interactive Testing in Research and its Adoption in Practice}
