@@ -4,79 +4,6 @@
 
 This section presents Keyword-Driven Testing (KDT) , along with illustrative examples and a description of its supporting framework, Robot Framework \cite{RobotFramework2020}, and the industrial context of our study.
 
-\subsection{Keyword-Driven Testing}
-\label{kdt}
-
-Keyword-Driven testing (KDT) is a software testing technique that aims at separating test design from the technical implementation of the tests, thus, limiting exposure to unnecessary details and avoiding duplication. KDT advocates that this separation of concerns allows tests to be written easier, to create more maintainable tests and enables experts from different fields and backgrounds to work together, at different levels of abstraction, for the creation of the tests.
-
-To do so, KDT\cite{Tang2008} aims at separating test design from technical implementation. Its goal is to limit the exposure to unnecessary details and avoiding duplication. KDT advocates that this separation of concerns allows tests to be written easier, to create more maintainable tests and enables experts from different fields and backgrounds, work together at different levels of abstraction. 
-
-Figure~\ref{fig:robotframework_script} shows an example of a KDT test. This test, named ``Valid Login'' (line 5, adopted from the official documentation of Robot Framework), is responsible for validating the correct behaviour of the login form in an imaginary SUT. Lines 6--8 present the ``steps'' of the tests and, in KDT parlance, they are calls to \emph{keywords}. In turn, these keywords are defined in the respective definition blocks between lines 10 and 28. Each keyword is itself decomposed in a series of steps. Keywords can have \emph{arguments}. For instance, keyword ``Open browser'' (line 12) takes two arguments, ``\$\{LOGIN URL\}'' and ``\$\{BROWSER\}''. The use of arguments to call keywords allows to further extend the reuse of keywords.
-
-As can be seen from the figure, most part of this fully automated test is written in plain English. This enables the unobstructed collaboration in the creation of the tests between different experts. For instance, a business analyst can write the high-level part of the test (lines 4--8) and an automation expert can implement the remaining part of the test (lines 10-35), adding the technical details to automate the steps.
-
-\begin{figure}[t!]
-\centering
-\includegraphics[width=\columnwidth]{figures/evolution/robotframework_script.png}
-\caption{An example of a KDT test.}
-\label{fig:robotframework_script}
-\end{figure}
-
-% \footnotetext{Some of the keywords were omitted for visibility constraints}
-
-KDT tests can be represented using a tree structure. Figure~\ref{fig:robotframework_tree} shows this structure for the test of Figure~\ref{fig:robotframework_script}. The root of the tree (purple rectangle) is the \emph{Test Case} that is executed by calling all the keywords contained. The intermediary nodes (white rectangles) are called \emph{User Keywords} since they are created by the tester. Finally, the leaf nodes (green rectangles) are \emph{Library Keywords}. \emph{Library Keywords} are implemented by the system or an external library and responsible for either controlling the control flow of the tests or interacting with the SUT.
-
-\begin{figure}[t!]
-\centering
-\includegraphics[width=\columnwidth]{figures/evolution/robotframework_tree.pdf}
-\caption{Tree representation of the ``Valid Login'' KDT test.}
-\label{fig:robotframework_tree}
-\end{figure}
-
-We group keywords into seven categories based on their functionality and present them in Table \ref{keywords_categories}. We define a \emph{SYNC}
-keyword category for keywords dealing with the synchronization between tests and SUT; e.g., a keyword that waits 10 seconds for a GUI element of the SUT to become available. In the rest of the paper we use the term keyword to refer to \emph{User Keywords} unless stated otherwise.
-
-\subsection{Robot Framework}
-\label{robot_framework}
-
-One the tools used for the application of KDT is Robot Framework \cite{RobotFramework2020}. Robot Framework is a popular framework used world-wide by major companies, including Nokia, KONE, ABB. This is also the tool adopted by our industrial partner and, thus, used in this work. Robot Framework is an open source tool originally developed by Nokia Networks and is mainly used for acceptance testing. The ``Valid Login'' KDT test of Figure \ref{fig:robotframework_script} was written using this framework.
-
-One of the main advantages of Robot Framework is its high modularity.  Indeed, Robot Framework is platform-agnostic and thanks to its driver plugin architecture, the core framework does not require any knowledge of the SUT. For instance, in Figure~\ref{fig:robotframework_script}, lines 1--2 show that the script is using the external library for Selenium to interact with the SUT. Another advantage of the framework lies in its simple syntax, which makes it easily accessible to testers, regardless of their background.
-
-\begin{table}
-\caption{Keyword categories}
-\label{keywords_categories}
-\centering
-\begin{tabular}{>{\raggedright}m{0.9in}>{\raggedright}m{2.3in}}
-\toprule
-\textbf{\scriptsize{Label}} & \textbf{\scriptsize{Explanation}}\tabularnewline
-\toprule
-
-\scriptsize{\textit{ACTION}}    & \scriptsize{Keyword performing an action on the
-SUT capable of modifying its state.} \tabularnewline
-
-\scriptsize{\textit{ASSERTION}} & \scriptsize{Keyword verifying that a predicate
-is true at a specific point of test execution} \tabularnewline
-
-\scriptsize{CONTROLFOW}         & \scriptsize{Keyword allowing to modify the
-                                   control flow of the test execution.} \tabularnewline
-
-\scriptsize{GETTER}             & \scriptsize{Keyword allowing to extract an element from
-the SUT.} \tabularnewline
-
-\scriptsize{LOGGING}            & \scriptsize{Keyword dumping logs during execution.}
-\tabularnewline
-
-\scriptsize{SYNC}               & \scriptsize{Keyword relating to the
-                                  synchronization between the SUT and the tests.} \tabularnewline
-
-\scriptsize{\textit{USER}}      & \scriptsize{Keyword created by a user.}
-\tabularnewline
-
-\bottomrule
-\end{tabular}
-\end{table} 
-
 \subsection{Industrial Context}
 \label{sec:evolution-introduction-data}
 
@@ -321,7 +248,7 @@ The results for RQ2 are split into two parts: first, results about the complexit
 
 To understand KDT test suite complexity, we calculate the \emph{keyword level} and \emph{connectivity} metrics, defined in Section~\ref{sec:evolution-protocol-definitions}. The first metric refers to the different ``abstraction levels'' (moving from pure technical to requirements expression) of the test suite and the second one, to the reusability among the keywords. Figures \ref{fig:boxplot_depth} and \ref{fig:boxplot_connectivity} present the corresponding results.
 
-Figure~\ref{fig:boxplot_depth} depicts our results of the \emph{keyword level} for \emph{Test Cases} and \emph{User Keywords}, with the y-axis referring to the number of keywords per version. Recall that \emph{Test Cases} are the complete instantiation of a test - root node in the tree representation - and \emph{User Keywords} are user defined abstraction of the steps - intermediate nodes in the tree representation - (see also Section~\ref{kdt}). As can be seen from the figure, most \emph{Tests Cases} are relatively complex, with a level of 5, whereas most \emph{User Keywords} are simple (levels 1 to 2). This indicates that most user defined actions remain simple, in accordance with the philosophy of KDT.
+Figure~\ref{fig:boxplot_depth} depicts our results of the \emph{keyword level} for \emph{Test Cases} and \emph{User Keywords}, with the y-axis referring to the number of keywords per version. Recall that \emph{Test Cases} are the complete instantiation of a test - root node in the tree representation - and \emph{User Keywords} are user defined abstraction of the steps - intermediate nodes in the tree representation - (see also Section~\ref{sec:introduction-test-scripting}). As can be seen from the figure, most \emph{Tests Cases} are relatively complex, with a level of 5, whereas most \emph{User Keywords} are simple (levels 1 to 2). This indicates that most user defined actions remain simple, in accordance with the philosophy of KDT.
 
 Regarding the keyword reusability, Figure~\ref{fig:boxplot_connectivity} plots the number of keywords per version (y-axis) with the \emph{keyword connectivity} (x-axis). As can be seen, there is a high degree of reusability among \emph{User Keywords}. More precisely, only 20.34\% of the lines of code are used only once. Overall, the reused keywords amount to 51.56\% of the total lines of code of TestSuiteA. As we will see next, this reusability is key to the decreased cost of the KDT test suite maintenance.
 

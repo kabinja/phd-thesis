@@ -25,10 +25,31 @@
 \usepackage{algorithm}
 \usepackage{algorithmic}
 
-\newcommand{\code}[1]{\scriptsize{\texttt{#1}}}
-\newcommand{\mercator}{\emph{Mercator}}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{framed}
 
-%\newtheorem{operator}{Operator}
+\definecolor{keyword}{RGB}{127,0,0}
+\definecolor{block}{RGB}{0,127,0}
+\definecolor{variable}{RGB}{0,0,127}
+
+\lstset{
+numbers=left,
+stepnumber=1,
+numbersep=5pt,
+xleftmargin=0pt,
+xrightmargin=0pt,
+breaklines=true,
+escapeinside={<@}{@>},
+numberstyle=\color{black},
+columns=fixed,
+keepspaces=true,
+columns=flexible,
+framesep=0pt,
+frame=single,
+basicstyle=\ttfamily\footnotesize
+}
+
 
 \addbibresource{references.bib}
 

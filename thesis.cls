@@ -20,6 +20,7 @@
 \RequirePackage{bibentry}
 %\nobibliography*
 \RequirePackage{pdfpages}
+\RequirePackage{textcomp}
 \RequirePackage{gensymb}
 \RequirePackage{dsfont}
 \RequirePackage{pifont}
@@ -229,11 +230,12 @@
 	\end{center}	
 }
 
-\newcommand{\ie}[0]{\textit{i.e., }}
+\newcommand{\ie}[0]{\textit{i.e.}}
 \newcommand{\etc}[0]{\textit{etc.}}
-\newcommand{\cf}[0]{\textit{cf. }}
-\newcommand{\eg}[0]{\textit{e.g., }}
-\newcommand{\etal}[0]{\textit{et al., }}
+\newcommand{\cf}[0]{\textit{cf.}}
+\newcommand{\eg}[0]{\textit{e.g.}}
+\newcommand{\citep}[1]{\citeauthor{#1} \cite{#1}}
+\newcommand{\code}[1]{\scriptsize{\texttt{#1}}}
 
 \newcommand{\paragraphit}[1]{\noindent\textit{#1}~~}
 
