@@ -7,7 +7,7 @@
 \RequirePackage{diagbox}
 \RequirePackage[table]{xcolor}
 \RequirePackage{xifthen}
-\RequirePackage[ autolang=other, backref=true, style=trad-alpha, bibencoding=utf8]{biblatex}
+\RequirePackage[maxcitenames=2, autolang=other, backref=true, style=trad-alpha, bibencoding=utf8]{biblatex}
 \RequirePackage[hidelinks]{hyperref}
 \RequirePackage{indentfirst}
 \RequirePackage{doi}
@@ -17,8 +17,6 @@
 \RequirePackage[T1]{fontenc}
 \RequirePackage[final]{microtype}
 \RequirePackage{lmodern}
-\RequirePackage{bibentry}
-%\nobibliography*
 \RequirePackage{pdfpages}
 \RequirePackage{textcomp}
 \RequirePackage{gensymb}
@@ -230,11 +228,8 @@
 	\end{center}	
 }
 
-\newcommand{\ie}[0]{\textit{i.e.}}
-\newcommand{\etc}[0]{\textit{etc.}}
-\newcommand{\cf}[0]{\textit{cf.}}
-\newcommand{\eg}[0]{\textit{e.g.}}
-\newcommand{\citep}[1]{\citeauthor{#1} \cite{#1}}
+\newcommand{\ie}[0]{\textit{i.e. }}
+\newcommand{\eg}[0]{\textit{e.g. }}
 \newcommand{\code}[1]{\scriptsize{\texttt{#1}}}
 
 \newcommand{\paragraphit}[1]{\noindent\textit{#1}~~}

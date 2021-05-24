@@ -2,48 +2,97 @@
 
 Today, companies need to produce software faster than ever in order to remain competitive. To do so, they rely mainly on two different strategies: the integration of continuous deployment pipeline and the establishment of agile methodologies within the company. These strategies allow for software producers to increase the release rate while maintaining a high quality for the software that is shipped.
 
-One of the keystones of the quality process is based on the adoption of automated software testing covering both functional and technical requirements which is providing a rapid feedback to the developers after each change to the system. In this work, we define testing as a technical investigation to assess the quality of a system under test (SUT) by executing the latter against a set of input values. Tests can further be classified through the scope they target into three categories: unit, integration and system tests. Unit testing cover the tests that are testing a unit, be it a class, a function or any other software component, in isolation to validate each unit individually. In integration testing, related modules are grouped together and tested as a group. Finally, system testing covers the test evaluating the system as a whole to evaluate its compliance to its requirements.
+One of the keystones of the quality process is based on the adoption of strategies to assess that both functional and technical requirements. Because of the complex dynamic runtime of most modern applications, static analysis techniques faces limitations in revealing violation of the requirements. Thus, most teams heavily rely on dynamic analysis to reveal fault in their software. 
 
-Because unit and integration tests target more restricted portions of the application, they offer better control to the tester who can isolate portions and tests the specific behavior of sub-parts of the system. On the other end, system tests and especially test interacting with the user interface, System User Interactive Tests (SUITs), tend to be more fragile, \ie\ they break following non-functional changes of the SUT.
+In this work, we define dynamic analysis or testing as a technical investigation to assess the quality of a system under test (SUT) by executing the latter against a set of input values. Tests can further be classified through the scope they target into three categories: unit, integration and system tests. Unit testing cover the tests that are testing a unit in isolation, be it a class, a function or any other software component,  to validate each unit individually. In integration testing, related modules are grouped together and tested as a group. Finally, system testing covers the test evaluating the system as a whole to evaluate its compliance to its requirements.
 
-In this work, we analyze the evolution of SUITs in order to shed light on the reason why these tests require costly maintenance. Then, we propose some solutions as how to create more robust test suites, \ie, test suites that are less likely to break following non-functional evolution of the system under while exhibiting a more stable behavior.
+Because unit and integration tests target more restricted portions of the application, they offer better control to the tester who can isolate functionalities from their environment and tests specific behaviors of sub-parts of the system. On the other end, system tests and especially test interacting with the user interface, System User Interactive Tests (SUITs), target the system as whole usually as a black box, thus, are sensitive to any change in the SUT and its interface. This property makes system tests more fragile, \ie\ they may fail due to non functional changes that are not related to the behavior that is being tested.
 
+In this work, we analyze the evolution of SUITs in order to shed light on the reasons why these tests require costly maintenance. Then, we propose some solutions as how to create more robust test suites, \ie, test suites that are less likely to break following non-functional evolution of the SUT thus exhibiting a more stable behavior.
 
-\section{Testing through the User Interfaces}
+\section{GUI Testing}
+\label{sec:introduction-gui-testing}
 
-User Interfaces are designed to provide a way for the user to interact with an application. Unfortunately, as interfaces become more user-friendly, the underlying technology becomes more complex \cite{Myers1994}. Indeed, as depicted by \citep{Myers1995}, user interfaces require the system to  interact with complex graphical components, to provide multiple ways to provide the same command, to manage multiple asynchronous input devices through the use of asynchronous event loops, to provide an interactive computer programming environment (\eg\ read–evaluate–print loop), etc. Thus, to ease development, different architectural designs are proposed in the literature to decouple the code responsible for the user interaction to the rest of the system such as the Entity-Component-System model \cite{Raffaillac2018}.
+User Interfaces are designed to provide a way for the user to interact with an application. Unfortunately, as interfaces become more user-friendly, the underlying technology becomes more complex \cite{Myers1994}. Indeed, as depicted by \textcite{Myers1995}, user interfaces require the system to  interact with complex graphical components, to provide multiple ways to provide the same command, to manage multiple asynchronous input devices through the use of asynchronous event loops or to provide an interactive computer programming environment (\eg\ read–evaluate–print loop). To ease development, different architectural designs are proposed in the literature to decouple the code responsible for the user interaction to the rest of the system such as the Entity-Component-System model \cite{Raffaillac2018}.
 
-Nevertheless, while these architectural solutions, providing better isolation, offer advantages when testing individual components, in the case of system testing, the challenges remain open. Indeed, as the complexity of user interfaces and their associated code continues to grow, testing through the user interface for functional correctness remains challenging, but vital to help ensure the safety, robustness and usability of the SUT. The question is of utmost importance since developers report that prototyping and developing the behavior of a system is harder than prototyping and developing the appearance of the application \cite{Myers2008}.
+Nevertheless, while these architectural solutions offer advantages by providing better isolation when testing individual components, in the case of system testing, the challenges remain open. Indeed, as the complexity of user interfaces and their associated code continues to grow, testing through the user interface for functional correctness remains challenging, but vital to help ensure the safety, robustness and usability of the SUT.
 
-Today, Graphical User Interface (GUI) are becoming ubiquitous as a mean for users to interact with a software \cite{Myers1992, Myers1995, Brooks2009}. A GUI-based application can be defined as a software for which the GUI is the main mode of interaction to the detriment of other types of user interfaces. Thus, a lot of effort have been geared towards GUI automation explaining the abundance of SUITs frameworks targeting specifically GUI-based applications.
+Furthermore, today, Graphical User Interface (GUI) are becoming ubiquitous as a mean for users to interact with a software \cite{Myers1992, Myers1995, Brooks2009, Memon2010}. A GUI is a hierarchical, graphical front-end to a software system that accepts as input user-generated and system-generated events from a fixed set of events and produces deterministic graphical output \cite{Memon2007} and alters the state of the software \cite{Nguyen2014}. A GUI-based application is a software for which the GUI is the main mode of interaction to the detriment of other types of user interfaces. As a consequence of the predominance of GUI-based applications, a lot of effort has been geared towards GUI automation and specifically mobile GUI-based application \cite{Machiry2013, Gomez2013}.
 
-%An event-flow model of GUI-based applications for testing
+The question of correctness of a GUI-based application is of utmost importance since prototyping and developing the behavior of a system is harder than prototyping and developing the appearance of the application \cite{Myers2008}. This is in this context that we introduce GUI testing which encompasses the techniques used to test user interface layout and its behavior. More precisely, GUI testing can be defined as ``the process of testing a software application with a graphical front-end to guarantee that it meets its specification by performing a sequence of events against the GUI elements'' \cite{Cunha2010, Banerjee2013, Issa2012}. A SUIT is defined as a GUI test that exercises the SUT in a black box fashion.
 
-In the remainder of this section, we discuss current techniques used to test application through their interfaces. Different approaches are order in term of creation effort.
+Thus, different strategies have been developed to exercise the user interface to ensure that functional requirements are satisfied. Different approaches have been proposed but all rely on the same principle. A test framework executes events belonging to GUI components and monitors the resulting changes to the program state \cite{Nguyen2014}. In other words, each approach generates a sequence of actions that will be executed against the SUT (input) and captures some indication as what is the current state of the system (output). Thus, approaches can be categorized by the way they generate such sequence of input.
+
+In the remainder of this section, we discuss current techniques used to test application through their user interfaces. Different approaches are ordered in term of their theoretical potential for automation.
 
 \subsection{Random GUI Testing}
 \label{sec:introduction-random-gui-testing}
 
-\subsection{Capture \& Replay}
-\label{sec:introduction-capture-and-replay}
+In random GUI testing, also known as monkey testing or random-walk, tests are automatically created by generating sequences of events at random in the hope of exploring the SUT to reveal failures. Because no requirements are passed as input such techniques rely on specific constraints that are application or domain invariant oracles \cite{Mesbah2009} to assess for correctness. Thus, any test case which causes the SUT to violate an invariant is considered as a fault revealing test case \cite{Barr2015}. These properties make random GUI testing cheap to run on large number of version/configuration of applications and effective at finding crashes.
 
-As its name suggests, Capture \& Replay works in two phases: a capture phase and a replay phase. During the capture phase, the tester manually interacts with the application, thereby generating events on the SUT. The tool records the interactions and a part of the SUT response state as specified by the tester. Then, during the replay phase, the recorded test cases can be replayed on subsequent versions of the SUT and the captured state of the application are used as test oracles.
+Typically such tools rely on the concept of fuzz testing which inject arbitrary or contextual events to the SUT. Tools like Monkey \cite{Google2020},  ATUSA \cite{Mesbah2012} or Dynodroid \cite{Machiry2013} rely on pseudo random input events which include both user interface event and system events and assess the generated sequences against invariant oracles. 
+
+One of the major challenges encountered when relying on random GUI testing resides in the exploration of the application states. Indeed, with modern applications, the infinite number of combination of user inputs leads to potentially large and sometimes even infinite number of reachable states. Consequently, the search space cannot be covered exhaustively leading to low state coverage \cite{Canny2019}. Furthermore, in the case of more complex input such as a chain of character, randomly generated input have often low chances of producing feasible test cases, thus requiring a large number of input generations to find interesting test cases (\eg if a login page exists, only a combination of a valid user name and password would allow the test case to continue its exploration behind the login wall).
+
+To alleviate these limitations, different approaches emerged introducing algorithms to better explore the application state space and consequently generate more fault revealing test cases. For example EvoDroid \cite{Mahmood2014} and Sapienz \cite{Mao2016} propose to use search-based algorithms to explore the space of possible sequences and generate test for Android applications. The goals of the algorithm being to generate short sequences of input while improving coverage (code and state coverage) to produce fault revealing sequences. More recently, tools such as DIG \cite{Biagiola2019} try to go further and also tackle the input generation problem. While these approaches look promising, today, monkey testing typically requires to provide typical input (\eg login and passwords) to allow the algorithms to explore more states.
+
+To conclude this introduction to random GUI testing, we see that this kind of approach offer a cheap alternative to classical test scripting which can be useful to detect crashes and other invariant. However, because of the lack of knowledge of functional requirement and life cycle, exploring the application and assessing more finer grain behavior might be challenging. Thus, while companies do use random GUI testing extensively, they use it in addition to other techniques that we present below.
+
+\subsection{Model-Based Testing}
+\label{sec:introduction-model-based-testing}
+
+Model-Based Testing (MBT) is an approach encompassing the processes and techniques for the automatic derivation of abstract test cases from abstract models \cite{Utting2012}. Thus, functional specifications of a systems, with the assumption that they are precise enough, are used as input to design process models which in turn are used to generate automated test cases \cite{Gupta2011}. This process can be devised in the five below steps \cite{Utting2012}:
+
+\begin{enumerate}
+    \item A model of the SUT is build from informal requirements or existing specification documents;
+    \item Selection criteria are chosen, to guide the automatic test generation.
+    \item Test selection criteria are transformed into test case specifications;
+    \item A set of test cases is generated with the aim of satisfying all the test case specifications;
+    \item Finally, the test cases are executed against the SUT.
+\end{enumerate}
+
+Unfortunately, most of current GUI-based application are not derived from a model, thus, cannot rely on a \emph{a priori} model encompassing all the expected behaviors of the application. Besides, even though advances have been made in Model-Based Software Engineering, complex GUI applications exhibit behaviors that cannot be expressed by models found in GUI testing. This limitation causes model based testing to offer limited applicability which explains why practitioners shy away from the model-based solution proposed in the scientific literature.
+
+To tackle this shortcoming, in recent literature, researchers offer method to automatically derive a model of the application using techniques similar as the ones presented in Section~\ref{sec:introduction-random-gui-testing}. For example, \textcite{Memon2007} introduces an event-flow model to formally represent event and event interactions in a GUI-based. However, because of the large space of event and interactions present in an application, manually building the model is prohibitive. Thus, the author proposes to rely on reverse-engineering to automatically derive the models, leading to shortcoming such as the difficulty to assess whether or not the coverage offered by the model is sufficient or the choice of inputs during exploration. While recent literature offer partial solutions such as improving the input generation \cite{Biagiola2019}, new ways to derive models from the GUI and its requirements \cite{Canny2020} the question of automatic exploration of modern GUI-based application remains an open problem.
+
+\subsection{Record \& Replay}
+\label{sec:introduction-record-and-replay}
+
+This leads us to the third category of GUI testing, Record \& Replay which generates test cases from sequences of user interactions. As its name suggests, Record \& Replay works in two phases: a record phase and a replay phase:
+
+\begin{enumerate}
+    \item During the record phase, the tester manually interacts with the application, thereby generating events on the SUT. The tool records the interactions and a part of the SUT response state as specified by the tester in order to generate test cases.
+    \item During the replay phase, the recorded test cases can be replayed on subsequent versions of the SUT and the captured state of the application are used as test oracles.
+\end{enumerate}
+
+Thus, the generated test cases require human intervention during the capture phase and can be rerun, reducing the overall effort during regression testing. Furthermore, because the test cases are generated by the framework, no particular skills are needed from the tester. \textcite{DiMartino2021} show that even when human testers have limited information about the system, they achieve better coverage metrics than automatic test generation techniques when using Record \& Replay.
+
+Despite its advantages when generating test cases, Record \& Replay tend to be brittle \cite{Hammoudi2016}. Indeed, whenever the application naturally evolves, the generated test cases might break, requiring testers to regenerate the test. This limitation can be exacerbated by agile and continuous delivery practices where applications and their user interfaces is under constant evolution.
+
+To address this drawback, the research community proposes two ways to address the problem. On one hand, some attempts have been gear towards generating more robust test cases \cite{Hammoudi2016b}. On the other hand, other researchers focus their attention on the generation of more robust tests \cite{Ronsse1999}.
+
+Therefore, we see that while generation of test cases using Capture \& Replay is efficient, the approach suffers from drawbacks in terms of maintainability.
 
 \subsection{Test Scripting}
 \label{sec:introduction-test-scripting}
 
-Keyword-Driven testing (KDT) is a software testing technique that aims at separating test design from the technical implementation of the tests, thus, limiting exposure to unnecessary details and avoiding duplication. KDT advocates that this separation of concerns allows tests to be written easier, to create more maintainable tests and enables experts from different fields and backgrounds to work together, at different levels of abstraction, for the creation of the tests.
+Finally, the last techniques covered in the literature to create GUI tests is manually writing them. Following the general definition, a test script can be define as a piece of executable code that execute a test case against the SUT and generates a verdict. In this work, we focus on test scripts interacting with the SUT through their GUI, namely, SUITs. Thus, we include in this category software testing techniques that aims at separating test design from the technical implementation of the tests.
 
-To do so, KDT\cite{Tang2008} aims at separating test design from technical implementation. Its goal is to limit the exposure to unnecessary details and avoiding duplication. KDT advocates that this separation of concerns allows tests to be written easier, to create more maintainable tests and enables experts from different fields and backgrounds, work together at different levels of abstraction. 
+One such framework commonly used in industry is Keyword-Driven testing (KDT). KDT advocates that this separation of concerns allows tests to be written easier, to create more maintainable tests and enables experts from different fields and backgrounds to work together, at different levels of abstraction, for the creation of the tests.
+
+To do so, KDT\cite{Tang2008, Hametner2012} aims at separating test design from technical implementation. Its goal is to limit the exposure to unnecessary details and avoiding duplication. KDT advocates that this separation of concerns allows tests to be written easier, to create more maintainable tests and enables experts from different fields and backgrounds, work together at different levels of abstraction. 
 
 Listing~\ref{lst:robot} shows an example of a KDT test. This test, named ``Valid Login'' (line 5, adopted from the official documentation of Robot Framework), is responsible for validating the correct behaviour of the login form in an imaginary SUT. Lines 6--8 present the ``steps'' of the tests and, in KDT parlance, they are calls to \emph{keywords}. In turn, these keywords are defined in the respective definition blocks between lines 10 and 28. Each keyword is itself decomposed in a series of steps. Keywords can have \emph{arguments}. For instance, keyword ``Open browser'' (line 12) takes two arguments, ``\$\{LOGIN URL\}'' and ``\$\{BROWSER\}''. The use of arguments to call keywords allows to further extend the reuse of keywords.
 
 As can be seen from the figure, most part of this fully automated test is written in plain English. This enables the unobstructed collaboration in the creation of the tests between different experts. For instance, a business analyst can write the high-level part of the test (lines 4--8) and an automation expert can implement the remaining part of the test (lines 10-35), adding the technical details to automate the steps.
 
+While manually generated test scripts present advantages in term of communication, compared to the other techniques presented, they present a major drawback: they are expensive to create and present also a high maintenance cost as the system they are testing naturally evolve.
+
+\begin{minipage}{\linewidth}
 \begin{lstlisting}[caption={Example of Robot Framework test}, label={lst:robot}]
     <@\textcolor{block}{*** Settings ***}@>
     Test Teardown     Close All Browsers
-    Library           Selenium2Library    run_on_failure=Capture Page Screenshot
+    Library           Selenium2Library
     
     <@\textcolor{block}{*** Test Cases ***}@>
     <@\textcolor{keyword}{A user logs in with his username and password}@>
@@ -56,9 +105,9 @@ As can be seen from the figure, most part of this fully automated test is writte
         Open browser to login page
     
     <@\textcolor{keyword}{User "}@><@\textcolor{variable}{\$\{username\}}@><@\textcolor{keyword}{" logs in with password "}@><@\textcolor{variable}{\$\{password\}}@><@\textcolor{keyword}{"}@>
-        Input username    <@\textcolor{variable}{\$\{username\}}@>
-        Input password    <@\textcolor{variable}{\$\{password\}}@>
-        Submit credentials
+        Input Text    username_id    <@\textcolor{variable}{\$\{username\}}@>
+        Input Text    password_id    <@\textcolor{variable}{\$\{password\}}@>
+        Click Button    validate_id
     
     <@\textcolor{keyword}{Open Browser To Login Page}@>
         Open Browser    <@\textcolor{variable}{\$\{LOGIN URL\}}@>    <@\textcolor{variable}{\$\{BROWSER\}}@>
@@ -69,17 +118,6 @@ As can be seen from the figure, most part of this fully automated test is writte
     <@\textcolor{keyword}{Go To Login Page}@>
         Go To    <@\textcolor{variable}{\$\{LOGIN URL\}}@>
         Login Page Should Be Open
-    
-    <@\textcolor{keyword}{Input Username}@>
-        [Arguments]    <@\textcolor{variable}{\$\{username\}}@>
-        Input Text    username_id    <@\textcolor{variable}{\$\{username\}}@>
-    
-    <@\textcolor{keyword}{Input Password}@>
-        [Arguments]    <@\textcolor{variable}{\$\{password\}}@>
-        Input Text    password_id    <@\textcolor{variable}{\$\{password\}}@>
-    
-    <@\textcolor{keyword}{Submit Credentials}@>
-        Click Button    validate_id
         
     <@\textcolor{keyword}{Welcome Page Should Be Open}@>
         Title Should Be    Welcome Page
@@ -92,65 +130,32 @@ As can be seen from the figure, most part of this fully automated test is writte
         <@\textcolor{variable}{\$\{BROWSER\}}@>          Chrome        
         <@\textcolor{variable}{\$\{LOGIN URL\}}@>        http://<@\textcolor{variable}{\$\{SERVER\}}@>
 \end{lstlisting}
-
-KDT tests can be represented using a tree structure. Figure~\ref{fig:robotframework_tree} shows this structure for the test of Listing~\ref{lst:robot}. The root of the tree (purple rectangle) is the \emph{Test Case} that is executed by calling all the keywords contained. The intermediary nodes (white rectangles) are called \emph{User Keywords} since they are created by the tester. Finally, the leaf nodes (green rectangles) are \emph{Library Keywords}. \emph{Library Keywords} are implemented by the system or an external library and responsible for either controlling the control flow of the tests or interacting with the SUT.
-
-\begin{figure}
-\centering
-\includegraphics[width=\columnwidth]{figures/evolution/robotframework_tree.pdf}
-\caption{Tree representation of the ``Valid Login'' KDT test.}
-\label{fig:robotframework_tree}
-\end{figure}
-
-We group keywords into seven categories based on their functionality and present them in Table \ref{keywords_categories}. We define a \emph{SYNC}
-keyword category for keywords dealing with the synchronization between tests and SUT; e.g., a keyword that waits 10 seconds for a GUI element of the SUT to become available. In the rest of the paper we use the term keyword to refer to \emph{User Keywords} unless stated otherwise.
-
-One the tools used for the application of KDT is Robot Framework \cite{RobotFramework2020}. Robot Framework is a popular framework used world-wide by major companies, including Nokia, KONE, ABB. This is also the tool adopted by our industrial partner and, thus, used in this work. Robot Framework is an open source tool originally developed by Nokia Networks and is mainly used for acceptance testing. The ``Valid Login'' KDT test of Listing~\ref{lst:robot} was written using this framework.
-
-One of the main advantages of Robot Framework is its high modularity.  Indeed, Robot Framework is platform-agnostic and thanks to its driver plugin architecture, the core framework does not require any knowledge of the SUT. For instance, in Listing~\ref{lst:robot}, lines 1--2 show that the script is using the external library for Selenium to interact with the SUT. Another advantage of the framework lies in its simple syntax, which makes it easily accessible to testers, regardless of their background.
-
-\begin{table}
-\caption{Keyword categories}
-\label{keywords_categories}
-\centering
-\begin{tabular}{>{\raggedright}m{0.9in}>{\raggedright}m{4in}}
-\toprule
-\textbf{\scriptsize{Label}} & \textbf{\scriptsize{Explanation}}\tabularnewline
-\toprule
-
-\scriptsize{\textit{ACTION}} & \scriptsize{Keyword performing an action on the
-SUT capable of modifying its state.} \tabularnewline
-
-\scriptsize{\textit{ASSERTION}} & \scriptsize{Keyword verifying that a predicate
-is true at a specific point of test execution} \tabularnewline
-
-\scriptsize{CONTROLFOW} & \scriptsize{Keyword allowing to modify the
-                                   control flow of the test execution.} \tabularnewline
-
-\scriptsize{GETTER} & \scriptsize{Keyword allowing to extract an element from
-the SUT.} \tabularnewline
-
-\scriptsize{LOGGING} & \scriptsize{Keyword dumping logs during execution.}
-\tabularnewline
-
-\scriptsize{SYNC} & \scriptsize{Keyword relating to the
-                                  synchronization between the SUT and the tests.} \tabularnewline
-
-\scriptsize{\textit{USER}} & \scriptsize{Keyword created by a user.}
-\tabularnewline
-
-\bottomrule
-\end{tabular}
-\end{table}
-
-\subsection{Model-Based Testing}
+\end{minipage}
 
 \section{Challenges of System User Interactive Tests}
 
-\subsection{The Added Value of System User Interactive Tests}
+As depicted in Section~\ref{sec:introduction-gui-testing} while different GUI testing exist, they all come with advantages and limitations. When addressing the case of fully automated techniques such as random GUI testing and to a certain extend model-based testing, exploring the GUI space remains an open challenge. Thus, practitioners while relying to a certain extend to these approaches, tend to complete the test suites with manual test generation.
 
-\subsection{The Fragility Problem}
+Unfortunately, manual test generation comes with its challenges as well. Indeed, because SUITs by design are decoupled from the application they are testing, they tend to be more fragile, \ie breaking following non-functional changes resulting from the natural evolution of the SUT. Thus, test cases fails or requires maintenance where the specific functionalities it tests remain unchanged \cite{Coppola2019, DiMartino2021}.
+
+Better understanding why GUI test break and which invariant exist in the SUT on to which they rely is a crucial step to understand how to limit GUI test case fragility.
 
 \section{Overview of the Contribution and Organization of the Dissertation}
+
+This section presents the contributions of this dissertation to address the aforementioned challenges encountered when writing GUI tests as well as the organisation of this dissertation.
+
 \subsection{Contributions}
+
+Following are the contribution of this dissertation:
+
+\begin{itemize}
+    \item \textbf{An empirical study on the evolution of Keyword-Driven Tests in an industrial context Chapter~\ref{chap:evolution-system-user-interactive-test}.} We conduct an empirical study on the evolution of  Keyword-Driven test suites, also known as Keyword-Driven Testing. Our aim is to demonstrate the problem of test maintenance, identify the benefits of Keyword-Driven Testing and overall improve the understanding of test code evolution (at the acceptance testing level). This information will support the development of automatic techniques, such as test refactoring and repair, and will motivate future research. To this end, we identify, collect and analyze test code changes across the evolution of industrial KDT test suites for a period of eight months. We show that the problem of test maintenance is largely due to test fragility (most commonly-performed changes are due to locator and synchronization issues) and test clones (over 30\% of keywords are duplicated). We also show that the better test design of KDT test suites has the potential for drastically reducing (approximately 70\%) the number of test code changes required to support software evolution. To further validate our results, we interview testers from BGL BNP Paribas and report their perceptions on the advantages and challenges of keyword-driven testing. 
+    
+    \item \textbf{An empirical study on the diffusion and refactoring of test smells in Keyword-Driven Test (Chapter~\ref{chap:smells-system-user-interactive-test}).}
+    
+    \item \textbf{An approach to generate more flexible locators (Chapter~\ref{chap:flexible-locators-system-user-interactive-tests})} We propose a novel approach, HPath, to provide more flexibility to DOM-based locators by exploiting the semantics offered in the HTML5 standard. We evaluate our approach on web elements mined from the test suites of 2 large open source projects. Our results suggest that, when HTML5 semantics are present, HPath can exploit rendered properties of web elements to generate expressive locators for 73.35\% of them reducing locator breakages from 64.99\% when relying on attribute properties to 0.49\% with rendered properties. 
+\end{itemize}
+
 \subsection{Organization of the Dissertation}
+
+In the remaining of this dissertation, Chapter~\ref{chap:related-work} presents the previous work that are related to the contributions presented in this dissertation. Chapter~\ref{chap:evolution-system-user-interactive-test} presents an empirical study that evaluates the evolution of GUI test scripts written using Keyword-Driven Testing in an industrial setting. Chapter~\ref{chap:smells-system-user-interactive-test} presents an empirical study on the diffusion and refactoring of smells present in Keyword-Driven Test scripts both in industrial settings and in open-source software. Chapter~\ref{chap:ikora-framework} describes the tools and frameworks built as the result of this work, to contribute to the advances in good testing practices when developing GUI test cases. Finally, Chapter~\ref{chap:conclusion} conclude this dissertation and presents the future work.

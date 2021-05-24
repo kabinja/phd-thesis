@@ -1,8 +1,63 @@
 \chapter{Evolution of System User Interactive Tests}
+\label{chap:evolution-system-user-interactive-test}
+
 \section{Introduction}
 \label{sec:evolution-introduction}
 
-This section presents Keyword-Driven Testing (KDT) , along with illustrative examples and a description of its supporting framework, Robot Framework \cite{RobotFramework2020}, and the industrial context of our study.
+\section{Background}
+\label{sec:evolution-background}
+
+\subsection{Tree representation of Keyword-driven Tests}
+
+KDT tests can be represented using a tree structure. Figure~\ref{fig:robotframework_tree} shows this structure for the test of Listing~\ref{lst:robot}. The root of the tree (purple rectangle) is the \emph{Test Case} that is executed by calling all the keywords contained. The intermediary nodes (white rectangles) are called \emph{User Keywords} since they are created by the tester. Finally, the leaf nodes (green rectangles) are \emph{Library Keywords}. \emph{Library Keywords} are implemented by the system or an external library and responsible for either controlling the control flow of the tests or interacting with the SUT.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\columnwidth]{figures/evolution/robotframework_tree.pdf}
+\caption{Tree representation of the ``Valid Login'' KDT test.}
+\label{fig:robotframework_tree}
+\end{figure}
+
+We group keywords into seven categories based on their functionality and present them in Table \ref{keywords_categories}. We define a \emph{SYNC} keyword category for keywords dealing with the synchronization between tests and SUT; e.g., a keyword that waits 10 seconds for a GUI element of the SUT to become available. In the rest of the paper we use the term keyword to refer to \emph{User Keywords} unless stated otherwise.
+
+\begin{table}
+\caption{Keyword categories}
+\label{keywords_categories}
+\centering
+\begin{tabular}{>{\raggedright}m{0.9in}>{\raggedright}m{4in}}
+\toprule
+\textbf{\scriptsize{Label}} & \textbf{\scriptsize{Explanation}}\tabularnewline
+\toprule
+
+\scriptsize{\textit{ACTION}} & \scriptsize{Keyword performing an action on the
+SUT capable of modifying its state.} \tabularnewline
+
+\scriptsize{\textit{ASSERTION}} & \scriptsize{Keyword verifying that a predicate
+is true at a specific point of test execution} \tabularnewline
+
+\scriptsize{CONTROLFOW} & \scriptsize{Keyword allowing to modify the
+                                   control flow of the test execution.} \tabularnewline
+
+\scriptsize{GETTER} & \scriptsize{Keyword allowing to extract an element from
+the SUT.} \tabularnewline
+
+\scriptsize{LOGGING} & \scriptsize{Keyword dumping logs during execution.}
+\tabularnewline
+
+\scriptsize{SYNC} & \scriptsize{Keyword relating to the
+                                  synchronization between the SUT and the tests.} \tabularnewline
+
+\scriptsize{\textit{USER}} & \scriptsize{Keyword created by a user.}
+\tabularnewline
+
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+One the tools used for the application of KDT is Robot Framework \cite{RobotFramework2020}. Robot Framework is a popular framework used world-wide by major companies, including Nokia, KONE, ABB. This is also the tool adopted by our industrial partner and, thus, used in this work. Robot Framework is an open source tool originally developed by Nokia Networks and is mainly used for acceptance testing. The ``Valid Login'' KDT test of Listing~\ref{lst:robot} was written using this framework.
+
+One of the main advantages of Robot Framework is its high modularity.  Indeed, Robot Framework is platform-agnostic and thanks to its driver plugin architecture, the core framework does not require any knowledge of the SUT. For instance, in Listing~\ref{lst:robot}, lines 1--2 show that the script is using the external library for Selenium to interact with the SUT. Another advantage of the framework lies in its simple syntax, which makes it easily accessible to testers, regardless of their background.
 
 \subsection{Industrial Context}
 \label{sec:evolution-introduction-data}

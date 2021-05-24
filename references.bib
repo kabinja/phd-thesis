@@ -17,9 +17,7 @@ address = {New York, New York, USA},
 author = {Myers, Brad A. and Rosson, Mary Beth},
 booktitle = {Proceedings of the SIGCHI conference on Human factors in computing systems - CHI '92},
 doi = {10.1145/142750.142789},
-file = {:C\:/Users/renaud.rwemalika/OneDrive/PhD/Papers/Rosson_Most_1992.pdf:pdf},
 isbn = {0897915135},
-mendeley-groups = {GUI},
 pages = {195--202},
 publisher = {ACM Press},
 title = {{Survey on user interface programming}},
@@ -82,6 +80,21 @@ year = {1995}
  publisher = {ACM},
  address = {New York, NY, USA},
 }
+
+@article{Ronsse1999,
+abstract = {This article presents a practical solution for the cyclic debugging of nondeterministic parallel programs. The solution consists of a combination of record/replay with automatic on-the-fly data race detection. This combination enables us to limit the record phase to the more efficient recording of the synchronization operations, while deferring the time-consuming data race detection to the replay phase. As the record phase is highly efficient, there is no need to switch it off, hereby eliminating the possibility of Heisenbugs because tracing can be left on all the time. This article describes an implementation of the tools needed to support RecPlay.},
+author = {Ronsse, Michiel and {De Bosschere}, Koen},
+doi = {10.1145/312203.312214},
+issn = {07342071},
+journal = {ACM Transactions on Computer Systems},
+keywords = {D.1.3 [Programming Techniques]: Concurrent Programming - Parallel programming,D.2.5 [Software Engineering]: Testing and Debugging -Debugging aids,D.4.1 [Operating Systems]: Process Management - Concurrency,Deadlocks,Monitors,Tracing},
+number = {2},
+pages = {133--152},
+title = {{RecPlay: A fully integrated practical record/replay system}},
+volume = {17},
+year = {1999}
+}
+
 
 @article{Gottlob2002,
 abstract = {Several important decision problems on conjunctive queries (CQs) are NP-complete in general but become tractable, and actually highly parallelizable, if restricted to acyclic or nearly acyclic queries. Examples are the evaluation of Boolean CQs and query containment. These problems were shown tractable for conjunctive queries of bounded treewidth (Ch. Chekuri and A. Rajaraman, Theoret. Comput. Sci. 239 (2000), 211-229), and of bounded degree of cyclicity (M. Gyssens et al., Artif. Intell. 66 (1994), 57-89; M. Gyssens and J. Paredaens, in "Advances in Database Theory," Vol. 2, pp. 85-122, Plenum Press, New York, 1984). The so far most general concept of nearly acyclic queries was the notion of queries of bounded query-width introduced by Chekuri and Rajaraman (2000). While CQs of bounded query-width are tractable, it remained unclear whether such queries are efficiently recognizable. Chekuri and Rajaraman (2000) stated as an open problem whether for each constant k it can be determined in polynomial time if a query has query-width at most k. We give a negative answer by proving the NP-completeness of this problem (specifically, for k = 4). In order to circumvent this difficulty, we introduce the new concept of hypertree decomposition of a query and the corresponding notion of hypertree-width. We prove: (a) for each k, the class of queries with query-width bounded by k is properly contained in the class of queries whose hypertree-width is bounded by k; (b) unlike query-width, constant hypertree-width is efficiently recognizable; and (c) Boolean queries of bounded hypertree-width can be efficiently evaluated. {\textcopyright} 2002 Elsevier Science (USA).},
@@ -159,6 +172,23 @@ ISSN={0098-5589},
 month={11},
 }
 
+@article{Memon2007,
+abstract = {Graphical user interfaces (GUIs) are by far the most popular means used to interact with today's software. The functional correctness of a GUI is required to ensure the safety, robustness and usability of an entire software system. GUI testing techniques used in practice are resource intensive; model-based automated techniques are rarely employed. A key reason for the reluctance in the adoption of model-based solutions proposed by researchers is their limited applicability; moreover, the models are expensive to create. Over the past few years, the present author has been developing different models for various aspects ofGUI testing. This paper consolidates all of the models into one scalable event-flow model and outlines algorithms to semi-automatically reverse-engineer the model from an implementation. Earlier work on model-based test-case generation, test-oracle creation, coverage evaluation, and regression testing is recast in terms of this model by defining event-space exploration strategies (ESESs) and creating an end-to-end GUI testing process. Three such ESESs are described: for checking the event-flow model, test-case generation, and test- oracle creation. Two demonstrational scenarios show the application of the model and the three ESESs for experimentation and application in GUI testing.},
+author = {Memon, Atif M.},
+doi = {10.1002/stvr.364},
+issn = {09600833},
+journal = {Software Testing, Verification and Reliability},
+keywords = {event-driven software,event-flow graph,event-flow model,graphical user interfaces,integration,model checking,test oracles,test-case generation,tree},
+month = {9},
+number = {3},
+pages = {137--157},
+pmid = {9189301},
+title = {{An event-flow model of GUI-based applications for testing}},
+volume = {17},
+year = {2007}
+}
+
+
 @inproceedings{Tang2008,
 abstract = {This paper presents an adaptive framework of keyword-driven automation testing to support the conversion of the keyword-based test cases into different kinds of test scripts automatically to be executed by different test applications under different test environments (such as GUI environment, database environment, etc.). XML is used to describe the keyword-based commands for the test case. An engine is provided in this framework to parse the XML file and dispatch the command sequences to the different test drivers according to the driver type pre-defined in the command. The test driver is responsible for dispatching the commands to the corresponding test applications to generate the test scripts automatically according to the keywords in the commands. The test scripts will be executed by the test applications on the system-under-test under different test environments. All the test results will be recorded into a log repository for generating all kinds of the test reports.},
 author = {{Jingfan Tang} and {Xiaohua Cao} and Ma, Albert},
@@ -177,10 +207,8 @@ year = {2008}
 abstract = {To date we have developed and applied numerous model-based GUI testing techniques; however, we are unable to provide definitive improvement schemes to real-world GUI test planners, as our data was derived from open source applications, small compared to industrial systems. This paper presents a study of three industrial GUI-based software systems developed at ABB, including data on classified defects detected during late-phase testing and customer usage, test suites, and source code change metrics. The results show that (1) 50\% of the defects found through the GUI are categorized as data access and handling, control flow and sequencing, correctness, and processing defects, (2) system crashes exposed defects 12-19\% of the time, and (3) GUI and non-GUI components are constructed differently, in terms of source code metrics.},
 author = {Brooks, Penelope and Robinson, Brian and Memon, Atif M.},
 doi = {10.1109/ICST.2009.11},
-file = {:C\:/Users/renaud.rwemalika/OneDrive/PhD/Papers/Brooks, Robinson_Unknown_2009.pdf:pdf},
 isbn = {9780769536019},
 journal = {Proceedings - 2nd International Conference on Software Testing, Verification, and Validation, ICST 2009},
-mendeley-groups = {GUI},
 pages = {11--20},
 publisher = {IEEE},
 title = {{An initial characterization of industrial graphical user interface systems}},
@@ -283,12 +311,69 @@ booktitle = {2008 IEEE Symposium on Visual Languages and Human-Centric Computing
 doi = {10.1109/VLHCC.2008.4639081},
 isbn = {978-1-4244-2528-0},
 issn = {1943-6092},
-mendeley-groups = {GUI},
-month = {sep},
+month = {9},
 pages = {177--184},
 publisher = {IEEE},
 title = {{How designers design and program interactive behaviors}},
 year = {2008}
+}
+
+@inproceedings{Mesbah2009,
+abstract = {AJAX-based Web 2.0 applications rely on stateful asynchronous client/server communication, and client-side runtime manipulation of the DOM tree. This not only makes them fundamentally different from traditional web applications, but also more error-prone and harder to test. We propose a method for testing AJAX applications automatically, based on a crawler to infer a flow graph for all (client-side) user interface states. We identify AJAX-specific faults that can occur in such states (related to DOM validity, error messages, discoverability, back-button compatibility, etc.) as well as DOM-tree invariants that can serve as oracle to detect such faults. We implemented our approach in ATUSA, a tool offering generic invariant checking components, a plugin-mechanism to add application-specific state validators, and generation of a test suite covering the paths obtained during crawling. We describe two case studies evaluating the fault revealing capabilities, scalability, required manual effort and level of automation of our approach. {\textcopyright} 2009 IEEE.},
+author = {Mesbah, Ali and van Deursen, Arie},
+booktitle = {2009 IEEE 31st International Conference on Software Engineering},
+doi = {10.1109/ICSE.2009.5070522},
+isbn = {978-1-4244-3453-4},
+issn = {02705257},
+pages = {210--220},
+publisher = {IEEE},
+title = {{Invariant-based automatic testing of AJAX user interfaces}},
+year = {2009}
+}
+
+@inproceedings{Cunha2010,
+abstract = {Nowadays, the usage of graphical user interfaces (GUIs) in order to ease the interaction with software applications is preferred over command line interfaces. Despite recent advances in software testing, GUIs are still tested in a complete ad-hoc, manual fashion, with little support from (industrial) testing tools. Automating the process of testing GUIs has additional challenges when compared to command-line applications. This paper presents an approach for GUI (semi-automated) testing which uses knowledge of the common behaviour of a GUI. To do so, the most common aspects in a GUI are identified and then a suite of test cases is automatically generated and executed. To validate our approach, we have run it against well known web-based applications, such as GMail. {\textcopyright} 2010 IEEE.},
+author = {Cunha, Marco and Paiva, Ana C. R. and Ferreira, Hugo Sereno and Abreu, Rui},
+booktitle = {2010 2nd International Conference on Software Technology and Engineering},
+doi = {10.1109/ICSTE.2010.5608882},
+isbn = {978-1-4244-8667-0},
+keywords = {Graphical user interfaces,Patterns,Software testing},
+month = {10},
+pages = {202--206},
+publisher = {IEEE},
+title = {{PETTool: A pattern-based GUI testing tool}},
+volume = {1},
+year = {2010}
+}
+
+
+@incollection{Memon2010,
+abstract = {Despite the ubiquity of software applications that employ a graphical-user interface (GUI) front-end, functional system testing of these applications has remained, until recently, an understudied research area. During “GUI testing,” test cases, modeled as sequences of user input events, are created and executed on the software by exercising the GUI's widgets. Because each possible sequence of user events may potentially be a test case and today's GUIs offer enormous flexibility to end-users, in principle, GUI testing requires a prohibitively large number of test cases. Any practical test-case generation technique must sample the vast GUI input space. Existing techniques are largely manual, and hence extremely resource intensive. Several new automated model-based techniques have been developed in the past decade. All these techniques develop, either manually or automatically, a model of the GUI and employ it to generate test cases. This chapter presents the first detailed taxonomy of these techniques. A small GUI application is used as a running example to demonstrate each technique and illustrate its relative strengths and weaknesses. {\textcopyright} 2010 Elsevier Inc.},
+author = {Memon, Atif M. and Nguyen, Bao N.},
+booktitle = {Advances in Computers},
+doi = {10.1016/S0065-2458(10)80003-8},
+edition = {1},
+issn = {00652458},
+pages = {121--162},
+publisher = {Elsevier Inc.},
+title = {{Advances in Automated Model-Based System Testing of Software Applications with a GUI Front-End}},
+volume = {80},
+year = {2010}
+}
+
+
+@inproceedings{Gupta2011,
+abstract = {Applications, once developed, need to be maintained and tested as they undergo frequent changes. Test automation plays a significant role in testing activity, as it saves time and provides better utilization of resources. Test automation itself comes with many challenges such as mapping of user specifications to test-cases, test-case generation, maintenance of test-cases and test-scripts. In this paper, we propose a model-driven approach for test automation to provide end-to-end assistance in test case generation and automation, with focus on re-usability and maintainability. Functional specifications of system are mapped to test-cases for traceability which ensures better test automation process. Functional specifications of system are used as an input to design process models, which are used for automatic generation of test-cases. Process models consist of flows of different tasks in specified sequence. By recording the individual tasks, test-scripts for all the test-cases are generated. The test-cases and test-scripts can be modified and maintained using user friendly user-interface (UI) to provide better control to test designer and ease the load of tester. In this paper, we also present a case study performed on JBilling application [18] to evaluate our approach.},
+address = {New York, New York, USA},
+author = {Gupta, Priya and Surve, Prafullakumar},
+booktitle = {Proceedings of the First International Workshop on End-to-End Test Script Engineering - ETSE '11},
+doi = {10.1145/2002931.2002932},
+isbn = {9781450308083},
+keywords = {model based approach,test case maintenance,test execution,test scripts,test-automation,test-case generation},
+pages = {1--7},
+publisher = {ACM Press},
+title = {{Model based approach to assist test case creation, execution, and maintenance for test automation}},
+year = {2011}
 }
 
 
@@ -307,6 +392,52 @@ volume = {16},
 year = {2011}
 }
 
+@inproceedings{Hametner2012,
+abstract = {In the field of industrial automation systems software becomes an important factor because engineers tend to move the realization of functional requirements from hardware to software components. The main reason for this is that software components allow increasing product flexibility. As a consequence software complexity increases rapidly and requires systematic, automation-supported and agile testing approaches. Thus, systematic and agile testing are key challenges in industrial control software development to ensure and improve systems quality. Further different implementation standards, i.e., IEC 61131-3 and IEC 61499, arise additional challenges in constructing and testing industrial automation systems software. This paper presents an agile and keyword-driven test approach with focus on testing implementations based on both important industrial standards and illustrates the applicability of the purposed approach in a sample implementation, i.e., a High Speed Pick and Place unit. Main results show the applicability of keyword-driven testing based on a defined subset of keywords (common for IEC 61131-3 and IEC 61499) and thus enable agile and automation-supported testing more effective and efficient. {\textcopyright} 2012 IEEE.},
+author = {Hametner, Reinhard and Winkler, Dietmar and Zoitl, Alois},
+booktitle = {IECON 2012 - 38th Annual Conference on IEEE Industrial Electronics Society},
+doi = {10.1109/IECON.2012.6389298},
+isbn = {978-1-4673-2421-2},
+keywords = {IEC 61131-3,IEC 61499,Industrial Control Applications,Keyword-driven Test,Test Automation},
+month = {10},
+pages = {3727--3732},
+publisher = {IEEE},
+title = {{Agile testing concepts based on keyword-driven testing for industrial automation systems}},
+year = {2012}
+}
+
+
+@inproceedings{Issa2012,
+abstract = {Graphical User Interface (GUI) testing literature emphasizes testing a system's functionality through its GUI, rather than testing visual aspects of the GUI itself. In this paper we introduce the notion of visual testing as a subset of GUI testing. To explore visual testing, we have conducted a study of defects in four open source systems. We found that visual defects represent between 16\% and 33\% of reported defects in those systems. Two categories of visual defects are identified with six subcategories within each of them. Other findings are also reported that are aimed at motivating the importance and the need for systematically conducting visual testing among researchers and practitioners. {\textcopyright} 2012 IEEE.},
+author = {Issa, Ayman and Sillito, Jonathan and Garousi, Vahid},
+booktitle = {Proceedings of IEEE International Symposium on Web Systems Evolution, WSE},
+doi = {10.1109/WSE.2012.6320526},
+isbn = {9781467330558},
+issn = {21606153},
+keywords = {graphical user interface,visual defect,visual testing},
+pages = {11--15},
+publisher = {IEEE},
+title = {{Visual testing of Graphical User Interfaces: An exploratory study towards systematic definitions and approaches}},
+year = {2012}
+}
+
+@article{Mesbah2012,
+abstract = {Ajax-based Web 2.0 applications rely on stateful asynchronous client/server communication, and client-side runtime manipulation of the DOM tree. This not only makes them fundamentally different from traditional web applications, but also more error-prone and harder to test. We propose a method for testing Ajax applications automatically, based on a crawler to infer a state-flow graph for all (client-side) user interface states. We identify Ajax-specific faults that can occur in such states (related to, e.g., DOM validity, error messages, discoverability, back-button compatibility) as well as DOM-tree invariants that can serve as oracles to detect such faults. Our approach, called Atusa, is implemented in a tool offering generic invariant checking components, a plugin-mechanism to add application-specific state validators, and generation of a test suite covering the paths obtained during crawling. We describe three case studies, consisting of six subjects, evaluating the type of invariants that can be obtained for Ajax applications as well as the fault revealing capabilities, scalability, required manual effort, and level of automation of our testing approach.},
+author = {Mesbah, Ali and van Deursen, A. and Roest, Danny},
+doi = {10.1109/TSE.2011.28},
+isbn = {9781424434527},
+issn = {0098-5589},
+journal = {IEEE Transactions on Software Engineering},
+keywords = {Ajax,Automated testing,web applications},
+month = {1},
+number = {1},
+pages = {35--53},
+title = {{Invariant-Based Automatic Testing of Modern Web Applications}},
+volume = {38},
+year = {2012}
+}
+
+
 @article{Pinto2012,
 abstract = {Test suites, once created, rarely remain static. Just like the application they are testing, they evolve throughout their lifetime. Test obsolescence is probably the most known reason for test-suite evolution---test cases cease to work because of changes in the code and must be suitably repaired. Repairing existing test cases manually, however, can be extremely time consuming, especially for large test suites, which has motivated the recent development of automated test-repair techniques. We believe that, for developing effective repair techniques that are applicable in real-world scenarios, a fundamental prerequisite is a thorough understanding of how test cases evolve in practice. Without such knowledge, we risk to develop techniques that may work well for only a small number of tests or, worse, that may not work at all in most realistic cases. Unfortunately, to date there are no studies in the literature that investigate how test suites evolve. To tackle this problem, in this paper we present a technique for studying test-suite evolution, a tool that implements the technique, and an extensive empirical study in which we used our technique to study many versions of six real-world programs and their unit test suites. This is the first study of this kind, and our results reveal several interesting aspects of test-suite evolution. In particular, our findings show that test repair is just one possible reason for test-suite evolution, whereas most changes involve refactorings, deletions, and additions of test cases. Our results also show that test modifications tend to involve complex, and hard-to-automate, changes to test cases, and that existing test-repair techniques that focus exclusively on assertions may have limited practical applicability. More generally, our findings provide initial insight on how test cases are added, removed, and modified in practice, and can guide future research efforts in the area of test-suite evolution.},
 author = {Pinto, Leandro Sales and Sinha, Saurabh and Orso, Alessandro},
@@ -317,6 +448,21 @@ keywords = {test-suite evolution,test-suite maintenance,unit testing},
 pages = {33:1--33:11},
 title = {{Understanding Myths and Realities of Test-suite Evolution}},
 volume = {1},
+year = {2012}
+}
+
+@article{Utting2012,
+abstract = {Model-based testing (MBT) relies on models of a system under test and/or its environment to derive test cases for the system. This paper discusses the process of MBT and defines a taxonomy that covers the key aspects of MBT approaches. It is intended to help with understanding the characteristics, similarities and differences of those approaches, and with classifying the approach used in a particular MBT tool. To illustrate the taxonomy, a description of how three different examples of MBT tools fit into the taxonomy is provided.},
+author = {Utting, Mark and Pretschner, Alexander and Legeard, Bruno},
+doi = {10.1002/stvr.456},
+issn = {09600833},
+journal = {Software Testing, Verification and Reliability},
+keywords = {clustering,inheritance metrics,machine learning,object oriented paradigm,prediction,software fault,unsupervised learning},
+month = {8},
+number = {5},
+pages = {297--312},
+title = {{A taxonomy of model-based testing approaches}},
+volume = {22},
 year = {2012}
 }
 
@@ -332,6 +478,23 @@ publisher = {IEEE},
 title = {{Transitioning Manual System Test Suites to Automated Testing: An Industrial Case Study}},
 year = {2013}
 }
+
+@article{Banerjee2013,
+abstract = {Context GUI testing is system testing of a software that has a graphical-user interface (GUI) front-end. Because system testing entails that the entire software system, including the user interface, be tested as a whole, during GUI testing, test cases - modeled as sequences of user input events - are developed and executed on the software by exercising the GUI's widgets (e.g., text boxes and clickable buttons). More than 230 articles have appeared in the area of GUI testing since 1991. Objective In this paper, we study this existing body of knowledge using a systematic mapping (SM). Method The SM is conducted using the guidelines proposed by Petersen et al. We pose three sets of research questions. We define selection and exclusion criteria. From the initial pool of 230 articles, published in years 1991-2011, our final pool consisted of 136 articles. We systematically develop a classification scheme and map the selected articles to this scheme. Results We present two types of results. First, we report the demographics and bibliometrics trends in this domain, including: top-cited articles, active researchers, top venues, and active countries in this research area. Moreover, we derive the trends, for instance, in terms of types of articles, sources of information to derive test cases, types of evaluations used in articles, etc. Our second major result is a publicly-accessible repository that contains all our mapping data. We plan to update this repository on a regular basis, making it a "live" resource for all researchers. Conclusion Our SM provides an overview of existing GUI testing approaches and helps spot areas in the field that require more attention from the research community. For example, much work is needed to connect academic model-based techniques with commercially available tools. To this end, studies are needed to compare the state-of-the-art in GUI testing in academic techniques and industrial tools. {\textcopyright} 2013 Elsevier B.V. All rights reserved.},
+author = {Banerjee, Ishan and Nguyen, Bao and Garousi, Vahid and Memon, Atif},
+doi = {10.1016/j.infsof.2013.03.004},
+issn = {09505849},
+journal = {Information and Software Technology},
+keywords = {Bibliometrics,GUI application,Paper repository,Systematic mapping,Testing},
+month = {10},
+number = {10},
+pages = {1679--1694},
+publisher = {Elsevier B.V.},
+title = {{Graphical user interface (GUI) testing: Systematic mapping and repository}},
+volume = {55},
+year = {2013}
+}
+
 
 @article{Kan2013,
 abstract = {Through reusing software test components, automated software testing generally costs less than manual software testing. There has been much research on how to develop the reusable test components, but few fall on how to estimate the reusability of test components for automated testing. The purpose of this paper is to present a method of minimum reusability estimation for automated testing based on the return on investment (ROI) model. Minimum reusability is a benchmark for the whole automated testing process. If the reusability in one test execution is less than the minimum reusability, some new strategies must be adopted in the next test execution to increase the reusability. Only by this way, we can reduce unnecessary costs and finally get a return on the investment of automated testing. {\textcopyright} 2013 Shanghai Jiaotong University and Springer-Verlag Berlin Heidelberg.},
@@ -358,6 +521,38 @@ publisher = {IEEE},
 title = {{Capture-replay vs. programmable web testing: An empirical assessment during test case evolution}},
 year = {2013}
 }
+
+@inproceedings{Gomez2013,
+abstract = {Touchscreen-based devices such as smartphones and tablets are gaining popularity, but their rich input capabilities pose new development and testing complications. To alleviate this problem, we present an approach and tool named Reran that permits record-and-replay for the Android smartphone platform. Existing GUI-level record-and-replay approaches are inadequate due to the expressiveness of the smartphone domain, in which applications support sophisticated GUI gestures, depend on inputs from a variety of sensors on the device, and have precise timing requirements among the various input events. We address these challenges by directly capturing the low-level event stream on the phone, which includes both GUI events and sensor events, and replaying it with microsecond accuracy. Moreover, Reran does not require access to app source code, perform any app rewriting, or perform any modifications to the virtual machine or Android platform. We demonstrate RERAN's applicability in a variety of scenarios, including (a) replaying 86 out of the Top-100 Android apps on Google Play; (b) reproducing bugs in popular apps, e.g., Firefox, Facebook, Quickoffice; and (c) fast-forwarding executions. We believe that our versatile approach can help both Android developers and researchers. {\textcopyright} 2013 IEEE.},
+author = {Gomez, Lorenzo and Neamtiu, Iulian and Azim, Tanzirul and Millstein, Todd},
+booktitle = {2013 35th International Conference on Software Engineering (ICSE)},
+doi = {10.1109/ICSE.2013.6606553},
+isbn = {978-1-4673-3076-3},
+issn = {02705257},
+keywords = {Google Android,Record-and-replay},
+month = {5},
+pages = {72--81},
+publisher = {IEEE},
+title = {{RERAN: Timing- and touch-sensitive record and replay for Android}},
+url = {http://ieeexplore.ieee.org/document/6606553/},
+year = {2013}
+}
+
+
+@inproceedings{Machiry2013,
+abstract = {We present a system Dynodroid for generating relevant inputs to unmodified Android apps. Dynodroid views an app as an event-driven program that interacts with its environment by means of a sequence of events through the Android framework. By instrumenting the framework once and for all, Dynodroid monitors the reaction of an app upon each event in a lightweight manner, using it to guide the generation of the next event to the app. Dynodroid also allows interleaving events from machines, which are better at generating a large number of simple inputs, with events from humans, who are better at providing intelligent inputs. We evaluated Dynodroid on 50 open-source Android apps, and compared it with two prevalent approaches: users manually exercising apps, and Monkey, a popular fuzzing tool. Dynodroid, humans, and Monkey covered 55\%, 60\%, and 53\%, respectively, of each app's Java source code on average. Monkey took 20X more events on average than Dynodroid. Dynodroid also found 9 bugs in 7 of the 50 apps, and 6 bugs in 5 of the top 1, 000 free apps on Google Play. Copyright 2013 ACM.},
+address = {New York, New York, USA},
+author = {Machiry, Aravind and Tahiliani, Rohan and Naik, Mayur},
+booktitle = {Proceedings of the 2013 9th Joint Meeting on Foundations of Software Engineering - ESEC/FSE 2013},
+doi = {10.1145/2491411.2491450},
+isbn = {9781450322379},
+keywords = {Android,GUI testing,Testing event-driven programs},
+pages = {224},
+publisher = {ACM Press},
+title = {{Dynodroid: an input generation system for Android apps}},
+year = {2013}
+}
+
 
 @article{Rattan2013,
 title = "Software clone detection: A systematic review ",
@@ -433,6 +628,36 @@ title = {{Reducing Web Test Cases Aging by Means of Robust XPath Locators}},
 year = {2014}
 }
 
+@inproceedings{Mahmood2014,
+abstract = {Proliferation of Android devices and apps has created a demand for applicable automated software testing techniques. Prior research has primarily focused on either unit or GUI testing of Android apps, but not their end-to-end system testing in a systematic manner. We present EvoDroid, an evolutionary approach for system testing of Android apps. EvoDroid overcomes a key shortcoming of using evolutionary techniques for system testing, i.e., the inability to pass on genetic makeup of good individuals in the search. To that end, EvoDroid combines two novel techniques: (1) an Android-specific program analysis technique that identifies the segments of the code amenable to be searched independently, and (2) an evolutionary algorithm that given information of such segments performs a step- wise search for test cases reaching deep into the code. Our experi- ments have corroborated EvoDroid's ability to achieve significantly higher code coverage than existing Android testing tools.},
+address = {New York, New York, USA},
+author = {Mahmood, Riyadh and Mirzaei, Nariman and Malek, Sam},
+booktitle = {Proceedings of the 22nd ACM SIGSOFT International Symposium on Foundations of Software Engineering - FSE 2014},
+doi = {10.1145/2635868.2635896},
+isbn = {9781450330565},
+keywords = {android,evolutionary testing,program analysis},
+pages = {599--609},
+publisher = {ACM Press},
+title = {{EvoDroid: segmented evolutionary testing of Android apps}},
+year = {2014}
+}
+
+
+@article{Nguyen2014,
+abstract = {Most of today's software applications feature a graphical user interface (GUI) front-end. System testing of these applications requires that test cases, mod- eled as sequences of GUI events, be generated and executed on the software. We term GUI testing as the process of testing a software application through its GUI. Re- searchers and practitioners agree that one must employ a variety of techniques (e.g., model-based, capture/replay, manually scripted) for effective GUI testing. Yet, the tools available today for GUI testing are limited in the techniques they support. In this paper, we describe an innovative tool called GUITAR that supports a wide va- riety of GUI testing techniques. The innovation lies in the architecture of GUITAR, which uses plug-ins to support flexibility and extensibility. Software developers and quality assurance engineers may use this architecture to create new toolchains, new workflows based on the toolchains, and plug in a variety of measurement tools to conduct GUI testing.We demonstrate these features of GUITAR via several carefully crafted case studies.},
+author = {Nguyen, Bao N. and Robbins, Bryan and Banerjee, Ishan and Memon, Atif},
+doi = {10.1007/s10515-013-0128-9},
+issn = {0928-8910},
+journal = {Automated Software Engineering},
+keywords = {GUI testing,Test automation,Test generation},
+month = {3},
+number = {1},
+pages = {65--105},
+title = {{GUITAR: an innovative tool for automated testing of GUI-driven software}},
+volume = {21},
+year = {2014}
+}
+
 
 @online{W3C2014,
 url={https://www.w3.org/WAI/GL/wiki/Using_ARIA_landmarks_to_identify_regions_of_a_page},
@@ -477,6 +702,22 @@ number = {3},
 pages = {694--744},
 title = {{Visual GUI testing in practice: challenges, problemsand limitations}},
 volume = {20},
+year = {2015}
+}
+
+@article{Barr2015,
+abstract = {Testing involves examining the behaviour of a system in order to discover potential faults. Given an input for a system, the challenge of distinguishing the corresponding desired, correct behaviour from potentially incorrect behavior is called the 'test oracle problem'. Test oracle automation is important to remove a current bottleneck that inhibits greater overall test automation. Without test oracle automation, the human has to determine whether observed behaviour is correct. The literature on test oracles has introduced techniques for oracle automation, including modelling, specifications, contract-driven development and metamorphic testing. When none of these is completely adequate, the final source of test oracle information remains the human, who may be aware of informal specifications, expectations, norms and domain specific information that provide informal oracle guidance. All forms of test oracles, even the humble human, involve challenges of reducing cost and increasing benefit. This paper provides a comprehensive survey of current approaches to the test oracle problem and an analysis of trends in this important area of software testing research and practice.},
+author = {Barr, Earl T. and Harman, Mark and McMinn, Phil and Shahbaz, Muzammil and Yoo, Shin},
+doi = {10.1109/TSE.2014.2372785},
+issn = {0098-5589},
+journal = {IEEE Transactions on Software Engineering},
+keywords = {Automatic testing,Test oracle,Testing formalism},
+month = {5},
+number = {5},
+pages = {507--525},
+publisher = {IEEE},
+title = {{The Oracle Problem in Software Testing: A Survey}},
+volume = {41},
 year = {2015}
 }
 
@@ -530,6 +771,22 @@ title = {{Why do Record/Replay Tests of Web Applications Break?}},
 year = {2016}
 }
 
+@inproceedings{Hammoudi2016b,
+abstract = {Software engineers use record replay tools to capture use case scenarios that can serve as regression tests for web applications. Such tests, however, can be brittle in the face of code changes. Thus, researchers have sought automated approaches for repairing broken record/replay tests. To date, such approaches have operated by directly analyzing differences between the releases of web applications. Often, however, intermediate versions or commits exist between releases, and these represent finer-grained sequences of changes by which new releases evolve. In this paper, we present WATERFALL, an incremental test repair approach that applies test repair techniques iteratively across a sequence of fine-grained versions of a web application. The results of an empirical study on seven web applications show that our approach is substantially more effective than a coarse-grained approach (209\% overall), while maintaining an acceptable level of overhead.},
+address = {New York, NY, USA},
+author = {Hammoudi, Mouna and Rothermel, Gregg and Stocco, Andrea},
+booktitle = {Proceedings of the 2016 24th ACM SIGSOFT International Symposium on Foundations of Software Engineering},
+doi = {10.1145/2950290.2950294},
+isbn = {9781450342186},
+keywords = {Record/replay tests,Test case repair,Web applications},
+month = {11},
+pages = {751--762},
+publisher = {ACM},
+title = {{WATERFALL: an incremental approach for repairing record-replay tests of web applications}},
+volume = {13-18-Nove},
+year = {2016}
+}
+
 
 @article{Leotta2016,
 abstract = {Automated test scripts are used with success in many web development projects, so as to automatically verify key functionalities of the web application under test, reveal possible regressions and run a large number of tests in short time. However, the adoption of automated web testing brings advantages but also novel problems, among which the test code fragility problem. During the evolution of the web application, existing test code may easily break and testers have to correct it. In the context of automated DOM-based web testing, one of the major costs for evolving the test code is the manual effort necessary to repair broken web page element locators – lines of source code identifying the web elements (e.g. form fields and buttons) to interact with. In this work, we present ROBULA+, a novel algorithm able to generate robust XPath-based locators – locators that are likely to work correctly on new releases of the web application. We compared ROBULA+ with several state of the practice/art XPath locator generator tools/algorithms. Results show that XPath locators produced by ROBULA+ are by far the most robust. Indeed, ROBULA+ reduces the locators' fragility on average by 90{\%} w.r.t. absolute locators and by 63{\%} w.r.t. Selenium IDE locators. Copyright},
@@ -543,6 +800,22 @@ title = {{Robula+: an algorithm for generating robust XPath locators for web tes
 volume = {28},
 year = {2016}
 }
+
+@inproceedings{Mao2016,
+abstract = {We introduce Sapienz, an approach to Android testing that uses multi-objective search-based testing to automatically explore and optimise test sequences, minimising length, while simultaneously maximising coverage and fault revelation. Sapienz combines random fuzzing, systematic and search-based exploration, exploiting seeding and multi-level instrumentation. Sapienz significantly outperforms (with large effect size) both the state-of-the-art technique Dynodroid and the widely-used tool, Android Monkey, in 7/10 experiments for coverage, 7/10 for fault detection and 10/10 for fault-revealing sequence length. When applied to the top 1,000 Google Play apps, Sapienz found 558 unique, previously unknown crashes. So far we have managed to make contact with the developers of 27 crashing apps. Of these, 14 have confirmed that the crashes are caused by real faults. Of those 14, six already have developer-confirmed fixes.},
+address = {New York, NY, USA},
+author = {Mao, Ke and Harman, Mark and Jia, Yue},
+booktitle = {Proceedings of the 25th International Symposium on Software Testing and Analysis},
+doi = {10.1145/2931037.2931054},
+isbn = {9781450343909},
+keywords = {android,search-based software testing,test generation},
+month = {7},
+pages = {94--105},
+publisher = {ACM},
+title = {{Sapienz: multi-objective automated testing for Android applications}},
+year = {2016}
+}
+
 
 @online{W3C2016,
 url={https://www.w3.org/TR/1999/REC-xpath-19991116/},
@@ -613,7 +886,7 @@ year = {2018}
 }
 
 @inproceedings{Eladawy2018,
-abstract = {The importance of test automation in the software industry has received a growing attention in recent years and it is continuously increasing. Unfortunately, the maintenance of the test cases is a major problem that faces those who use test automation. This problem becomes bigger when dealing with Graphical User Interface (GUI) tests.In this paper, an algorithm is introduced to maintain GUI tests for web applications. The Genetic algorithm is adopted to automatically repair the locators used to select elements from web pages. The algorithm is evaluated using several applications and results show that the proposed algorithm improves the repair percentage to 87{\%} of the used locators compared to the previous result which was 73{\%}.},
+abstract = {The importance of test automation in the software industry has received a growing attention in recent years and it is continuously increasing. Unfortunately, the maintenance of the test cases is a major problem that faces those who use test automation. This problem becomes bigger when dealing with Graphical User Interface (GUI) tests.In this paper, an algorithm is introduced to maintain GUI tests for web applications. The Genetic algorithm is adopted to automatically repair the locators used to select elements from web pages. The algorithm is evaluated using several applications and results show that the proposed algorithm improves the repair percentage to 87\% of the used locators compared to the previous result which was 73\%.},
 author = {Eladawy, Hadeel Mohamed and Mohamed, Amr E. and Salem, Sameh A.},
 booktitle = {2018 13th International Conference on Computer Engineering and Systems (ICCES)},
 keywords = {DOM selectors,GUI testing,XPath,XPath locator,genetic algorithm,web testing},
@@ -647,17 +920,15 @@ year = {2018}
 }
 
 @inproceedings{Raffaillac2018,
-abstract = {This paper introduces a new GUI framework based on the Entity-Component-System model (ECS), where interactive elements (Enti-ties) can acquire any data (Components). Behaviors are managed by continuously running processes (Systems) which select entities by the components they possess. This model facilitates the handling and reuse of behaviors. It allows to define the interaction modalities of an application globally, by formulating them as a set of Systems. We present Polyphony, an experimental toolkit implementing this approach, detail our interpretation of the ECS model in the context of GUIs, and demonstrate its use with a sample application. CCS CONCEPTS • Human-centered computing → User interface programming; User interface toolkits;},
-author = {Raffaillac, Thibault and Huot, St{\'{e}}phane},
-booktitle = {Proceedings of the 30th on l'Interaction Homme-Machine},
+author = {Raffaillac, Thibault and Huot, Stéphane},
+booktitle = {Proceedings of the 30th Conference on l'Interaction Homme-Machine},
 isbn = {9781450360784},
-keywords = {-  Human-centered computing  ->  User interface pr,User interface toolkits},
+keywords = {Human-centered computing, User interface, User interface toolkits},
 pages = {42--51},
 publisher = {ACM},
-title = {{Application du mod{\`{e}}le Entit{\'{e}}-Composant-Syst{\`{e}}me {\`{a}} la programmation d'interactions Applying the Entity-Component-System Model to Interaction Programming}},
+title = {{Application du modèle Entité-Composant-Système à la programmation d'interactions Applying the Entity-Component-System Model to Interaction Programming}},
 year = {2018}
 }
-
 
 @inproceedings{Stocco2018,
 abstract = {Web tests are prone to break frequently as the application under test evolves, causing much maintenance effort in practice. To detect the root causes of a test breakage, developers typically inspect the test's interactions with the application through the GUI. Existing automated test repair techniques focus instead on the code and entirely ignore visual aspects of the application. We propose a test repair technique that is informed by a visual analysis of the application. Our approach captures relevant visual information from tests execution and analyzes them through a fast image processing pipeline to visually validate test cases as they re-executed for regression purposes. Then, it reports the occurrences of breakages and potential fixes to the testers. Our approach is also equipped with a local crawling mechanism to handle non-trivial breakage scenarios such as the ones that require to repair the test's workflow. We implemented our approach in a tool called Vista. Our empirical evaluation on 2,672 test cases spanning 86 releases of four web applications shows that Vista is able to repair, on average, 81\% of the breakages, a 41\% increment with respect to existing techniques.},
@@ -697,6 +968,50 @@ title = {{A Method of Optimizing Multi-Locators Based on Machine Learning}},
 year = {2018}
 }
 
+@inproceedings{Biagiola2019,
+abstract = {Existing web test generators derive test paths from a navigational model of the web application, completed with either manually or randomly generated input values. However, manual test data selec- tion is costly, while random generation often results in infeasible input sequences, which are rejected by the application under test. Random and search-based generation can achieve the desired level of model coverage only after a large number of test execution at- tempts, each slowed down by the need to interact with the browser during test execution. In this work, we present a novel web test generation algorithm that pre-selects the most promising candi- date test cases based on their diversity from previously generated tests. As such, only the test cases that explore diverse behaviours of the application are considered for in-browser execution. We have implemented our approach in a tool called DIG. Our empirical eval- uation on six real-world web applications shows that DIG achieves higher coverage and fault detection rates significantly earlier than crawling-based and search-based web test generators.},
+address = {Tallinn, Estonia},
+author = {Biagiola, Matteo and Stocco, Andrea and Ricca, Filippo and Tonella, Paolo},
+booktitle = {Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering - ESEC/FSE 2019},
+doi = {10.1145/3338906.3338970},
+isbn = {9781450355728},
+keywords = {diversity,page object,test generation,web testing},
+number = {1},
+pages = {142--153},
+publisher = {ACM Press},
+title = {{Diversity-based web test generation}},
+year = {2019}
+}
+
+@incollection{Canny2019,
+abstract = {Testing interactive systems is known to be a complex task that cannot be exhaustive. Indeed, the infinite number of combination of user input and the complexity of information presentation exceed the practical limits of exhaustive and analytical approach to testing [31]. Most interactive software testing techniques are produced by applying and tuning techniques from the field of software testing to try to address the specificities of interactive applications. When some elements cannot be taken into account by the software testing technique, they are usually ignored. In this paper we propose to follow an opposite approach, starting from a generic architecture for interactive systems (including both software and hardware elements) for identifying in a systematic way, testing problems and testing needs. This architecture-driven approach makes it possible to identify how software testing knowledge and techniques can support interactive systems testing but also where the interactive systems engineering community should invest in order to test their idiosyncrasies too.},
+author = {Canny, Alexandre and Bouzekri, Elodie and Martinie, C{\'{e}}lia and Palanque, Philippe},
+booktitle = {Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)},
+doi = {10.1007/978-3-030-05909-5_10},
+isbn = {9783030059088},
+issn = {16113349},
+keywords = {Architecture-driven testing,Interactive system testing},
+pages = {164--186},
+title = {{Rationalizing the Need of Architecture-Driven Testing of Interactive Systems}},
+volume = {11262 LNCS},
+year = {2019}
+}
+
+@article{Coppola2019,
+abstract = {Android applications do not seem to be tested as thoroughly as desktop ones. In particular, graphical user interface (GUI) testing appears generally limited. Like web-based applications, mobile apps suffer from GUI test fragility, i.e., GUI test classes failing or needing updates due to even minor modifications in the GUI or in the application under test. The objective of our study is to estimate the adoption of GUI testing frameworks among Android open-source applications, the quantity of modifications needed to keep test classes up to date, and their amount due to GUI test fragility. We introduce a set of 21 metrics to measure the adoption of testing tools and the evolution of test classes and test methods, and to estimate the fragility of test suites. We computed our metrics for six GUI testing frameworks, none of which achieved a significant adoption among Android projects hosted on GitHub. When present, GUI test methods associated with the considered tools are modified often, and a relevant portion (70\% on average) of those modifications is induced by GUI-related fragilities. On average, for the projects considered, more than 7\% of the total modified lines of code between consecutive releases belong to test classes developed with the analyzed testing frameworks. The measured percentage was higher on average than the one required by other generic test code, based on the JUnit testing framework. Fragility of GUI tests constitutes a relevant concern, probably an obstacle for developers to adopt test automation. This first evaluation of the fragility of Android scripted GUI testing can constitute a benchmark for developers and testers leveraging the analyzed test tools and the basis for the definition of a taxonomy of fragility causes and guidelines to mitigate the issue.},
+author = {Coppola, Riccardo and Morisio, Maurizio and Torchiano, Marco},
+doi = {10.1109/TR.2018.2869227},
+issn = {0018-9529},
+journal = {IEEE Transactions on Reliability},
+keywords = {Mobile computing,software engineering,software maintenance,software metrics,software testing},
+month = {3},
+number = {1},
+pages = {67--90},
+publisher = {IEEE},
+title = {{Mobile GUI Testing Fragility: A Study on Open-Source Android Applications}},
+volume = {68},
+year = {2019}
+}
 
 
 @online{Grigorik2019,
@@ -735,6 +1050,30 @@ title = {{On the Evolution of Keyword-Driven Test Suites}},
 year = {2019}
 }
 
+@inproceedings{Canny2020,
+abstract = {The testing of applications with a Graphical User Interface (GUI) is a complex activity because of the infinity of possible event sequences. In the field of GUI Testing, model-based approaches based on reverse engineering of GUI application have been proposed to generate test cases. Unfortunately, evidences show that these techniques do not support some of the features of modern GUI applications. These features include dynamic widgets instantiation or advanced interaction techniques (e.g. multitouch). In this paper, we propose to build models of the applications from requirements, as it is standard practice in Model-Based Testing. To do so, we identified ICO (Interactive Cooperative Object) as one of the modelling techniques allowing the description of complex GUI behavior. We demonstrate that this notation is suitable for generating test cases targeting complex GUI applications in a process derived from the standard ModelBased Testing process.},
+author = {Canny, Alexandre and Palanque, Philippe and Navarre, David},
+booktitle = {2020 IEEE International Conference on Software Testing, Verification and Validation Workshops (ICSTW)},
+doi = {10.1109/ICSTW50294.2020.00029},
+isbn = {978-1-7281-1075-2},
+keywords = {GUI Testing,Model-Based Testing,User Interface Description Languages},
+month = {10},
+pages = {95--104},
+publisher = {IEEE},
+title = {{Model-Based Testing of GUI Applications Featuring Dynamic Instanciation of Widgets}},
+year = {2020}
+}
+
+
+@online{Google2020,
+url={https://developer.android.com/studio/test/monkey},
+title={UI/Application Exerciser Monkey},
+author={Google},
+year={2020},
+month={8},
+urldate={2021-05-15}
+}
+
 @online{MDN2020,
 url={https://developer.mozilla.org/en-US/docs/Web/HTML/Element},
 title={HTML elements reference},
@@ -751,6 +1090,21 @@ year = 2020,
 url = {http://robotframework.org/},
 urldate = {2021-02-15}
 }
+
+@article{DiMartino2021,
+abstract = {Exploratory testing and fully automated testing tools represent two viable and cheap alternatives to traditional test-case-based approaches for graphical user interface (GUI) testing of Android apps. The former can be executed by capture and replay tools that directly translate execution scenarios registered by testers in test cases, without requiring preliminary test-case design and advanced programming/testing skills. The latter tools are able to test Android GUIs without tester intervention. Even if these two strategies are widely employed, to the best of our knowledge, no empirical investigation has been performed to compare their performance and obtain useful insights for a project manager to establish an effective testing strategy. In this paper, we present two experiments we carried out to compare the effectiveness of exploratory testing approaches using a capture and replay tool (Robotium Recorder) against three freely available automatic testing tools (AndroidRipper, Sapienz, and Google Robo). The first experiment involved 20 computer engineering students who were asked to record testing executions, under strict temporal limits and no access to the source code. Results were slightly better than those of fully automated tools, but not in a conclusive way. In the second experiment, the same students were asked to improve the achieved testing coverage by exploiting the source code and the coverage obtained in the previous tests, without strict temporal constraints. The results of this second experiment showed that students outperformed the automated tools especially for long/complex execution scenarios. The obtained findings provide useful indications for deciding testing strategies that combine manual exploratory testing and automated testing.},
+author = {{Di Martino}, Sergio and Fasolino, Anna Rita and Starace, Luigi Libero Lucio and Tramontana, Porfirio},
+doi = {10.1002/stvr.1754},
+issn = {0960-0833},
+journal = {Software Testing, Verification and Reliability},
+keywords = {Android app testing,GUI testing,automatic input generation,capture and replay,testing effectiveness},
+month = {5},
+number = {3},
+title = {{Comparing the effectiveness of capture and replay against automatic input generation for Android graphical user interface testing}},
+volume = {31},
+year = {2021}
+}
+
 
 @online{WHATWG2021,
 url={https://html.spec.whatwg.org/},
