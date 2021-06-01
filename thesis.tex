@@ -8,7 +8,7 @@
 \usepackage{array}
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 
-\usepackage{amsmath, amsfonts, amsthm, amssymb}
+\usepackage{amsmath, amsfonts, amsthm, amssymb, commath}
 \usepackage{boxedminipage, xspace}   
 \usepackage[T1]{fontenc}
 \usepackage{changepage}
@@ -20,6 +20,7 @@
 \usepackage{tabularx}
 \usepackage{booktabs}
 \usepackage{multirow}
+\usepackage{parcolumns}
 \usepackage[roman]{parnotes}
 
 \usepackage{algorithm}
@@ -32,6 +33,9 @@
 \definecolor{keyword}{RGB}{127,0,0}
 \definecolor{block}{RGB}{0,127,0}
 \definecolor{variable}{RGB}{0,0,127}
+
+\newcolumntype{L}{>{\hsize=.2\hsize\raggedright\arraybackslash}X}
+\newcolumntype{R}{>{\hsize=.16\hsize\raggedleft\arraybackslash}X}
 
 \lstset{
 numbers=left,
