@@ -111,7 +111,7 @@ booktitle = {Proceedings of the 2nd International Conference on Extreme Programm
 doi = {10.1134/S106422690609004X},
 issn = {1064-2269},
 keywords = {extreme programming,refactoring,unit testing},
-month = {sep},
+month = {9},
 pages = {92--95},
 title = {{Simulation of corrugated horns and exciters for circular corrugated waveguides}},
 year = {2001}
@@ -139,6 +139,24 @@ title = {{Streaming XPath processing with forward and backward axes}},
 year = {2003}
 }
 
+@inproceedings{Memon2003a,
+abstract = {Although graphical user interfaces (GUIs) constitute a large part of the software being developed today and are typically created using rapid prototyping, there are no effective regression testing techniques for GUIs. The needs of GUI regression testing differ from those of traditional software. When the structure of a GUI is modified, test cases from the original GUI are either reusable or unusable on the modified GUI. Since GUI test case generation is expensive, our goal is to make the unusable test cases usable. The idea of reusing these unusable (a.k.a. obsolete) test cases has not been explored before. In this paper, we show that for GUIs, the unusability of a large number of test cases is a serious problem. We present a novel GUI regression testing technique that first automatically determines the usable and unusable test cases from a test suite after a GUI modification. It then determines which of the unusable test cases can be repaired so they can execute on the modified GUI. The last step is to repair the test cases. Our technique is integrated into a GUI testing framework that, given a test case, automatically executes it on the GUI. We implemented our regression testing technique and demonstrate for two case studies that our approach is effective in that many of the test cases can be repaired, and is practical in terms of its time performance.},
+address = {New York, New York, USA},
+author = {Memon, Atif M. and Soffa, Mary Lou},
+booktitle = {Proceedings of the 9th European software engineering conference held jointly with 10th ACM SIGSOFT international symposium on Foundations of software engineering - ESEC/FSE '03},
+doi = {10.1145/940071.940088},
+isbn = {1581137435},
+issn = {01635948},
+keywords = {Regression testing, repairing test cases, GUI testing, GUI control-flow graph, GUI call-graph, call-tree, classification of events},
+number = {5},
+pages = {118},
+publisher = {ACM Press},
+title = {{Regression testing of GUIs}},
+volume = {28},
+year = {2003}
+}
+
+
 @inproceedings{Marinescu2004,
 abstract = {In order to support the maintenance of an object-oriented software system, the quality of its design must be evaluated using adequate quantification means. In spite of the current extensive use of metrics, if used in isolation metrics are oftentimes too fine grained to quantify comprehensively an investigated design aspect (e.g., distribution of system's intelligence among classes). To help developers and maintainers detect and localize design problems in a system, we propose a novel mechanism - called detection strategy - for formulating metrics-based rules that capture deviations from good design principles and heuristics. Using detection strategies an engineer can directly localize classes or methods affected by a particular design flaw (e.g., God Class), rather than having to infer the real design problem from a large set of abnormal metric values. We have defined such detection strategies for capturing around ten important flaws of object-oriented design found in the literature and validated the approach experimentally on multiple large-scale case-studies. {\textcopyright} 2004 IEEE.},
 author = {Marinescu, Radu},
@@ -163,15 +181,6 @@ title = {{A case study on regression test suite maintenance in system evolution}
 year = {2004}
 }
 
-@online{W3C2004,
-url={https://www.w3.org/TR/DOM-Level-3-Core/introduction.html},
-title={What is the Document Object Model?},
-author={World Wide Web Consortium},
-year={2004},
-month={4},
-addendum = {(accessed: 15.01.2021)}
-}
-
 @article{Anton2005,
 abstract = {We introduce a wrapper induction algorithm for extracting information from tree-structured docu- ments like HTML or XML. It derives XPath- compatible extraction rules from a set of anno- tated example documents. The approach builds a minimally generalized tree traversal pattern, and augments it with conditions. Another variant se- lects a subset of conditions so that (a) the pattern is consistent with the training data, (b) the pat- tern's document coverage is minimized, and (c) conditions that match structures preceding the target nodes are preferred. We discuss the ro- bustness of rules induced by this selection strat- egy and we illustrate how these rules exhibit knowledge of the target concept.},
 author = {Anton, Tobias},
@@ -180,6 +189,22 @@ pages = {126--133},
 title = {{XPath-Wrapper Induction by generalizing tree traversal patterns}},
 year = {2005}
 }
+
+@inproceedings{Berner2005,
+abstract = {This report addresses some of our observations made in a dozen of projects in the area of software testing, and more specifically, in automated testing. It documents, analyzes and consolidates what we consider to be of interest to the community. The major findings can be summarized in a number of lessons learned, covering test strategy, testability, daily integration, and best practices. The report starts with a brief description of five sample projects. Then, we discuss our observations and experiences and illustrate them with the sample projects. The report concludes with a synopsis of these experiences and with suggestions for future test automation endeavors. Copyright 2005 ACM.},
+author = {Berner, Stefan and Weber, Roland and Keller, R.K.},
+booktitle = {Proceedings. 27th International Conference on Software Engineering, 2005. ICSE 2005.},
+doi = {10.1109/ICSE.2005.1553603},
+isbn = {1-59593-963-2},
+issn = {02705257},
+keywords = {Automated testing,Software test,Test management},
+pages = {571--579},
+publisher = {IEEE},
+title = {{Observations and lessons learned from automated testing}},
+volume = {2005},
+year = {2005}
+}
+
 
 @article{Gottlob2005,
 abstract = {We study the complexity of two central XML processing problems. The first is XPath 1.0 query processing, which has been shown to be in PTIME in previous work. We prove that both the data complexity and the query complexity of XPath 1.0 fall into lower (highly parallelizable) complexity classes, while the combined complexity is PTIME-hard. Subsequently, we study the sources of this hardness and identify a large and practically important fragment of XPath 1.0 for which the combined complexity is LOGCFL-complete and, therefore, in the highly parallelizable complexity class NC2. The second problem is the complexity of validating XML documents against various typing schemes like Document Type Definitions (DTDs), XML Schema Definitions (XSDs), and tree automata, both with respect to data and to combined complexity. For data complexity, we prove that validation is in LOGSPACE and depends crucially on how XML data is represented. For the combined complexity, we show that the complexity ranges from LOGSPACE to LOGCFL, depending on the typing scheme. {\textcopyright} 2005 ACM.},
@@ -278,7 +303,7 @@ doi = {10.1109/TSE.2007.70745},
 issn = {0098-5589},
 journal = {IEEE Transactions on Software Engineering},
 keywords = {Maintainability,Maintenance engineering,Performance evaluation,Quality assurance,Test design,Testing},
-month = {dec},
+month = {12},
 number = {12},
 pages = {800--817},
 title = {{On The Detection of Test Smells: A Metrics-Based Approach for General Fixture and Eager Test}},
@@ -692,6 +717,21 @@ volume = {22},
 year = {2012}
 }
 
+@inproceedings{Vliegendhart2012,
+abstract = {Conducting a conventional experiment to test an application's user interface in a lab environment is a costly and time-consuming process. In this paper, we show that it is feasible to carry out A/B tests for a multimedia application through Amazon's crowdsourcing platform Mechanical Turk involving hundreds of workers at low costs. We let workers test user interfaces within a remote virtual machine that is embedded within the HIT and we show that technical issues that arise in this approach can be overcome.},
+address = {New York, New York, USA},
+author = {Vliegendhart, Raynor and Dolstra, Eelco and Pouwelse, Johan},
+booktitle = {Proceedings of the ACM multimedia 2012 workshop on Crowdsourcing for multimedia - CrowdMM '12},
+doi = {10.1145/2390803.2390813},
+isbn = {9781450315890},
+keywords = {A/B testing,Crowdsourcing,Usability study},
+pages = {21},
+publisher = {ACM Press},
+title = {{Crowdsourced user interface testing for multimedia applications}},
+year = {2012}
+}
+
+
 @inproceedings{Alegroth2013,
 author = {Alegroth, Emil and Feldt, Robert and Olsson, Helena H},
 booktitle = {2013 IEEE Sixth International Conference on Software Testing, Verification and Validation},
@@ -906,6 +946,19 @@ title = {{Reducing Web Test Cases Aging by Means of Robust XPath Locators}},
 year = {2014}
 }
 
+@incollection{Leotta2014b,
+abstract = {Automation in Web testing has been successfully supported by DOM based tools that allow testers to program the interactions of their test cases with the Web application under test. More recently a new generation of visual tools has been proposed where a test case interacts with the Web application by recognising the images of the widgets that can be actioned upon and by asserting the expected visual appearance of the result. In this paper, we first discuss the inherent robustness of the locators created by following the visual and DOM-based approaches and we then compare empirically a visual and a DOM-based tool, taking into account both the cost for initial test suite development from scratch and the cost for test suite maintenance during code evolution. Since visual tools are known to be computationally demanding, we also measure the test suite execution time. Results indicate that DOM-based locators are generally more robust than visual ones and that DOM-based test cases can be developed from scratch and evolved at lower cost. Moreover, DOM-based test cases require a lower execution time. However, depending on the specific features of the Web application under test and its expected evolution, in some cases visual locators might be the best choice (e.g., when the visual appearance is more stable than the structure).},
+author = {Leotta, Maurizio and Clerissi, Diego and Ricca, Filippo and Tonella, Paolo},
+booktitle = {International Conference on Web Engineering},
+doi = {10.1007/978-3-319-08245-5_19},
+issn = {16113349},
+pages = {322--340},
+title = {{Visual vs. DOM-Based Web Locators: An Empirical Study}},
+volume = {8541},
+year = {2014}
+}
+
+
 @inproceedings{Luo2014,
 abstract = {Regression testing is a crucial part of software development. It checks that software changes do not break existing func-tionality. An important assumption of regression testing is that test outcomes are deterministic: an unmodified test is expected to either always pass or always fail for the same code under test. Unfortunately, in practice, some tests— often called flaky tests—have non-deterministic outcomes. Such tests undermine the regression testing as they make it difficult to rely on test results. We present the first extensive study of flaky tests. We study in detail a total of 201 commits that likely fix flaky tests in 51 open-source projects. We classify the most com-mon root causes of flaky tests, identify approaches that could manifest flaky behavior, and describe common strategies that developers use to fix flaky tests. We believe that our insights and implications can help guide future research on the important topic of (avoiding) flaky tests.},
 address = {New York, NY, USA},
@@ -1063,7 +1116,6 @@ year = {2015}
 abstract = {Bad code smells have been defined as indicators of potential problems in source code. Techniques to identify and mitigate bad code smells have been proposed and studied. Recently bad test code smells (test smells for short) have been put forward as a kind of bad code smell specific to tests such a unit tests. What has been missing is empirical investigation into the prevalence and impact of bad test code smells. Two studies aimed at providing this missing empirical data are presented. The first study finds that there is a high diffusion of test smells in both open-source and industrial software systems with 86 {\%} of JUnit tests exhibiting at least one test smell and six tests having six distinct test smells. The second study provides evidence that test smells have a strong negative impact on program comprehension and maintenance. Highlights from this second study include the finding that comprehension is 30 {\%} better in the absence of test smells.},
 author = {Bavota, Gabriele and Qusef, Abdallah and Oliveto, Rocco and {De Lucia}, Andrea and Binkley, Dave},
 doi = {10.1007/s10664-014-9313-0},
-isbn = {1066401493130},
 issn = {1382-3256},
 journal = {Empirical Software Engineering},
 keywords = {Controlled experiments,Mining software repositories,Test smells,Unit testing},
@@ -1541,6 +1593,18 @@ year = {2018}
 }
 
 
+@inproceedings{Rwemalika2018,
+abstract = {Agile methodologies enable companies to drastically increase software release pace and reduce time-to-market. In a rapidly changing environment, testing becomes a cornerstone of the software development process, guarding the system code base from the insertion of faults. To cater for this, many companies are migrating manual end-to-end tests to automated ones. This migration introduces several challenges to the practitioners. These challenges relate to difficulties in the creation of the automated tests, their maintenance and the evolution of the test code base. In this position paper, we discuss our preliminary results on such challenges and present two potential solutions to these problems, focusing on keyword-driven end-to-end tests. Our solutions leverage existing software artifacts, namely the test suite and an automatically-created model of the system under test, to support the evolution of keyword-driven test suites.},
+author = {Rwemalika, Renaud and Kintis, Marinos and Papadakis, Mike and {Le Traon}, Yves},
+booktitle = {CEUR Workshop Proceedings},
+issn = {16130073},
+title = {{Can we automate away the main challenges of end-to-end testing?}},
+volume = {2361},
+year = {2018}
+}
+
+
+
 @inproceedings{Stocco2018,
 abstract = {Web tests are prone to break frequently as the application under test evolves, causing much maintenance effort in practice. To detect the root causes of a test breakage, developers typically inspect the test's interactions with the application through the GUI. Existing automated test repair techniques focus instead on the code and entirely ignore visual aspects of the application. We propose a test repair technique that is informed by a visual analysis of the application. Our approach captures relevant visual information from tests execution and analyzes them through a fast image processing pipeline to visually validate test cases as they re-executed for regression purposes. Then, it reports the occurrences of breakages and potential fixes to the testers. Our approach is also equipped with a local crawling mechanism to handle non-trivial breakage scenarios such as the ones that require to repair the test's workflow. We implemented our approach in a tool called Vista. Our empirical evaluation on 2,672 test cases spanning 86 releases of four web applications shows that Vista is able to repair, on average, 81\% of the breakages, a 41\% increment with respect to existing techniques.},
 address = {Lake Buena Vista, FL, USA},
@@ -1572,14 +1636,6 @@ year = {2018}
 }
 
 
-@online{W3C2018,
-url={https://drafts.csswg.org/selectors-3/},
-title={Selectors Level 3 - W3C Candidate Recommendation},
-author={World Wide Web Consortium},
-year={2018},
-month={1},
-urldate={2021-01-21}
-}
 
 
 @inproceedings{Zheng2018,
@@ -1655,33 +1711,6 @@ year = {2019}
 }
 
 @article{Coppola2019b,
-abstract = {Android applications do not seem to be tested as thoroughly as desktop ones. In particular, graphical user interface (GUI) testing appears generally limited. Like web-based applications, mobile apps suffer from GUI test fragility, i.e., GUI test classes failing or needing updates due to even minor modifications in the GUI or in the application under test. The objective of our study is to estimate the adoption of GUI testing frameworks among Android open-source applications, the quantity of modifications needed to keep test classes up to date, and their amount due to GUI test fragility. We introduce a set of 21 metrics to measure the adoption of testing tools and the evolution of test classes and test methods, and to estimate the fragility of test suites. We computed our metrics for six GUI testing frameworks, none of which achieved a significant adoption among Android projects hosted on GitHub. When present, GUI test methods associated with the considered tools are modified often, and a relevant portion (70\% on average) of those modifications is induced by GUI-related fragilities. On average, for the projects considered, more than 7\% of the total modified lines of code between consecutive releases belong to test classes developed with the analyzed testing frameworks. The measured percentage was higher on average than the one required by other generic test code, based on the JUnit testing framework. Fragility of GUI tests constitutes a relevant concern, probably an obstacle for developers to adopt test automation. This first evaluation of the fragility of Android scripted GUI testing can constitute a benchmark for developers and testers leveraging the analyzed test tools and the basis for the definition of a taxonomy of fragility causes and guidelines to mitigate the issue.},
-author = {Coppola, Riccardo and Morisio, Maurizio and Torchiano, Marco},
-doi = {10.1109/TR.2018.2869227},
-issn = {0018-9529},
-journal = {IEEE Transactions on Reliability},
-keywords = {Mobile computing,software engineering,software maintenance,software metrics,software testing},
-month = {3},
-number = {1},
-pages = {67--90},
-publisher = {IEEE},
-title = {{Mobile GUI Testing Fragility: A Study on Open-Source Android Applications}},
-volume = {68},
-year = {2019}
-}
-
-
-
-@online{Grigorik2019,
-url={https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction},
-title={Render-tree Construction, Layout, and Paint},
-author={Grigorik, Ilya},
-year={2019},
-month={2},
-urldate={2021-01-28}
-}
-
-@article{Coppola2019,
 abstract = {Evidence from empirical studies suggests that mobile applications are not thoroughly tested as their desktop counterparts. In particular, GUI testing is generally limited. Like web-based applications, mobile apps suffer from GUI testing fragility, i.e., GUI test classes failing or needing interventions because of modifications in the AUT or in its GUI arrangement and definition. The objective of our study is to examine the diffusion of test classes created with a set of popular GUI Automation Frameworks for Android apps, the amount of changes required to keep test classes up to date, and the amount of code churn in existing test suites, along with the underlying modifications in the AUT that caused such modifications. We defined 12 metrics to characterize the evolution of test classes and test methods, and a taxonomy of 28 possible causes for changes to test code. To perform our experiments, we selected six widely used open-source GUI Automation Frameworks for Android apps. We evaluated the diffusion of the tools by mining the GitHub repositories featuring them, and computed our set of metrics on the projects. Applying the Grounded Theory technique, we then manually analyzed diff files of test classes written with the selected tools, to build from the ground up a taxonomy of causes for modifications of test code. We found that none of the considered GUI automation frameworks achieved a major diffusion among open-source Android projects available on GitHub. For projects featuring tests created with the selected frameworks, we found that test suites had to be modified often – specifically, about 8\% of developers' modified LOCs belonged to test code and that a relevant portion (around 50\% on average) of those modifications were induced by modifications in GUI definition and arrangement. Test code written with GUI automation fromeworks proved to need significant interventions during the lifespan of a typical Android open-source project. This can be seen as an obstacle for developers to adopt this kind of test automation. The evaluations and measurements of the maintainance needed by test code wrtitten with GUI automation frameworks, and the taxonomy of modification causes, can serve as a benchmark for developers, and the basis for the formulation of actionable guidelines and the development of automated tools to help mitigating the issue.},
 author = {Coppola, Riccardo and Morisio, Maurizio and Torchiano, Marco and Ardito, Luca},
 doi = {10.1007/s10664-019-09722-9},
@@ -1696,6 +1725,23 @@ title = {{Scripted GUI testing of Android open-source apps: evolution of test co
 volume = {24},
 year = {2019}
 }
+
+
+@inproceedings{Jimenez2019,
+abstract = {Previous work on vulnerability prediction assume that predictive models are trained with respect to perfect labelling information (includes labels from future, as yet undiscovered vulnerabilities). In this paper we present results from a comprehensive empirical study of 1,898 real-world vulnerabilities reported in 74 releases of three security-critical open source systems (Linux Kernel, OpenSSL and Wiresark). Our study investigates the effectiveness of three previously proposed vulnerability prediction approaches, in two settings: with and without the unrealistic labelling assumption. The results reveal that the unrealistic labelling assumption can profoundly mis- lead the scientific conclusions drawn; suggesting highly effective and deployable prediction results vanish when we fully account for realistically available labelling in the experimental methodology. More precisely, MCC mean values of predictive effectiveness drop from 0.77, 0.65 and 0.43 to 0.08, 0.22, 0.10 for Linux Kernel, OpenSSL and Wiresark, respectively. Similar results are also obtained for precision, recall and other assessments of predictive efficacy. The community therefore needs to upgrade experimental and empirical methodology for vulnerability prediction evaluation and development to ensure robust and actionable scientific findings.},
+address = {New York, NY, USA},
+author = {Jimenez, Matthieu and Rwemalika, Renaud and Papadakis, Mike and Sarro, Federica and {Le Traon}, Yves and Harman, Mark},
+booktitle = {Proceedings of the 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering},
+doi = {10.1145/3338906.3338941},
+isbn = {9781450355728},
+keywords = {Machine Learning,Prediction Modelling,Software Vulnerabilities},
+month = {8},
+pages = {695--705},
+publisher = {ACM},
+title = {{The importance of accounting for real-world labelling when predicting software vulnerabilities}},
+year = {2019}
+}
+
 
 
 
@@ -1744,6 +1790,22 @@ location = {Beijing, China},
 series = {ISSTA 2019}
 }
 
+@inproceedings{Rwemalika2019c,
+abstract = {Software bugs constitute a frequent and common issue of software development. To deal with this problem, modern software development methodologies introduce dedicated quality assurance procedures. At the same time researchers aim at developing techniques capable of supporting the early discovery and fix of bugs. One important factor that guides such research attempts is the characteristics of software bugs and bug fixes. In this paper, we present an industrial study on the characteristics and differences between pre-release bugs, i.e. bugs detected during software development, and post-release bugs, i.e. bugs that escaped to production. Understanding such differences is of paramount importance as it will improve our understanding on the testing and debugging support that practitioners require from the research community, on the validity of the assumptions of several research techniques, and, most importantly, on the reasons why bugs escape to production. To this end, we analyze 37 industrial projects from BGL BNP Paribas and document the differences between pre-release bugs and post-release bugs. Our findings suggest that post-release bugs are more complex to fix, requiring developers to modify several source code files, written in different programming languages, and configuration files, as well. We also find that approximately 82\% of the post-release bugs involve code additions and can be characterized as 'omission' bugs. Finally, we conclude the paper with a discussion on the implications of our study and provide guidance to future research directions.},
+address = {Cleveland, USA},
+author = {Rwemalika, Renaud and Kintis, Marinos and Papadakis, Mike and {Le Traon}, Yves and Lorrach, Pierre},
+booktitle = {2019 IEEE International Conference on Software Maintenance and Evolution (ICSME)},
+doi = {10.1109/ICSME.2019.00019},
+isbn = {978-1-7281-3094-1},
+keywords = {Empirical study,bug fix,industrial study,post release,pre release},
+month = {9},
+pages = {92--102},
+publisher = {IEEE},
+title = {{An Industrial Study on the Differences between Pre-Release and Post-Release Bugs}},
+year = {2019}
+}
+
+
 
 @inproceedings{Canny2020,
 abstract = {The testing of applications with a Graphical User Interface (GUI) is a complex activity because of the infinity of possible event sequences. In the field of GUI Testing, model-based approaches based on reverse engineering of GUI application have been proposed to generate test cases. Unfortunately, evidences show that these techniques do not support some of the features of modern GUI applications. These features include dynamic widgets instantiation or advanced interaction techniques (e.g. multitouch). In this paper, we propose to build models of the applications from requirements, as it is standard practice in Model-Based Testing. To do so, we identified ICO (Interactive Cooperative Object) as one of the modelling techniques allowing the description of complex GUI behavior. We demonstrate that this notation is suitable for generating test cases targeting complex GUI applications in a process derived from the standard ModelBased Testing process.},
@@ -1758,6 +1820,40 @@ publisher = {IEEE},
 title = {{Model-Based Testing of GUI Applications Featuring Dynamic Instanciation of Widgets}},
 year = {2020}
 }
+
+@article{Chen2020,
+abstract = {In crowdsourced mobile application testing, crowd workers perform test tasks for developers and submit test reports to report the observed abnormal behaviors. These test reports usually provide important information to improve the quality of software. However, due to the poor expertise of workers and the inconvenience of editing on mobile devices, some test reports usually lack necessary information for understanding and reproducing the revealed bugs. Sometimes developers have to spend a significant part of available resources to handle the low-quality test reports, thus severely reducing the inspection efficiency. In this paper, to help developers determine whether a test report should be selected for inspection within limited resources, we issue a new problem of test report quality assessment. Aiming to model the quality of test reports, we propose a new framework named TERQAF. First, we systematically summarize some desirable properties to characterize expected test reports and define a set of measurable indicators to quantify these properties. Then, we determine the numerical values of indicators according to the contained contents of test reports. Finally, we train a classifier by using logistic regression to predict the quality of test reports. To validate the effectiveness of TERQAF, we conduct extensive experiments over five crowdsourced test report datasets. Experimental results show that TERQAF can achieve 85.18\% in terms of Macro-average Precision (MacroP), 75.87\% in terms of Macro-average Recall (MacroR), and 80.01\% in terms of Macro-average F-measure (MacroF) on average in test report quality assessment. Meanwhile, the empirical results also demonstrate that test report quality assessment can help developers handle test reports more efficiently.},
+author = {Chen, Xin and Jiang, He and Li, Xiaochen and Nie, Liming and Yu, Dongjin and He, Tieke and Chen, Zhenyu},
+doi = {10.1007/s10664-019-09793-8},
+issn = {1382-3256},
+journal = {Empirical Software Engineering},
+keywords = {Crowdsourced testing,Desirable properties,Natural language processing,Quality indicators,Test report quality},
+month = {3},
+number = {2},
+pages = {1382--1418},
+publisher = {Empirical Software Engineering},
+title = {{A systemic framework for crowdsourced test report quality assessment}},
+volume = {25},
+year = {2020}
+}
+
+
+@inproceedings{Ghamizi2020,
+abstract = {The rapid spread of the Coronavirus SARS-2 is a major challenge that led almost all governments worldwide to take drastic measures to respond to the tragedy. Chief among those measures is the massive lockdown of entire countries and cities, which beyond its global economic impact has created some deep social and psychological tensions within populations. While the adopted mitigation measures (including the lockdown) have generally proven useful, policymakers are now facing a critical question: how and when to lift the mitigation measures? A carefully-planned exit strategy is indeed necessary to recover from the pandemic without risking a new outbreak. Classically, exit strategies rely on mathematical modeling to predict the effect of public health interventions. Such models are unfortunately known to be sensitive to some key parameters, which are usually set based on rules-of-thumb. In this paper, we propose to augment epidemiological forecasting with actual data-driven models that will learn to fine-tune predictions for different contexts (e.g., per country). We have therefore built a pandemic simulation and forecasting toolkit that combines a deep learning estimation of the epidemiological parameters of the disease in order to predict the cases and deaths, and a genetic algorithm component searching for optimal trade-offs/policies between constraints and objectives set by decision-makers. Replaying pandemic evolution in various countries, we experimentally show that our approach yields predictions with much lower error rates than pure epidemiological models in 75\% of the cases and achieves a 95\% R2 score when the learning is transferred and tested on unseen countries. When used for forecasting, this approach provides actionable insights into the impact of individual measures and strategies.},
+address = {New York, NY, USA},
+author = {Ghamizi, Salah and Rwemalika, Renaud and Cordy, Maxime and Veiber, Lisa and Bissyand{\'{e}}, Tegawend{\'{e}} F. and Papadakis, Mike and Klein, Jacques and {Le Traon}, Yves},
+booktitle = {Proceedings of the 26th ACM SIGKDD International Conference on Knowledge Discovery \& Data Mining},
+doi = {10.1145/3394486.3412863},
+eprint = {2006.07087},
+isbn = {9781450379984},
+keywords = {covid19,deep learning,exit strategies,pandemic,prediction,search-based optimization,seir},
+month = {8},
+pages = {3434--3442},
+publisher = {ACM},
+title = {{Data-driven Simulation and Optimization for Covid-19 Exit Strategies}},
+year = {2020}
+}
+
 
 
 @inproceedings{Kim2020,
@@ -1825,6 +1921,15 @@ year = {2021}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% ONLINE RESOURCES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@online{W3C2004,
+url={https://www.w3.org/TR/DOM-Level-3-Core/introduction.html},
+title={What is the Document Object Model?},
+author={World Wide Web Consortium},
+year={2004},
+month={4},
+addendum = {(accessed: 15.01.2021)}
+}
 
 @online{Jain2007,
   author = {Naresh Jain},
@@ -1931,6 +2036,15 @@ urldate={2021-01-16}
   urldate = {2020-07-02}
 }
 
+@online{W3C2018,
+url={https://drafts.csswg.org/selectors-3/},
+title={Selectors Level 3 - W3C Candidate Recommendation},
+author={World Wide Web Consortium},
+year={2018},
+month={1},
+urldate={2021-01-21}
+}
+
 @online{Dharmender2017,
   author = {Kumar Dharmender},
   title = {Automation Testing: Anti-patterns},
@@ -2009,6 +2123,15 @@ urldate={2021-01-16}
   year = 2019,
   url = {https://yonigoldberg.medium.com/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347},
   urldate = {2020-07-02}
+}
+
+@online{Grigorik2019,
+url={https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction},
+title={Render-tree Construction, Layout, and Paint},
+author={Grigorik, Ilya},
+year={2019},
+month={2},
+urldate={2021-01-28}
 }
 
 @online{Jones2019,

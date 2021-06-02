@@ -1,0 +1,59 @@
+\section{Introduction}
+\label{sec:hpath-introduction}
+
+\subsection{Document Object Model}
+\label{sec:hpath-introduction-DOM}
+
+The Document Object Model (DOM) is an application programming interface (API) maintained by the World Wide Web Consortium (W3C) until 2004 and then took over by the Web Hypertext Application Technology Working Group (WHATWG). The goal of the standard is to provide an API allowing to use it with different languages in broad range of environments to generate HTML, RSS and other well-formed XML documents. According to the definition provided by the W3C, the DOM defines the logical structure of documents and the way a document is accessed and manipulated. In this definition, a \emph{document} is the representation of a set of information that may be stored in diverse systems which would traditionally be described as data. In this above definition, XML presents the data as documents and the DOM may be used to manage this data \cite{W3C2004}.
+
+In this work, we view a DOM as a rooted, unranked and ordered tree $D$ where each node $n_D \in N_D$ is labeled. The root node $n_R$ instantiated by a \emph{Document object} allows to associate to each DOM tree $D$ an encoding, a content type, a URL, an origin, a type and a mode. Any node $N_D$ reachable from $n_R$ is said to be contained in the tree and by extension in the document. With different specification, different nodes may have different specialization (\emph{e.g.} providing information about the language of the document, containing raw text, etc.).
+
+\subsection{Hypertext Markup Language}
+\label{sec:hpath-introduction-HTML}
+
+Hypertext Markup Language (HTML) is a standard markup derived from the eXtensible Markup Language (XML). It is maintained by the Web Hypertext Application Technology Working Group (WHATWG) and designed to display the Document Object Model (DOM) in a web page. In its current implementation, HTML5, it specifies a set of more granular content models which allow to improve support for multimedia and while maintaining good machine parsing capabilities, ease its readability by humans. The specification of HTML5 can be found in the HTML Living Standard documentation \cite{WHATWG2021}. The HTML syntax consists in a tree differentiating two types of nodes: (1) encoded marker (tags) differentiating bits of information composing the document or defining anchors for multimedia content and referred to as elements $E$ and (2) any other types of nodes containing data\footnote{text node, CDATA section node, comment node,.} or lower level structural properties\footnote{attribute node, processing instruction node, document node, document type node.} of the document $N$.
+
+The root of an HTML document tree is an \emph{html} element, $e_{html}$. The standard enforces the presence of two unique elements as direct children of $e_{html}$ that can appear only once in the document: a \emph{head} element, $e_{head}$ and a \emph{body} element, $e_{body}$. $e_{body}$ is the sectioning root that represents the content of the document. With HTML5 a lot of semantic has been added to children elements of $e_{body}$. In this work we follow the categories presented in the HTML elements reference \cite{MDN2020,WHATWG2021} (Table~\ref{tab:hpath-introduction-html5}).
+
+\begin{table}
+\centering
+\caption{Categories of elements defined by the HTML elements references. When the scope of our category differs from the HTML element references, the original merged categories are mentioned in footnote.}
+\label{tab:hpath-introduction-html5}
+\begin{tabular}{>{\raggedright}m{1.3in}>{\raggedright}m{3.5in}}
+\toprule
+\textbf{\scriptsize{Category}} & \textbf{\scriptsize{Description}}\tabularnewline
+\toprule
+\scriptsize{\textit{Document Metadata}} & \scriptsize{Elements encapsulating data that are not present in the page, but rather, affects the way content is presented or provides additional information about the document. \emph{e.g.} $E_{link}$, $E_{meta}$ and $E_{style}$.} \tabularnewline
+\scriptsize{\textit{Content Sectioning}} & \scriptsize{Elements providing landmark to organize the content of a document into logical pieces. According to the W3C recommendation, the structural information conveyed visually to users should be represented programmatically by the appropriate sectioning element defined by the ARIA landmark roles\cite{W3C2014}. \emph{e.g.} $E_{aside}$, $E_{footer}$, $E_{nav}$, etc.} \tabularnewline
+\scriptsize{\textit{Text Content\parnote{\scriptsize{Text Content and Table Content.}}}} & \scriptsize{Elements organizing blocks of content, typically text. \emph{e.g.} $E_{li}$, $E_{p}$, $E_{blockquote}$, etc.} \tabularnewline
+\scriptsize{\textit{Inline Text Semantics\parnote{\scriptsize{Inline Text Semantics and Demarcating Edits.}}}} & \scriptsize{Elements formating text such as bold, italic, etc. There are also knowon as \emph{inline} content. \emph{e.g.} $E_{em}$, $E_{strong}$, $E_{cite}$, $E_{small}$, etc.}\tabularnewline
+\scriptsize{\textit{Embedded Content\parnote{\scriptsize{Embedded Content, Image \& Multimedia, SVG \& MathML and Web Components.}}}} & \scriptsize{Elements allowing to embedded multimedia resources and other content. They provide information about where to load the content from and how to display it. \emph{e.g.} $E_{img}$, $E_{object}$, $E_{embed}$, $E_{video}$, etc.} \tabularnewline
+\scriptsize{\textit{Interactive\parnote{\scriptsize{Interactive and Form.}}}} & \scriptsize{Elements with which a user can interact with. Typically it represents input elements. \emph{e.g.} $E_{input}$, $E_{button}$, etc.} \tabularnewline
+\scriptsize{\textit{Scripting}} & \scriptsize{Elements allowing to integrate scripting in order to create dynamic content and Web application. \emph{e.g.} $E_{canvas}$, $E_{noscript}$ and $E_{script}$} \tabularnewline
+\bottomrule
+\end{tabular}
+\parnotes
+\end{table}
+
+A specificity of an HTML document is its focus on presentation of the data. Thus, a mechanism to apply styles and positioning to elements under the sectioning root, $e_{body}$, was introduced under the form of the Cascading Style Sheet (CSS). CSS defines a set of styling rules that are to be applied to target elements described by a CSS selector (see Section~\ref{sec:hpath-introduction-css-selector}).
+
+Finally, the HTML standard reserve two elements with no meaning by themselves: the div element, $E_{div}$, from the Content Sectioning category and the span element, $E_{span}$, from the Inline Text Semantics category. These two types do not hold any semantic meaning. Both these elements act as placeholders to mark up user defined semantics common to their children through the use of global attributes, \emph{e.g.} class, id or name. This specific semantics can be useful when used with styling where a subtree can be targeted by a style rule or when interacting with a script to apply some processing to a portion of the document.
+
+\subsection{DOM-based Locators}
+\label{sec:hpath-introduction-locators}
+
+A DOM-based locator can be defined as a query language for selecting a subset of targeted nodes $N_{target} \subseteq N_D$ where $N_D$ is the set of nodes contained in the document $D$. Hence, a DOM-based locator is query on a tree $D$ returning a set of nodes $N_{target} \subseteq N_D$ where the size $|N_{target}|$ varies between 0 and $|N_D|$. The HTML standard describes two ways of querying a set of nodes $N_{target} \subseteq N_D$ in a HTML document: XPath and CSS Selector. 
+
+\subsubsection{XPath}
+\label{sec:hpath-introduction-xpath}
+
+XML Path Language also known as XPath came from an effort to provide a common syntax and semantics to identify parts of an XML document\cite{W3C2016}. Thus, the query language is not bounded to HTML document but rather to any XML compliant document\footnote{Note that the W3C describes a slightly modified version of the XPath 1.0 standard to interact with HTML documents.}. To query $N_{target}$, XPath relies on the concept of location path. A location path\cite{Gottlob2002} is a series of successive steps traversing the XML tree. At each step, a set of nodes, referred to as context nodes, are uniquely identified. The direct left step of the context node describe the parent node and the right step describes child nodes. During the evaluation of a context node, predicates allow to filter subset of nodes among their siblings (\emph{e.g.} all nodes with a specific attribute). Hence during the location path resolution, the path is traversed from left to right, filtering out part of the tree until it reaches the right-most step and returns the result of the query. If the left-most step is the root of the tree, we call it an absolute XPath (\emph{e.g.} /html/body/div/form/button), otherwise, if the left-most step describes the root of one or many subtrees in the document, it is said to be a relative XPath (\emph{e.g.} //button[@id="validate"]). 
+
+Each step can be defined by a selection node criteria, an optional axis relation and an optional set of predicates\cite{Barton2003}. The selection node criteria defines the element tag from the HTML document. An axis represents a relationship to the context node, and locates relative nodes (parent, self, attributes, preceding, etc.) in the document (\emph{e.g.} //ancestor-or-self::book which selects all ancestors of type book of the context node or the context node itself if it has a tag book). The predicate is an expression contained between brackets after the node criteria allowing more fine grain selection during the evaluation of the step. Predicates can express logical expressions, arithmetic operations or string manipulations \cite{Gottlob2005} (\emph{e.g.} //a[contains(text()="Partial text")]).
+
+\subsubsection{CSS Selector}
+\label{sec:hpath-introduction-css-selector}
+
+Contrarily to XPath that relies on location paths, CSS Selector is a structure that determines which elements are matched in the document tree by a pattern described by the locator. Here, the locator is a chain of one or more sequences of simple selectors separated by combinators\cite{W3C2018} represented by ">". The CSS standard defines 6 types of simple selectors supported by the standard: (1) type selector, (2) universal selector, (3) attribute selector, (4) class selector, (5) ID selector and (6) pseudo-class. The type selector qualify an element based on its tag, a class selector based on the class attribute of the element and an ID selector relies on the id attribute of the element. A universal selector is a wild card character (*) allowing to match any substring. The attribute selector is a generalization of the ID selector and the class selector where the name of the attribute and its values are defined. Finally, the pseudo-class concept is introduced to permit selection based on information lying outside the HTML document or that cannot be expressed using other simple selectors (\emph{e.g.} a:visited which allows to target an anchor element, $E_a$, that has already been visited).
+
+Both XPath and CSS Selector rely on internal properties of the elements they target by exploiting the elements attributes (id, class, etc.) which is the cause of their limited flexibility to DOM evolution. In the following section, we present HPath aiming at alleviating this limitation of DOM-based locators.

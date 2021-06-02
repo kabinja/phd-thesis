@@ -1,0 +1,110 @@
+\section{Research Protocol}
+
+\subsection{Definitions}
+\label{sec:evolution-protocol-definitions}
+
+\begin{itemize}
+    \item \textbf{Tree}: Keywords can be represented as trees, thus, we can define a $tree\; T$ as an ordered, directed, acyclic graph with nodes $N(T)$ and edges $E(T) \subseteq N(T) \times N(T)$. The nodes of the tree denote keywords and each edge between two keywords denotes a ``step'': the parent keyword has the child keyword as a \emph{step}. For instance, in Figure \ref{fig:robotframework_tree}, keyword ``Open Browser To Login Page'' has four steps: ``Open Browser'', ``Maximize Browser Window'', ``Set Selenium Speed'' and ``Login Page Should Be Open''. As the tree is ordered, the execution of the steps will follow the order in the tree, from left to right. A node with no parent is a $root$ node that should be defined in the \emph{Test Case} block,  while a node with no children is a $leaf$ node and should be a \emph{Library Keyword}.
+
+    \item \textbf{Keyword Level}: The \emph{level} of keyword $k$, is the maximum number of edges that exist on the subpath(s) from $k$ to a leaf keyword. In Figure \ref{fig:robotframework_tree}, ``Login Page Should Be Open'' is a \emph{level 1} keyword whereas ``Open Browser To Login Page'' is a \emph{level 2}. \emph{Library Keywords} at the leaves of the tree have a \emph{level 0}.
+
+    \item \textbf{Keyword Connectivity}: Connectivity is a metric of reusability among the keywords. A keyword can belong to several test cases represented as trees: let keyword $k$ belong to trees $T_1, T_2, ... T_n$, i.e. $k \in N(T_1) \cup N(T_2) \cup ... \cup N(T_n)$, then we calculate the connectivity of $k$ by counting the number of nodes (keywords) in the subpath(s) from the root nodes of $T_1, T_2, ... T_n$ to $k$.
+
+    \item \textbf{Keyword Churn}: Keyword churn is the number of lines of code added, edited or deleted from one version to the next over a period of time.
+\end{itemize}
+
+The last 3 definitions correspond to metrics used in our study. The \emph{keyword level} is used to group keywords having equal levels together. According to the philosophy of KDT, lower level keywords should be more linked to the technical details of the SUT whereas higher level keywords should be more abstract, expressing the functional requirements. The \emph{ connectivity} metric expresses the degree to which a keyword is reused and, as a consequence, the degree to which a change to this keyword can impact the test suite. Finally, the \emph{churn} corresponds to the degree to which a keyword is changed during the evolution of the test suite.
+
+\subsection{Answering RQ1}
+\label{sec:evolution-protocol-rq1}
+
+To answer RQ1, we extract all the changes occurring in the test suite and group them per type of change. The types identified describe an action (insert, update, delete) performed on a code unit element (\emph{User Keyword}, \emph{Test Case}, \emph{Variable}, etc.). 
+
+To this end, we extracted the 129 commits from the evolution of TestSuiteA. For each pair of consecutive commits, we gather the changes using a fine grain change algorithm.
+
+The algorithm relies on previous, state-of-the-art studies \cite{Chawathe1996, Falleri2014, Fluri2007, Pinto2012}. In these studies, the authors built abstract syntax trees (ASTs) of Java classes and used tree edit distance algorithms to extract an optimal change path from one tree to the other, with each tree corresponding to a version of the code base.
+
+To detect the changes, the algorithm works in two phases:
+
+\begin{enumerate}
+    \item Finding a match between elements of $v_1 \in V$ and $v_2 \in V$ where $V$ is the set of versions -- with one version corresponding to one commit -- to come up with a mapping $e_{1n} \rightarrow e_{2n}$ where $e_{mn} \in E_n$ and $E_n$ is the set of elements from $v_n$.
+  
+    \item Finding a minimum edit script that transforms $V_1$ to $V_2$ given the computed mapping.
+\end{enumerate}
+
+Phase 1 is essential to the edit script since the more elements that can be matched, the better the minimum edit script will perform. Phase 2 produces  an edit script detecting the basic edit operations \emph{INSERT}, \emph{UPDATE}, \emph{DELETE} for each pair of matched elements.
+
+\begin{algorithm}[!t]
+\caption{Element Matcher}
+\label{alg:element_matcher}
+\begin{algorithmic}[1] 
+\REQUIRE $E_1 \subset v_n$, $E_2 \subset v_{n+1}$
+\ENSURE final matching set: $M_{final}$
+\STATE $M_{final} \leftarrow \emptyset$
+\STATE $E_{1,unmatched} \leftarrow \emptyset$
+\FOR{$e_1 \in E_1$}
+\IF{$findMatchFileAndName(e_1,E_2)$}
+\STATE $M_{final} \leftarrow M_{final} \cup (e_1,e_2)$
+\STATE $E_2 \leftarrow E_2 - e_2$
+\ELSE
+\STATE $E_{1,unmatched} \leftarrow E_{1,unmatched} \cup e_1$
+\ENDIF
+\ENDFOR
+\FOR{$e_1 \in E_{1,unmatched}$}
+\IF{$findMatchFileAndContent(e_1,E_2)$}
+\STATE $M_{final} \leftarrow M_{final} \cup (e_1,e_2)$
+\STATE $E_2 \leftarrow E_2 - e_2$
+\ELSIF{$findMatchNameAndContent(e_1,E_2)$}
+\STATE $M_{final} \leftarrow M_{final} \cup (e_1,e_2)$
+\STATE $E_2 \leftarrow E_2 - e_2$
+\ELSE
+\STATE $M_{final} \leftarrow M_{final} \cup (e_1,\emptyset)$
+\ENDIF
+\ENDFOR
+\FOR{$e_2 \in E_2$}
+\STATE $M_{final} \leftarrow M_{final} \cup (\emptyset, e_2)$
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+
+Listing \ref{alg:element_matcher} presents the algorithm used for phase 1 to find an appropriate matching set $E_{1n} \rightarrow E_{2n}$.
+
+\begin{itemize}
+    \item \textbf{Lines 3--10}: Search for two elements present in the same file with the same name. If no match is found from $e_1 \in E_1$, it is tagged as unmatched.
+
+  \item \textbf{Lines 11--21}:  The same operation is performed, relaxing the constraints. First, at line 12 the name is relaxed, to check if the element was renamed. Then at line 15 the file is relaxed to check if the element was moved to another file. If no suitable match is found for $e_1 \in E_1$, it is matched with a $null$ element and will be consider as a \emph{DELETE} operation in phase 2.
+
+\item \textbf{Lines 22--24}: Check if there are elements from $E_2$ that weren't matched, in which case they will be considered as an \emph{INSERT} operation in phase 2.
+\end{itemize}
+
+In phase 2, for each pair of matched elements, we extract the differences. In the case of \emph{User Keyword} and \emph{Test Case}, we use an edit distance algorithm on the sequence of steps which is a modification of the \emph{String-to-String} algorithm presented in \cite{Ukkonen1985} using the Levenshtein edit distance.
+
+\subsection{Answering RQ2}
+\label{sec:evolution-protocol-rq2}
+
+For each keyword we extract its level and connectivity, using the tree structure of KDT presented in Section~\ref{sec:evolution-protocol-definitions}. We then cluster the keywords by each of these metrics. For each group, we analyze the number of changes performed and the keyword churn. In order to avoid skewing the churn results, we compute the churn during ``Creation'' and ``Maintenance'' separately.
+
+Next, we attempt to provide an estimation of the number of changes saved due to the reusability offered by KDT. To answer this, for each tests, we create a sequence of steps executed during execution. Therefore, if a keyword is used twice, the steps from that keyword would appear twice in the sequence. We then compute the changes for each sequence of step execution from one version to the next. The sequences of steps obtained are similar to the ones generated by a classical Capture/Replay (CR) tool. While these results cannot be used to directly compare the maintenance cost of CR and KDT, it provides an estimation of the benefits of reusing keywords.
+
+\subsection{Answering RQ3}
+\label{sec:evolution-protocol-rq3}
+
+To answer this question, we extract similar keywords, also referred to as clones in the literature, and we analyze their evolution. To detect test clones in KDT test suites, we built a clone detection tool specifically designed for KDT test code. The tool is based on the fine grain change algorithm presented in the previous section. We extract the differences between each pair of keywords $k_1, k_2 \in E_n$, ignoring changes related to documentation and \emph{update name} (cf. Table~\ref{table:total_changes}).  For each pair $k_1, k_2$ we check whether they belong to one of the two types of clones analyzed in our work (definitions adopted from \cite{Lavoie2017}):
+
+\begin{itemize}
+    \item \textbf{Type I keyword clones}: identical keywords except for changes in white space, layout and documentation. The clone detection tool tags a keyword pair as Type I clones only in the case of an empty set of differences.
+  
+    \item \textbf{Type II keyword clones}: keywords with a content syntactically  identical except for step arguments. The clone detection tool tags a pair as Type II clones only if the set contains differences of type \emph{update step arguments} and/or \emph{update step return values} from Table~\ref{table:total_changes}.
+\end{itemize}
+
+ Additionally, for each keyword, we extract the set of changes happening during the period under study. From this change list, we define 3 types of keyword evolution:
+ 
+ \begin{itemize}
+   \item \textbf{Keyword evolving}: If the change list of a keyword $k$ is not empty, it is defined as evolving.
+   
+   \item \textbf{Keyword co-evolving}: Among the set of keywords evolving, keywords $k_1, k_2$ are defined as co-evolving if their changed list is identical.
+   
+   \item \textbf{Keyword not evolving}: Keyword $k$ is defined as not evolving if its change list is empty. 
+ \end{itemize}
+
+ Finally, we analyze the relationship between keyword evolution and keyword similarity by cross analysis of categories.

@@ -29,11 +29,14 @@ The process described in section~\ref{sec:experience-design-smells-collection} l
 \begin{table}
 \centering
 
-\begin{tabularx}{\textwidth}{>{\raggedright}p{1.5in}>{\raggedright}p{4in}}
+\caption{Catalogue of SUIT Smells and their origin. Smell in bold are associated with a metric and a complete description is presented in Section~\ref{sec:results-smells-catalogue}.}
+\label{tab:smell-catalogue}.
 
-\hline
-\textbf{Name} & \textbf{Sources}\tabularnewline
-\hline
+\begin{tabular}{>{\raggedright}p{1.5in}>{\raggedright}p{4in}}
+
+\toprule
+\scriptsize{\textbf{Name}} & \scriptsize{\textbf{Sources}}\tabularnewline
+\toprule
 
 \scriptsize{\textbf{Army of Clones}} & \scriptsize{\cite{Chen2012, Hauptmann2013, Hauptmann2015, Jones2019}} \tabularnewline 
 
@@ -106,11 +109,9 @@ The process described in section~\ref{sec:experience-design-smells-collection} l
 
 \scriptsize{Unsuitable Naming} & \scriptsize{\cite{Chen2012, Goldberg2019, Shay2019, Sheth2020}} \tabularnewline
 
-\hline
-\end{tabularx}
+\bottomrule
+\end{tabular}
 
-\caption{Catalogue of SUIT Smells and their origin. Smell in bold are associated with a metric and a complete description is presented in Section~\ref{sec:results-smells-catalogue}.}
-\label{tab:smell-catalogue}.
 \end{table}
 
 Building on the tree model introduced in Section~\ref{sec:tree-representation-KDT} we represent each test $t$ as a rooted, ordered, directed, acyclic graph. The nodes, $N_t$, of the tree represent the set of calls to \emph{Keywords}, $C_t$ and the set of of arguments $A$ passed to the calls. A call, $c_t$ can be associated to a type namely: USER, INTERACTION, ASSERTION, CONTROLFLOW, GETTER, LOGGING and SYNC. Thus, the set of calls in a test performing an assertion is noted $C_{t, assertion}$. Finally, the definition of the \emph{User Kyeword} called by a test $t$ is noted $K_t$. Following this notation, we formally describe each smell for which a metric can be extracted with respect to its symptoms, its impact, and the metrics chosen to measure the prevalence of the symptoms following the protocol presented in Section~\ref{sec:smell-detection}. Finally, we present the refactoring actions removing the symptoms from the test code base.
@@ -729,33 +730,34 @@ To conclude, the symptoms \emph{Hard Coded Values} (90\% of the tests), \emph{Ov
 \begin{table}
 \centering
 
-\begin{tabularx}{0.85\textwidth}{>{\raggedright}p{1.3in}>{\raggedleft}p{0.5in}>{\raggedleft}p{0.5in}>{\raggedleft}p{0.5in}>{\raggedleft}p{0.5in}}
-
-\hline
-& \multicolumn{2}{c}{\textbf{Industrial}} & \multicolumn{2}{c}{\textbf{Open Source}} \tabularnewline
-\textbf{Symptom} & \textbf{Count} & \textbf{Percent}  & \textbf{Count} & \textbf{Percent} \tabularnewline
-\hline
-Army of Clones & 738 & 36.64 & 10,139 & 24.42 \tabularnewline
-Conditional Assertions & 9 & 4.95 & 270 & 0.32 \tabularnewline
-Hardcoded Environment & 0 & 0.00 & 882 & 9.95 \tabularnewline
-Hardcoded Values & 226 & 18.44 & 28,863 & 17.09 \tabularnewline
-Hidden Test Data & 0 & 0.00 & 0 & 0.00 \tabularnewline
-Lack of Encapsulation & 8 & 0.00 & 10,944 & 11.52 \tabularnewline
-Long Test Steps & 0 & 0.00 & 34 & 0.19 \tabularnewline
-Middle Man & 1,037 & 39.57 & 55,509 & 27.62 \tabularnewline
-\textbf{Missing Assertion} & \textbf{6,647} & \textbf{90.45} & \textbf{137,707} & \textbf{72.86} \tabularnewline
-Narcissistic & 0 & 0.00 & 0 & 0.00 \tabularnewline
-Noisy Logging & 0 & 0.00 & 0 & 0.00 \tabularnewline
-On the Fly & 27 & 13.85 & 516 & 7.93 \tabularnewline
-Over-Checking & 35 & 3.46 & 21,586 & 15.50 \tabularnewline
-Sensitive Locators & 2 & 4.55 & 0 & 0.00 \tabularnewline
-Sneaky Checking & 0 & 0.00 & 0 & 0.00 \tabularnewline
-Stinky Synchronization & 38 & 4.92 & 23,163 & 23.28 \tabularnewline
-\hline
-\end{tabularx}
-
 \caption{Number of refactoring actions (\emph{Count}) and percentage of symptomatic tests where at least one refactoring action was performed during their lifetime (\emph{Percent}) for industrial and open source projects.}
 \label{tab:fixes}
+
+\begin{tabular}{>{\raggedright}p{1.3in}>{\raggedleft}p{0.5in}>{\raggedleft}p{0.5in}>{\raggedleft}p{0.5in}>{\raggedleft}p{0.5in}}
+
+\toprule
+& \multicolumn{2}{c}{\scriptsize{\textbf{Industrial}}} & \multicolumn{2}{c}{\scriptsize{\textbf{Open Source}}} \tabularnewline
+\scriptsize{\textbf{Symptom}} & \scriptsize{\textbf{Count}} & \scriptsize{\textbf{Percent}}  & \scriptsize{\textbf{Count}} & \scriptsize{\textbf{Percent}} \tabularnewline
+\toprule
+\scriptsize{Army of Clones} & \scriptsize{738} & \scriptsize{36.64} & \scriptsize{10,139} & \scriptsize{24.42} \tabularnewline
+\scriptsize{Conditional Assertions} & \scriptsize{9} & \scriptsize{4.95} & \scriptsize{270} & \scriptsize{0.32} \tabularnewline
+\scriptsize{Hardcoded Environment} & \scriptsize{0} & \scriptsize{0.00} & \scriptsize{882} & \scriptsize{9.95} \tabularnewline
+\scriptsize{Hardcoded Values} & \scriptsize{226} & \scriptsize{18.44} & \scriptsize{28,863} & \scriptsize{17.09} \tabularnewline
+\scriptsize{Hidden Test Data} & \scriptsize{0} & \scriptsize{0.00} & \scriptsize{0} & \scriptsize{0.00} \tabularnewline
+\scriptsize{Lack of Encapsulation} & \scriptsize{8} & \scriptsize{0.00} & \scriptsize{10,944} & \scriptsize{11.52} \tabularnewline
+\scriptsize{Long Test Steps} & \scriptsize{0} & \scriptsize{0.00} & \scriptsize{34} & \scriptsize{0.19} \tabularnewline
+\scriptsize{Middle Man} & \scriptsize{1,037} & \scriptsize{39.57} & \scriptsize{55,509} & \scriptsize{27.62} \tabularnewline
+\scriptsize{\textbf{Missing Assertion}} & \scriptsize{\textbf{6,647}} & \scriptsize{\textbf{90.45}} & \scriptsize{\textbf{137,707}} & \scriptsize{\textbf{72.86}} \tabularnewline
+\scriptsize{Narcissistic} & \scriptsize{0} & \scriptsize{0.00} & \scriptsize{0} & \scriptsize{0.00} \tabularnewline
+\scriptsize{Noisy Logging} & \scriptsize{0} & \scriptsize{0.00} & \scriptsize{0} & \scriptsize{0.00} \tabularnewline
+\scriptsize{On the Fly} & \scriptsize{27} & \scriptsize{13.85} & \scriptsize{516} & \scriptsize{7.93} \tabularnewline
+\scriptsize{Over-Checking} & \scriptsize{35} & \scriptsize{3.46} & \scriptsize{21,586} & \scriptsize{15.50} \tabularnewline
+\scriptsize{Sensitive Locators} & \scriptsize{2} & \scriptsize{4.55} & \scriptsize{0} & \scriptsize{0.00} \tabularnewline
+\scriptsize{Sneaky Checking} & \scriptsize{0} & \scriptsize{0.00} & \scriptsize{0} &\scriptsize{0.00} \tabularnewline
+\scriptsize{Stinky Synchronization} & \scriptsize{38} & \scriptsize{4.92} & \scriptsize{23,163} & \scriptsize{23.28} \tabularnewline
+\bottomrule
+\end{tabular}
+
 \end{table}
 
 While Section~\ref{sec:results-smells-diffusion} focuses on the prevalence of smell symptoms across SUITs, this section tackles the question of how often the symptoms are refactored by practitioners. Thus, relying on the definition of a symptom, we use the methodology described in Section~\ref{sec:methodology-smell-evolution} to extract the fine-grained changes removing a symptom from the test, \emph{i.e.} refactoring actions.
