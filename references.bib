@@ -404,6 +404,19 @@ title = {{Robust web extraction}},
 year = {2009}
 }
 
+@article{Fu2009,
+abstract = {Since manual black-box testing of GUI-based APplications (GAPs) is tedious and laborious, test engineers create test scripts to automate the testing process. These test scripts interact with GAPs by performing actions on their GUI objects. Unlike conventional languages that require programmers to declare types of variables explicitly, test script statements reference GUI objects using their properties (e.g., location, color, size, etc). The absence of type information exacerbates the process of understanding test scripts, making maintenance and evolution of these scripts expensive and prohibitive, thus obliterating benefits of test automation. We offer a novel approach for Type Inference of GUI Object References (TIGOR) in test scripts. TIGOR makes types of GUI objects explicit in the source code of scripts, enabling test engineers to reason more effectively about the interactions between operations in complex test scripts and GUI objects that these operations reference. We describe our implementation and give an algorithm for automatically inferring types of GUI objects. We built a tool and evaluated it on different GAPs. Our experience suggests that TIGOR is practical and efficient, and it yields appropriate types of GUI objects.},
+author = {Fu, Chen and Grechanik, Mark and Xie, Qing},
+doi = {10.1109/ICST.2009.12},
+isbn = {9780769536019},
+journal = {Proceedings of the 2nd International Conference on Software Testing, Verification, and Validation, ICST 2009},
+pages = {1--10},
+publisher = {IEEE},
+title = {{Inferring types of references to GUI objects in test scripts}},
+year = {2009}
+}
+
+
 @inproceedings{Grechanik2009,
 abstract = {Since manual black-box testing of GUI-based APplications (GAPs) is tedious and laborious, test engineers create test scripts to automate the testing process. These test scripts interact with GAPs by performing actions on their GUI objects. As GAPs evolve, testers should fix their corresponding test scripts so that they can reuse them to test successive releases of GAPs. Currently, there are two main modes of maintaining test scripts: tool-based and manual. In practice, there is no consensus what approach testers should use to maintain test scripts. Test managers make their decisions ad hoc, based on their personal experience and perceived benefits of the tool-based approach versus the manual. In this paper we describe a case study with forty five professional programmers and test engineers to experimentally assess the tool-based approach for maintaining GUIdirected test scripts versus the manual approach. Based on the results of our case study and considering the high cost of the programmers' time and the lower cost of the time of test engineers, and considering that programmers often modify GAP objects in the process of developing software we recommend organizations to supply programmers with testing tools that enable them to fix test scripts faster so that these scripts can unit test software. The other side of our recommendation is that experienced test engineers are likely to be as productive with the manual approach as with the tool-based approach, and we consequently recommend that organizations do not need to provide each tester with an expensive tool license to fix test scripts.},
 author = {Grechanik, Mark and Xie, Qing and Fu, Chen},
@@ -492,6 +505,19 @@ volume = {1},
 year = {2010}
 }
 
+@inproceedings{Huang2010,
+abstract = {Recent advances in automated functional testing of Graphical User Interfaces (GUIs) rely on deriving graph models that approximate all possible sequences of events that may be executed on the GUI, and then use the graphs to generate test cases (event sequences) that achieve a specified coverage goal. However, because these models are only approximations of the actual event flows, the generated test cases may suffer from problems of infeasibility, i.e., some events may not be available for execution causing the test case to terminate prematurely. In this paper we develop a method to automatically repair GUI test suites, generating new test cases that are feasible. We use a genetic algorithm to evolve new test cases that increase our test suite's coverage while avoiding infeasible sequences. We experiment with this algorithm on a set of synthetic programs containing different types of constraints and for test sequences of varying lengths. Our results suggest that we can generate new test cases to cover most of the feasible coverage and that the genetic algorithm outperforms a random algorithm trying to achieve the same goal in almost all cases.},
+author = {Huang, Si and Cohen, Myra B. and Memon, Atif M.},
+booktitle = {2010 Third International Conference on Software Testing, Verification and Validation},
+doi = {10.1109/ICST.2010.39},
+isbn = {978-1-4244-6435-7},
+pages = {245--254},
+publisher = {IEEE},
+title = {{Repairing GUI Test Suites Using a Genetic Algorithm}},
+year = {2010}
+}
+
+
 @book{Humble2010,
   abstract = {Getting software released to users is often a painful, risky, and time-consuming process. This groundbreaking new book sets out the principles and technical practices that enable rapid, incremental delivery of high quality, valuable new functionality to users. Through automation of the build, deployment, and testing process, and improved collaboration between developers, testers, and operations, delivery teams can get changes released in a matter of hours---sometimes even minutes---no matter what the size of a project or the complexity of its code base. Jez Humble and David Farley begin by presenting the foundations of a rapid, reliable, low-risk delivery process. Next, they introduce the deployment pipeline, an automated process for managing all changes, from check-in to release. Finally, they discuss the 'ecosystem' needed to support continuous delivery, from infrastructure, data and configuration management to governance. The authors introduce state-of-the-art techniques, including automated infrastructure management and data migration, and the use of virtualization. For each, they review key issues, identify best practices, and demonstrate how to mitigate risks.},
   address = {Upper Saddle River, NJ},
@@ -539,6 +565,21 @@ pages = {489--494},
 title = {{Experience with Maintenance of a Functional GUI Test Suite using IBM Rational Functional Tester}},
 year = {2010}
 }
+
+@inproceedings{Daniel2011,
+abstract = {To improve the overall user experience, graphical user interfaces (GUIs) of successful software systems evolve continuously. While the evolution is beneficial for end users, it creates several problems for developers and testers. Developers need to manually change the GUI code. Testers need to manually inspect and repair highly fragile test scripts. This is time-consuming and error-prone. The state-of-the-art tools for automatic GUI test repair use a black-box approach: they try to infer the changes between two GUI versions and then apply these changes to the test scripts. However, inferring these changes is challenging. We propose a white-box approach where the GUI changes are automated and knowledge about them is reused to repair the test cases appropriately. We use GUI refactorings as a means to encode the evolution of the GUIs. We envision a smart IDE that will record these refactorings precisely as they happen and will use them to change the GUI code and to repair test cases. We illustrate our approach through an example, discuss challenges that should be overcome to turn our vision into reality, and present a research agenda to address these challenges.},
+address = {New York, New York, USA},
+author = {Daniel, Brett and Luo, Qingzhou and Mirzaaghaei, Mehdi and Dig, Danny and Marinov, Darko and Pezz{\`{e}}, Mauro},
+booktitle = {2011 International Workshop on End-to-End Test Script Engineering, ETSE 2011 - Proceedings},
+doi = {10.1145/2002931.2002937},
+isbn = {9781450308083},
+keywords = {Automated GUI testing,GUI maintenance,GUI refactoring,Graphical user interfaces},
+pages = {38--41},
+publisher = {ACM Press},
+title = {{Automated GUI refactoring and test script repair (position paper)}},
+year = {2011}
+}
+
 
 @inproceedings{Choudhary2011,
 abstract = {Web applications tend to evolve quickly, resulting in errors and fail- ures in test automation scripts that exercise them. Repairing such scripts to work on the updated application is essential for maintain- ing the quality of the test suite. Updating such scripts manually is a time consuming task, which is often difficult and is prone to errors if not performed carefully. In this paper, we propose a tech- nique to automatically suggest repairs for such web application test scripts. Our technique is based on differential testing and compares the behavior of the test case on two successive versions of the web application: first version in which the test script runs successfully and the second version in which the script results in an error or fail- ure. By analyzing the difference between these two executions, our technique suggests repairs that can be applied to repair the scripts. To evaluate our technique, we implemented it in a tool calledWA- TER and exercised it on real web applications with test cases. Our experiments show thatWATER can suggest meaningful repairs for practical test cases, many of which correspond to those made later by developers themselves.},
@@ -701,6 +742,20 @@ title = {{Understanding Myths and Realities of Test-suite Evolution}},
 volume = {1},
 year = {2012}
 }
+
+@inproceedings{Thummalapenta2012,
+abstract = {Mention “test case”, and it conjures up the image of a script or a program that exercises a system under test. In industrial practice, however, test cases often start out as steps described in natural language. These are essentially directions a human tester needs to follow to interact with an application, exercising a given scenario. Since tests need to be executed repeatedly, such manual tests then have to go through test automation to create scripts or programs out of them. Test automation can be expensive in programmer time. We describe a technique to automate test automation. The input to our technique is a sequence of steps written in natural language, and the output is a sequence of procedure calls with accompanying parameters that can drive the application without human intervention. The technique is based on looking at the natural language test steps as consisting of segments that describe actions on targets, except that there can be ambiguity in identifying segments, in identifying the action in a segment, as well as in the specification of the target of the action. The technique resolves this ambiguity by backtracking, until it can synthesize a successful sequence of calls. We present an evaluation of our technique on professionally created manual test cases for two open-source web applications as well as a proprietary enterprise application. Our technique could automate over 82\% of the steps contained in these test cases with no human intervention, indicating that the technique can reduce the cost of test automation quite effectively.},
+author = {Thummalapenta, Suresh and Sinha, Saurabh and Singhania, Nimit and Chandra, Satish},
+booktitle = {Proceedings of the 34th International Conference on Software Engineering},
+doi = {10.1109/ICSE.2012.6227131},
+isbn = {978-1-4673-1066-6},
+month = {6},
+pages = {881--891},
+publisher = {IEEE},
+title = {{Automating test automation}},
+year = {2012}
+}
+
 
 @article{Utting2012,
 abstract = {Model-based testing (MBT) relies on models of a system under test and/or its environment to derive test cases for the system. This paper discusses the process of MBT and defines a taxonomy that covers the key aspects of MBT approaches. It is intended to help with understanding the characteristics, similarities and differences of those approaches, and with classifying the approach used in a particular MBT tool. To illustrate the taxonomy, a description of how three different examples of MBT tools fit into the taxonomy is provided.},
@@ -881,6 +936,24 @@ publisher = {IBM Corp.},
 title = {{A Multidimensional Empirical Study on Refactoring Activity}},
 year = {2013}
 }
+
+
+@inproceedings{Zhang2013,
+abstract = {A workflow is a sequence of UI actions to complete a specific task. In the course of a GUI application's evolution, changes ranging from a simple GUI refactoring to a complete rearchitecture can break an end-user's well-established workflow. It can be challenging to find a replacement workflow. To address this problem, we present a technique (and its tool implementation, called FlowFixer) that repairs a broken workflow. FlowFixer uses dynamic profiling, static analysis, and random testing to suggest a replacement UI action that fixes a broken workflow. We evaluated FlowFixer on 16 broken workflows from 5 realworld GUI applications written in Java. In 13 workflows, the correct replacement action was FlowFixer's first suggestion. In 2 workflows, the correct replacement action was FlowFixer's second suggestion. The remaining workflow was un-repairable. Overall, FlowFixer produced significantly better results than two alternative approaches.},
+address = {New York, NY, USA},
+author = {Zhang, Sai and L{\"{u}}, Hao and Ernst, Michael D.},
+booktitle = {Proceedings of the International Symposium on Software Testing and Analysis},
+doi = {10.1145/2483760.2483775},
+isbn = {9781450321594},
+keywords = {Dynamic analysis,GUI applications,workflows},
+month = {7},
+pages = {45--55},
+publisher = {ACM},
+title = {{Automatically repairing broken workflows for evolving GUI applications}},
+year = {2013}
+}
+
+
 
 @book{Bosch2014,
 abstract = {This book provides essential insights on the adoption of modern software engineering practices at large companies producing software-intensive systems, where hundreds or even thousands of engineers collaborate to deliver on new systems and new versions of already deployed ones. It is based on the findings collected and lessons learned at the Software Center (SC), a unique collaboration between research and industry, with Chalmers University of Technology, Gothenburg University and Malm{\"{o}} University as academic partners and Ericsson, AB Volvo, Volvo Car Corporation, Saab Electronic Defense Systems, Grundfos, Axis Communications, Jeppesen (Boeing) and Sony Mobile as industrial partners. The 17 chapters present the "Stairway to Heaven" model, which represents the typical evolution path companies move through as they develop and mature their software engineering capabilities. The chapters describe theoretical frameworks, conceptual models and, most importantly, the industrial experiences gained by the partner companies in applying novel software engineering techniques. The book's structure consists of six parts. Part I describes the model in detail and presents an overview of lessons learned in the collaboration between industry and academia. Part II deals with the first step of the Stairway to Heaven, in which R{\&}D adopts agile work practices. Part III of the book combines the next two phases, i.e., continuous integration (CI) and continuous delivery (CD), as they are closely intertwined. Part IV is concerned with the highest level, referred to as "R{\&}D as an innovation system," while Part V addresses a topic that is separate from the Stairway to Heaven and yet critically important in large organizations: organizational performance metrics that capture data, and visualizations of the status of software assets, defects and teams. Lastly, Part VI presents the perspectives of two of the SC partner companies. The book is intended for practitioners and professionals in the software-intensive systems industry, providing concrete models, frameworks and case studies that show the specific challenges that the partner companies encountered, their approaches to overcoming them, and the results. Researchers will gain valuable insights on the problems faced by large software companies, and on how to effectively tackle them in the context of successful cooperation projects.},
@@ -1180,6 +1253,21 @@ publisher = {IEEE},
 title = {{Using Multi-Locators to Increase the Robustness of Web Test Cases}},
 year = {2015}
 }
+
+@inproceedings{Leotta2015b,
+abstract = {Test scripts used for web testing rely on DOM locators, often expressed as XPaths, to identify the active web page elements and the web page data to be used in assertions. When the web application evolves, the major cost incurred for the evolution of the test scripts is due to broken locators, which fail to locate the target element in the new version of the software. We formulate the problem of automatically generating robust XPath locators as a graph exploration problem, for which we provide an optimal, greedy algorithm. Since such an algorithm has exponential time and space complexity, we present also a genetic algorithm.},
+author = {Leotta, Maurizio and Stocco, Andrea and Ricca, Filippo and Tonella, Paolo},
+booktitle = {2015 IEEE/ACM 8th International Workshop on Search-Based Software Testing},
+doi = {10.1109/SBST.2015.16},
+isbn = {978-1-4673-7079-0},
+keywords = {DOM-based Locators,Fragile Test,Web Element Locators,Web Testing,XPath Locators Robustness},
+month = {5},
+pages = {36--39},
+publisher = {IEEE},
+title = {{Meta-heuristic Generation of Robust XPath Locators for Web Testing}},
+year = {2015}
+}
+
 
 @article{Pandit2015,
 abstract = {User Acceptance Testing (UAT) has widespread implications in the software community. It involves not only the end-user, but the Quality Assurance (QA) team, developers, business analysts and top level management. UAT is conducted with the aim of developing confidence of the user in the software product. UAT is generally performed manually and not preferred to be automated. UAT frameworks exist for Agile methodologies such as Scrum. We propose a UAT process model which adapts the generic agile process model. Hence, it is able to encompass every agile methodology. AgileUAT, aims at generation of exhaustive acceptance test cases in natural language, based on acceptance criteria. It indicates whether the acceptance criteria is fulfilled or not, as a percentage value. The tool illustrates traceability among epics, user stories, acceptance criteria and acceptance test cases. We explore several different templates for user stories and acceptance criteria. In the future, we aim to provide a direct mapping between the acceptance criteria and acceptance test cases based on permutations and combinations using decision tables.},
@@ -1597,7 +1685,6 @@ year = {2018}
 abstract = {Agile methodologies enable companies to drastically increase software release pace and reduce time-to-market. In a rapidly changing environment, testing becomes a cornerstone of the software development process, guarding the system code base from the insertion of faults. To cater for this, many companies are migrating manual end-to-end tests to automated ones. This migration introduces several challenges to the practitioners. These challenges relate to difficulties in the creation of the automated tests, their maintenance and the evolution of the test code base. In this position paper, we discuss our preliminary results on such challenges and present two potential solutions to these problems, focusing on keyword-driven end-to-end tests. Our solutions leverage existing software artifacts, namely the test suite and an automatically-created model of the system under test, to support the evolution of keyword-driven test suites.},
 author = {Rwemalika, Renaud and Kintis, Marinos and Papadakis, Mike and {Le Traon}, Yves},
 booktitle = {CEUR Workshop Proceedings},
-issn = {16130073},
 title = {{Can we automate away the main challenges of end-to-end testing?}},
 volume = {2361},
 year = {2018}
@@ -1732,8 +1819,6 @@ abstract = {Previous work on vulnerability prediction assume that predictive mod
 address = {New York, NY, USA},
 author = {Jimenez, Matthieu and Rwemalika, Renaud and Papadakis, Mike and Sarro, Federica and {Le Traon}, Yves and Harman, Mark},
 booktitle = {Proceedings of the 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering},
-doi = {10.1145/3338906.3338941},
-isbn = {9781450355728},
 keywords = {Machine Learning,Prediction Modelling,Software Vulnerabilities},
 month = {8},
 pages = {695--705},
@@ -1758,11 +1843,26 @@ volume = {36},
 year = {2019}
 }
 
+@inproceedings{Li2019,
+abstract = {Repairing broken tests in evolving software systems is an expensive and challenging task. One of the main challenges for test repair, in particular, is preserving the intent of the original tests in the repaired ones. To address this challenge, we propose a technique for test repair that models and considers the intent of a test when repairing it. Our technique first uses a search-based approach to generate repair candidates for the broken test. It then computes, for each candidate, its likelihood of preserving the original test intent. To do so, the technique characterizes such intent using the path conditions generated during a dynamic symbolic execution of the tests. Finally, the technique reports the best candidates to the developer as repair recommendations. We implemented and evaluated our technique on a benchmark of 91 broken tests in 4 open-source programs. Our results are promising, in that the technique was able to generate intentpreserving repair candidates for over 79\% of those broken tests and rank the intent-preserving candidates as the first choice of repair recommendations for almost 70\% of the broken tests.},
+author = {Li, Xiangyu and D'Amorim, Marcelo and Orso, Alessandro},
+booktitle = {2019 12th IEEE Conference on Software Testing, Validation and Verification (ICST)},
+doi = {10.1109/ICST.2019.00030},
+isbn = {978-1-7281-1736-2},
+keywords = {Search-based software engineering,Software testing,Test case repair,Test intent characterization},
+month = {4},
+pages = {217--227},
+publisher = {IEEE},
+title = {{Intent-Preserving Test Repair}},
+year = {2019}
+}
+
+
 @inproceedings{Rwemalika2019,
 abstract = {Many companies rely on software testing to verify that their software products meet their requirements. However, test quality and, in particular, the quality of end-to-end testing is relatively hard to achieve. The problem becomes challenging when software evolves, as end-to-end test suites need to adapt and conform to the evolved software. Unfortunately, end-to-end tests are particularly fragile as any change in the application interface, e.g., application flow, location or name of graphical user interface elements, necessitates a change in the tests. This paper presents an industrial case study on the evolution of Keyword-Driven test suites, also known as Keyword-Driven Testing (KDT). Our aim is to demonstrate the problem of test maintenance, identify the benefits of Keyword-Driven Testing and overall improve the understanding of test code evolution (at the acceptance testing level). This information will support the development of automatic techniques, such as test refactoring and repair, and will motivate future research. To this end, we identify, collect and analyze test code changes across the evolution of industrial KDT test suites for a period of eight months. We show that the problem of test maintenance is largely due to test fragility (most commonly-performed changes are due to locator and synchronization issues) and test clones (over 30{\%} of keywords are duplicated). We also show that the better test design of KDT test suites has the potential for drastically reducing (approximately 70{\%}) the number of test code changes required to support software evolution. To further validate our results, we interview testers from BGL BNP Paribas and report their perceptions on the advantages and challenges of keyword-driven testing.},
 address = {Xi'an, China},
 author = {Rwemalika, Renaud and Kintis, Marinos and Papadakis, Mike and {Le Traon}, Yves and Lorrach, Pierre},
-booktitle = {2019 12th IEEE Conference on Software Testing, Validation and Verification (ICST)},
+booktitle = {Proceedings of the 12th IEEE Conference on Software Testing, Validation and Verification},
 keywords = {acceptance testing,end-to-end testing,keyword-driven testing,test clone,test code evolution},
 month = {4},
 pages = {335--345},
@@ -1776,11 +1876,8 @@ year = {2019}
 author = {Rwemalika, Renaud and Kintis, Marinos and Papadakis, Mike and Le Traon, Yves and Lorrach, Pierre},
 title = {Ukwikora: Continuous Inspection for Keyword-Driven Testing},
 year = {2019},
-isbn = {9781450362245},
 publisher = {Association for Computing Machinery},
-address = {New York, NY, USA},
-url = {https://doi-org.proxy.bnl.lu/10.1145/3293882.3339003},
-doi = {10.1145/3293882.3339003},
+address = {Beijing, China},
 abstract = {Automation of acceptance test suites becomes necessary in the context of agile software development practices, which require rapid feedback on the quality of code changes. To this end, companies try to automate their acceptance tests as much as possible. Unfortunately, the growth of the automated test suites, by several automation testers, gives rise to potential test smells, i.e., poorly designed test code, being introduced in the test code base, which in turn may increase the cost of maintaining the code and creating new one. In this paper, we investigate this problem in the context of our industrial partner, BGL BNP Paribas, and introduce Ukwikora, an automated tool that statically analyzes acceptance test suites, enabling the continuous inspection of the test code base. Ukwikora targets code written in the Robot Framework syntax, a popular framework for writing Keyword-Driven tests. Ukwikora has been successfully deployed at BGL BNP Paribas, detecting issues otherwise unknown to the automation testers, such as the presence of duplicated test code, dead test code and dependency issues among the tests. The success of our case study reinforces the need for additional research and tooling for acceptance test suites.},
 booktitle = {Proceedings of the 28th ACM SIGSOFT International Symposium on Software Testing and Analysis},
 pages = {402–405},
@@ -1794,9 +1891,7 @@ series = {ISSTA 2019}
 abstract = {Software bugs constitute a frequent and common issue of software development. To deal with this problem, modern software development methodologies introduce dedicated quality assurance procedures. At the same time researchers aim at developing techniques capable of supporting the early discovery and fix of bugs. One important factor that guides such research attempts is the characteristics of software bugs and bug fixes. In this paper, we present an industrial study on the characteristics and differences between pre-release bugs, i.e. bugs detected during software development, and post-release bugs, i.e. bugs that escaped to production. Understanding such differences is of paramount importance as it will improve our understanding on the testing and debugging support that practitioners require from the research community, on the validity of the assumptions of several research techniques, and, most importantly, on the reasons why bugs escape to production. To this end, we analyze 37 industrial projects from BGL BNP Paribas and document the differences between pre-release bugs and post-release bugs. Our findings suggest that post-release bugs are more complex to fix, requiring developers to modify several source code files, written in different programming languages, and configuration files, as well. We also find that approximately 82\% of the post-release bugs involve code additions and can be characterized as 'omission' bugs. Finally, we conclude the paper with a discussion on the implications of our study and provide guidance to future research directions.},
 address = {Cleveland, USA},
 author = {Rwemalika, Renaud and Kintis, Marinos and Papadakis, Mike and {Le Traon}, Yves and Lorrach, Pierre},
-booktitle = {2019 IEEE International Conference on Software Maintenance and Evolution (ICSME)},
-doi = {10.1109/ICSME.2019.00019},
-isbn = {978-1-7281-3094-1},
+booktitle = {Proceedings of the 35th IEEE International Conference on Software Maintenance and Evolution (ICSME)},
 keywords = {Empirical study,bug fix,industrial study,post release,pre release},
 month = {9},
 pages = {92--102},
@@ -1843,9 +1938,6 @@ abstract = {The rapid spread of the Coronavirus SARS-2 is a major challenge that
 address = {New York, NY, USA},
 author = {Ghamizi, Salah and Rwemalika, Renaud and Cordy, Maxime and Veiber, Lisa and Bissyand{\'{e}}, Tegawend{\'{e}} F. and Papadakis, Mike and Klein, Jacques and {Le Traon}, Yves},
 booktitle = {Proceedings of the 26th ACM SIGKDD International Conference on Knowledge Discovery \& Data Mining},
-doi = {10.1145/3394486.3412863},
-eprint = {2006.07087},
-isbn = {9781450379984},
 keywords = {covid19,deep learning,exit strategies,pandemic,prediction,search-based optimization,seir},
 month = {8},
 pages = {3434--3442},
@@ -1872,6 +1964,36 @@ publisher = {ACM},
 title = {{An empirical study on the evolution of test smell}},
 year = {2020}
 }
+
+@inproceedings{Long2020,
+abstract = {Record-and-replay tools are important for quality assurance of Web applications by capturing user case scenarios and executing them automatically when needed. However, the tests generated by existing techniques are brittle, and often lead to test breakages as the dynamic behavior and frequent updates of modern Web applications. In this paper, we propose WebRR, a self-replay enhanced robust record-and-replay technique for Web applications testing. The novelty of WebRR is that, it introduces a new self-replay mechanism in the recording phase, which checks the captured event from the record module online, and generates multiple locators (including DOM locators, visual locator and proximity locators) automatically, to improve the robustness of generated test cases. During the replay, it combines multiple locators and new local workflow repair technique to repair test breakages, and can improve the resilience of generated tests to frequent updates of the applications. We applied our approach to 3 enterprise Web applications, which are deployed in a large power grid company of China. The experimental results show that WebRR is effective, and substantially improve the robustness of end-to-end web tests that are generated using record-and-replay technique.},
+address = {New York, NY, USA},
+author = {Long, Zhenyue and Wu, Guoquan and Chen, Xiaojiang and Chen, Wei and Wei, Jun},
+booktitle = {Proceedings of the 28th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering},
+doi = {10.1145/3368089.3417069},
+isbn = {9781450370431},
+keywords = {End-to-end test,Record-and-replay,Web application},
+month = {11},
+pages = {1498--1508},
+publisher = {ACM},
+title = {{WebRR: self-replay enhanced robust record/replay for web application testing}},
+year = {2020}
+}
+
+
+@article{Pan2020,
+abstract = {Graphical User Interface (GUI) testing is widely used to test mobile apps. As mobile apps are frequently updated and need repeated testing, to reduce the test cost, their test cases are often coded as scripts to enable automated execution using test harnesses/tools. When those mobile apps evolve, many of the test scripts, however, may become broken due to changes made to the app GUIs. While it is desirable that the broken scripts get repaired, doing it manually can be preventively expensive if the number of tests need repairing is large. We propose in this paper a novel approach named METER to repairing broken GUI test scripts automatically when mobile apps evolve. METER leverages computer vision techniques to infer GUI changes between two versions of a mobile app and uses the inferred changes to guide the repair of GUI test scripts. Since METER only relies on screenshots to repair GUI tests, it is applicable to apps targeting open or closed source mobile platforms. In experiments conducted on 22 Android apps and 6 iOS apps, repairs produced by METER helped preserve 63.7\% and 38.8\% of all the test actions broken by the GUI changes, respectively},
+author = {Pan, Minxue and Xu, Tongtong and Pei, Yu and Li, Zhong and Zhang, Tian and Li, Xuandong},
+doi = {10.1109/TSE.2020.3007664},
+issn = {0098-5589},
+journal = {IEEE Transactions on Software Engineering},
+number = {c},
+pages = {1--20},
+title = {{GUI-Guided Test Script Repair for Mobile Apps}},
+volume = {5589},
+year = {2020}
+}
+
 
 
 @inproceedings{Peruma2020,
