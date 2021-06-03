@@ -55,31 +55,31 @@ The data collection process leads to a total of 2,884,383 SUITs analyzed across 
 \begin{table}
 \centering
 
-\begin{tabular}{LRRRR}
-
 \caption{Metrics for the 13 projects under study. \emph{LoC} is the number of lines of Robot Framework Code, \emph{\#Commits} is the number of commits implicating Robot Framework code, and \emph{\#TestCases} and \emph{\#Keywords} are the number of test cases and user keywords respectively in the last commit of the projects.}
 \label{tab:projects}
 
+\begin{tabular}{>{\raggedright}p{0.9in}>{\raggedleft}p{0.7in}>{\raggedleft}p{0.7in}>{\raggedleft}p{0.7in}>{\raggedleft}p{0.7in}}
+
 \toprule
-\scriptsize{\textbf{Name}} & \scriptsize{\textbf{LoC}} & \scriptsize{\textbf{\#Commits}} & \scriptsize{\textbf{\#TestCases}} & \scriptsize{\textbf{\#Keywords}} \\
+\scriptsize{\textbf{Name}} & \scriptsize{\textbf{LoC}} & \scriptsize{\textbf{\#Commits}} & \scriptsize{\textbf{\#TestCases}} & \scriptsize{\textbf{\#Keywords}} \tabularnewline
 \toprule
 
-\scriptsize{\textbf{bgl}} & \scriptsize{57030} & \scriptsize{309} & \scriptsize{559} & \scriptsize{5000} \\
+\scriptsize{\textbf{bgl}} & \scriptsize{57,030} & \scriptsize{309} & \scriptsize{559} & \scriptsize{5,000} \tabularnewline
 
 \midrule
 
-\scriptsize{\textbf{apinf}} & \scriptsize{1,068} & \scriptsize{345} & \scriptsize{74} & \scriptsize{138} \\
-\scriptsize{\textbf{bikalims}} & \scriptsize{4,446} & \scriptsize{1,279} & \scriptsize{76} & \scriptsize{172} \\
-\scriptsize{\textbf{collective-cover}} & \scriptsize{1,317} & \scriptsize{943} & \scriptsize{24} & \scriptsize{31} \\
-\scriptsize{\textbf{cumulus-ci}} & \scriptsize{1,599} & \scriptsize{1,429} & \scriptsize{132} & \scriptsize{34} \\
-\scriptsize{\textbf{harbor}} & \scriptsize{7,270} & \scriptsize{3,131} & \scriptsize{246} & \scriptsize{472} \\
-\scriptsize{\textbf{ifs}} & \scriptsize{8,466} & \scriptsize{5,606} & \scriptsize{494} & \scriptsize{605} \\
-\scriptsize{\textbf{mms-alfresco}} & \scriptsize{1,797} & \scriptsize{504} & \scriptsize{156} & \scriptsize{8} \\
-\scriptsize{\textbf{mystamps}} & \scriptsize{2,361} & \scriptsize{353} & \scriptsize{212} & \scriptsize{111} \\
-\scriptsize{\textbf{ozone}} & \scriptsize{2,636} & \scriptsize{271} & \scriptsize{230} & \scriptsize{90} \\
-\scriptsize{\textbf{plone}} & \scriptsize{1,046} & \scriptsize{211} & \scriptsize{59} & \scriptsize{163} \\
-\scriptsize{\textbf{plone-intranet}} & \scriptsize{2,225} & \scriptsize{1,759} & \scriptsize{213} & \scriptsize{134} \\
-\scriptsize{\textbf{rspamd}} & \scriptsize{3,397} & \scriptsize{685} & \scriptsize{429} & \scriptsize{151} \\
+\scriptsize{\textbf{apinf}} & \scriptsize{1,068} & \scriptsize{345} & \scriptsize{74} & \scriptsize{138} \tabularnewline
+\scriptsize{\textbf{bikalims}} & \scriptsize{4,446} & \scriptsize{1,279} & \scriptsize{76} & \scriptsize{172} \tabularnewline
+\scriptsize{\textbf{collective-cover}} & \scriptsize{1,317} & \scriptsize{943} & \scriptsize{24} & \scriptsize{31} \tabularnewline
+\scriptsize{\textbf{cumulus-ci}} & \scriptsize{1,599} & \scriptsize{1,429} & \scriptsize{132} & \scriptsize{34} \tabularnewline
+\scriptsize{\textbf{harbor}} & \scriptsize{7,270} & \scriptsize{3,131} & \scriptsize{246} & \scriptsize{472} \tabularnewline
+\scriptsize{\textbf{ifs}} & \scriptsize{8,466} & \scriptsize{5,606} & \scriptsize{494} & \scriptsize{605} \tabularnewline
+\scriptsize{\textbf{mms-alfresco}} & \scriptsize{1,797} & \scriptsize{504} & \scriptsize{156} & \scriptsize{8} \tabularnewline
+\scriptsize{\textbf{mystamps}} & \scriptsize{2,361} & \scriptsize{353} & \scriptsize{212} & \scriptsize{111} \tabularnewline
+\scriptsize{\textbf{ozone}} & \scriptsize{2,636} & \scriptsize{271} & \scriptsize{230} & \scriptsize{90} \tabularnewline
+\scriptsize{\textbf{plone}} & \scriptsize{1,046} & \scriptsize{211} & \scriptsize{59} & \scriptsize{163} \tabularnewline
+\scriptsize{\textbf{plone-intranet}} & \scriptsize{2,225} & \scriptsize{1,759} & \scriptsize{213} & \scriptsize{134} \tabularnewline
+\scriptsize{\textbf{rspamd}} & \scriptsize{3,397} & \scriptsize{685} & \scriptsize{429} & \scriptsize{151} \tabularnewline
 
 \bottomrule
 
@@ -138,14 +138,12 @@ To assess to which extent practitioners refactor SUIT smell symptoms, we count t
 \scriptsize{\textbf{Name}} & \scriptsize{\textbf{Notation}} & \scriptsize{\textbf{Description}} \tabularnewline
 \toprule
 
-\scriptsize{\# Symptoms} & \scriptsize{$S_s$} & \scriptsize{The number of symptoms for a smell $s$ counted in a single test.} \tabularnewline \noalign{\vspace{4pt}}
-\scriptsize{\% Symptoms} & \scriptsize{$D_s$} & \scriptsize{The number of symptoms for a smell $s$ counted in a single test divided by the number of location they could have appeared in that test.} \tabularnewline \noalign{\vspace{4pt}}
-\scriptsize{\# Refactoring} & \scriptsize{$\abs{R_{s}}$} & \scriptsize{The total number of action refactoring nodes exhibiting a symptom $R_{s}$ for a smell $s$ counted across all tests in all versions.} \tabularnewline \noalign{\vspace{4pt}}
-\scriptsize{\% Refactoring} & \scriptsize{-} & \scriptsize{The proportion of symptomatic tests undergoing at least one refactoring action through their lifespan.} \tabularnewline \noalign{\vspace{4pt}}
+\scriptsize{\# Symptoms} & \scriptsize{$S_s$} & \scriptsize{The number of symptoms for a smell $s$ counted in a single test.} \tabularnewline
+\scriptsize{\% Symptoms} & \scriptsize{$D_s$} & \scriptsize{The number of symptoms for a smell $s$ counted in a single test divided by the number of location they could have appeared in that test.} \tabularnewline
+\scriptsize{\# Refactoring} & \scriptsize{$\abs{R_{s}}$} & \scriptsize{The total number of action refactoring nodes exhibiting a symptom $R_{s}$ for a smell $s$ counted across all tests in all versions.} \tabularnewline
+\scriptsize{\% Refactoring} & \scriptsize{-} & \scriptsize{The proportion of symptomatic tests undergoing at least one refactoring action through their lifespan.} \tabularnewline
 \bottomrule
 
 \end{tabular}
-
-
 
 \end{table}

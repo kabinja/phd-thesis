@@ -17,6 +17,10 @@
 *.ist
 *.toc
 *.acn
+*.lof
+*.lot
+*.maf
+*.bbl
 thesis.pdf
 
 #intermediary files
