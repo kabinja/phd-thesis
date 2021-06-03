@@ -321,6 +321,24 @@ year = {2008}
 }
 
 
+@article{Memon2008,
+abstract = {Although graphical user interfaces (GUIs) constitute a large part of the software being developed today and are typically created using rapid prototyping, there are no effective regression testing techniques for GUIs. The needs of GUI regression testing differ from those of traditional software. When the structure of a GUI is modified, test cases from the original GUI's suite are either reusable or unusable on the modified GUI. Because GUI test case generation is expensive, our goal is to make the unusable test cases usable, thereby helping to retain the suite's event coverage. The idea of reusing these unusable ( obsolete ) test cases has not been explored before. This article shows that a large number of test cases become unusable for GUIs. It presents a new GUI regression testing technique that first automatically determines the usable and unusable test cases from a test suite after a GUI modification, then determines the unusable test cases that can be repaired so that they can execute on the modified GUI, and finally uses repairing transformations to repair the test cases. This regression testing technique along with four repairing transformations has been implemented. An empirical study for four open-source applications demonstrates that (1) this approach is effective in that many of the test cases can be repaired, and is practical in terms of its time performance, (2) certain types of test cases are more prone to becoming unusable, and (3) certain types of “dominator” events, when modified, make a large number of test cases unusable.},
+author = {Memon, Atif M.},
+doi = {10.1145/1416563.1416564},
+isbn = {1049-331X},
+issn = {1049-331X},
+journal = {ACM Transactions on Software Engineering and Methodology},
+mendeley-groups = {Software Testing/Maintenance,Software Testing/Gui Testing},
+month = {11},
+number = {2},
+pages = {1--36},
+title = {{Automatically repairing event sequence-based GUI test suites for regression testing}},
+volume = {18},
+year = {2008}
+}
+
+
+
 @Inbook{Moonen2008,
 author="Moonen, Leon and van Deursen, Arie and Zaidman, Andy and Bruntink, Magiel",
 title="On the Interplay Between Software Testing and Evolution and its Effect on Program Comprehension",
@@ -1375,6 +1393,24 @@ publisher = {ACM},
 title = {{Automated mobile UI test fragility: an exploratory assessment study on Android}},
 year = {2016}
 }
+
+@article{Gao2016,
+abstract = {System testing of a GUI-based application requires that test cases, consisting of sequences of user actions/events, be executed and the software's output be verified. To enable automated re-testing, such test cases are increasingly being coded as low-level test scripts, to be replayed automatically using test harnesses. Whenever the GUI changes-widgets get moved around, windows get merged-some scripts become unusable because they no longer encode valid input sequences. Moreover, because the software's output may have changed, their test oracles-assertions and checkpoints-encoded in the scripts may no longer correctly check the intended GUI objects. We present ScrIpT repAireR (SITAR), a technique to automatically repair unusable low-level test scripts. SITAR uses reverse engineering techniques to create an abstract test for each script, maps it to an annotated event-flow graph (EFG), uses repairing transformations and human input to repair the test, and synthesizes a new “repaired” test script. During this process, SITAR also repairs the reference to the GUI objects used in the checkpoints yielding a final test script that can be executed automatically to validate the revised software. SITAR amortizes the cost of human intervention across multiple scripts by accumulating the human knowledge as annotations on the EFG. An experiment using QTP test scripts suggests that SITAR is effective in that 41-89 percent unusable test scripts were repaired. Annotations significantly reduced human cost after 20 percent test scripts had been repaired.},
+author = {Gao, Zebao and Chen, Zhenyu and Zou, Yunxiao and Memon, Atif M.},
+doi = {10.1109/TSE.2015.2454510},
+isbn = {0098-5589 VO - 42},
+issn = {0098-5589},
+journal = {IEEE Transactions on Software Engineering},
+keywords = {GUI test script,GUI testing,human knowledge accumulation,test script repair},
+month = {2},
+number = {2},
+pages = {170--186},
+title = {{SITAR: GUI Test Script Repair}},
+volume = {42},
+year = {2016}
+}
+
+
 
 @article{Garousi2016,
 abstract = {With the increasing importance, size, and complexity of automated test suites, the need exists for suitable methods and tools to develop, assess the quality of, and maintain test code (scripts) in parallel with regular production (application) code. A recent review paper called this subarea of software testing software test code engineering (STCE). This article summarizes STCE tools, techniques, and guidelines. It also presents specific quantitative examples in this area based on experience in projects and raises important issues practitioners and researchers must address to further advance this field.},
