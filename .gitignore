@@ -1,0 +1,24 @@
+# IDEs
+*.vscode
+
+#latex
+*.aux
+*.fls
+*.log
+*.synctex.gz
+*.blg
+*.bbl
+*.fdb_latexmk
+*run.xml
+*.bcf
+*.out
+*.glo
+*.mtc*
+*.ist
+*.toc
+*.acn
+thesis.pdf
+
+#intermediary files
+*.synctex(busy)
+*~$*
