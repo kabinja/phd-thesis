@@ -1,16 +1,15 @@
 \section{HPath}
 \label{sec:hpath-hpath}
 
-Relying on the HTML standard described in section~\ref{sec:hpath-introduction-HTML}, we proposed \textsc{HTML Path Language (HPath)} a new query language to locate nodes in an HTML document. As its name suggests, our approach is similar to the XPath specification but tailored for HTML documents. While the target is the same as the CSS Selector (both targeting HTML documents), our scope is different. Indeed, our query language aims at providing test automation engineers more expressive and more flexible locators for GUI-based testing. In other words, the goal of our approach is to provide locators that leak as little structural details as possible by relying on properties of the HTML nodes that are rendered on the page to perform the query.
+Relying on the \gls{html} standard described in section~\ref{sec:hpath-introduction-HTML}, we proposed \textsc{\gls{html} Path Language (HPath)} a new query language to locate nodes in an \gls{html} document. As its name suggests, our approach is similar to the XPath specification but tailored for \gls{html} documents. While the target is the same as the \gls{css} Selector (both targeting \gls{html} documents), our scope is different. Indeed, our query language aims at providing test automation engineers more expressive and more flexible locators for GUI-based testing. In other words, the goal of our approach is to provide locators that leak as little structural details as possible by relying on properties of the \gls{html} nodes that are rendered on the page to perform the query.
 
-The intuition behind HPath lies in the fact that, if only visible features are permitted in the query, then the resulting locators should be more resilient to iso-functional structural changes. As a consequence, our approach helps to reduce GUI-based test fragility \cite{Thummalapenta2013, Hammoudi2016}. Moreover, relying on rendered properties (such as the label of an input) makes the locator (and, by extension, the test script) easier to understand %by humans reading a test or observing its execution report, because 
-as the reliance on structural properties has been minimized.
+The intuition behind HPath lies in the fact that, if only rendered properties are permitted in the query, then the resulting locators should be more resilient to iso-functional structural changes. As a consequence, our approach helps to reduce GUI-based test fragility \cite{Thummalapenta2013, Hammoudi2016}. Moreover, relying on rendered properties (\eg\ the label of an input field) makes the locator (and, by extension, the test script) easier to understand as the reliance on structural properties has been minimized.
 
 \begin{table}
 \centering
 \caption{BNF of HPath.}
 \label{tab:hpath-hpath-grammar}
-\begin{tabular}{>{\raggedright}m{0.6in}>{\raggedright}m{0.1in} >{\raggedright}m{1.9in}}
+\begin{tabular}{>{\raggedright}m{0.9in}>{\raggedright}m{0.2in} >{\raggedright}m{2.8in}}
 \toprule
 \code{LocationPath} &\code{:=} &\code{RelLocationPath | '/' RelLocationPath?}\tabularnewline
 \code{RelLocationPath} &\code{:=} &\code{'/' Step | RelLocationPath '/' Step}\tabularnewline
@@ -25,35 +24,135 @@ as the reliance on structural properties has been minimized.
 \end{tabular}
 \end{table}
 
-Table~\ref{tab:hpath-hpath-grammar} presents the grammar of HPath in Backus–Naur form (BNF). HPath is expressed as a location path composed of a series of steps (in a XPath fashion, yet using different predicates). Thus, HPath navigates in the HTML documents based on the properties of the nodes it traverses. Each step comprises a \emph{NameTest}, which defines the type (tag) of the context element associated to an optional \emph{Predicate} or a node $N_D \not\in E_D$. Note that only text nodes are supported since they are the only ones being rendered on the page. \emph{Predicate} returns a boolean value filtering out parts of the tree during path traversal. HPath accepts a textual input for the resolution of the predicate (\emph{Literal}) and returns whether or not the value matches the property of the context node. Our implementation is available as a Chrome Plugin\footnote{Available at \emph{link anonymized for double-blind review}} allowing to generate HPath through the browser.
+Table~\ref{tab:hpath-hpath-grammar} presents the grammar of HPath in \gls{bnf}. HPath is expressed as a location path composed of a series of steps (in a XPath fashion, yet using different predicates). Thus, HPath navigates in the \gls{html} documents based on the properties of the nodes it traverses. Each step comprises a \emph{NameTest}, which defines the type (tag) of the context element associated to an optional \emph{Predicate} or a node $N_D \not\in E_D$. Note that only text nodes are supported since they are the only ones being rendered on the page. \emph{Predicate} returns a boolean value filtering out parts of the tree during path traversal. HPath accepts a textual input for the resolution of the predicate (\emph{Literal}) and returns whether or not the value matches the property of the context node.
 
-In the remaining of this section we present the properties of HPath empowering it to generate more flexible location paths. We use the notation $E_{\texttt{type}}$ to describe a set of elements of type \texttt{type}, and $e_\texttt{type}$ to refer to a specific element of such a set.
+In the remaining of this section we present the properties of HPath allowing it to generate more flexible location paths. We use the notation $E_{\texttt{type}}$ to describe a set of elements of type \texttt{type}, and $e_\texttt{type}$ to refer to a specific element of such a set.
 
 \subsection{Node traversal}
 \label{sec:hpath-hpath-node-traversal}
 
-Not all nodes in an HTML document are used for rendering. Indeed, placeholders can be introduced in the DOM to make pages dynamic (animation, dragging, etc.) or to provide better readability for web robots (e.g., Search Engine Optimization). Thus, by definition, these nodes should not appear in the location path when creating flexible locators for GUI-base testing. 
+Not all nodes in an \gls{html} document are used for rendering. Indeed, placeholders can be introduced in the \gls{dom} to make pages dynamic (animation, dragging, etc.) or to provide better readability for web robots (e.g., Search Engine Optimization). Thus, by definition, these nodes should not appear in the location path when creating flexible locators for GUI-base testing. 
 
-Therefore, the node traversal is done on a rendering tree, generated by the HPath engine, where all elements not affecting the rendering flow are pruned out. Referring to the semantic offered by the HTML standard, two types of elements, $E_{span}$ and $E_{div}$, do not hold any intrinsic semantic by themselves and act as placeholders. Indeed, if no styling is applied to these elements, they are ignored by the rendering engine\cite{Grigorik2019}. Leveraging on this property, HPath ignores any $e_{span}$ or $e_{div}$ that will not affect the rendering flow.  
+Therefore, the node traversal is done on a rendering tree, generated by the HPath engine, where all elements not affecting the rendering flow are pruned out. Referring to the semantic offered by the \gls{html} standard, two types of elements, $E_{span}$ and $E_{div}$, do not hold any intrinsic semantic by themselves and act as placeholders. Indeed, if no styling is applied to these elements, they are ignored by the rendering engine\cite{Grigorik2019}. Consequently, during the tree traversal, HPath ignores any $e_{span}$ or $e_{div}$ that will not affect the rendering flow.  
 
-Since the locator is computed after all styling properties have been assigned to their corresponding elements, all the elements hold all the styling information needed to compute the rendering tree. Then, the algorithm relies on the browser engine for style sheets processing. 
+Because, when performing GUI testing, the locator is computed after the processing of all styling and rendering operations. To avoid misclassifying any node as not rendered, HPath relies on the browser engine to prune any nodes not affecting the display of the page. This step leads to a new \gls{html} document which only contains rendered node $N_R \subseteq N_D$. Thus, while HPath traverses the trees in a similar fashion as absolute XPath, it does so on a different tree.
+
+\begin{figure}
+\centering
+\caption{Example of HTML Document with elements that are not affecting rendering}
+\label{fig:html-document-not-rendered}
+\begin{minipage}{0.8\linewidth}
+\begin{lstlisting}[language=HTML]
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        .someStyle {
+          border: 5px outset red;
+          text-align: center;
+        }
+        </style>
+    </head>
+    <body>
+        <@\textcolor{block}{<div id="for-robot">}@>
+            <h1>Section Header</h1>
+        <@\textcolor{block}{</div>}@>
+        <div class="someStyle">
+          <p id="myTarget">Text <span style="color:red">in</span> a div.</p>
+        </div>
+    </body>
+</html>
+\end{lstlisting}
+\end{minipage}
+\end{figure}
+
+Figure~\ref{fig:html-document-not-rendered} shows an example of a \gls{html} document containing an element (in red) not rendered by the web engines but is in any other aspect equivalent to the one presented in Figure~\ref{fig:html-document}. In the case of HPath, both document do end up generating the same working tree. Thus, lets assume we target $e_{h1}$, using absolute XPath, the query takes the form: \texttt{/html/body/div/h1}. However, in the case of HPath, the query takes the form: \texttt{/html/body/h1}.
 
 \subsection{Predicates}
 \label{sec:hpath-hpath-predicates}
 
-While computing predicates or any other node filtering mechanism, DOM-based locators usually rely heavily on implementation-dependent properties of the elements they visit (\emph{e.g.} id or class). However, these attributes can change without affecting the functionality of a page or any of its visible parts. For example, modifying the id of a button, if not affected by a style rule, will not have any effect on its rendering. Thus, HPath defines a few selected predicates relying on rendered properties. During the predicate resolution, if the extracted text matches the value provided, it returns a true value, false otherwise. The predicates can take the following form:
+While computing predicates or any other node filtering mechanism, \gls{dom}-based locators usually rely heavily on implementation-dependent properties of the elements they visit (\emph{e.g.} id or class). However, these attributes can change without affecting the functionality of a page or any of its visible parts. For example, modifying the id of a button, if not affected by a style rule, will not have any effect on its rendering. Thus, HPath defines a few selected predicates relying on rendered properties, which can take the following forms:
 
 \begin{itemize}
-    \item \textbf{label} Most of the interactive elements $E_{interactive}$ can be associated with a label element, $E_{label}$ to provide a textual clue about their functionality (\emph{e.g.} Label "Name" associated to a textual input so the users know they have to type their name). The HTML standard defines two strategies to link those elements: (1) $e_{label}$ is a direct parent of $e_{interactive}$ or (2) $e_{label}$ is a sibling of $e_{interactive}$ where the value of the attribute \emph{for} of $e_{label}$ equals the value of the attribute \emph{id} of $e_{input}$. The \textbf{label} predicate extracts the textual content (see Section~\ref{sec:hpath-hpath-text-extraction}) of $e_{label}$ associated with the context $e_{interactive}$. 
+    \item \textbf{label:} Most of the interactive elements $E_{interactive}$ can be associated with a label element, $E_{label}$ to provide a textual clue about their functionality. The HTML standard defines two strategies to link those elements: (1) $e_{label}$ is a direct parent of $e_{interactive}$ or (2) $e_{label}$ is a sibling of $e_{interactive}$ where the value of the attribute \emph{for} of $e_{label}$ equals the value of the attribute \emph{id} of $e_{input}$. The \textbf{label} predicate extracts the textual content (see Section~\ref{sec:hpath-hpath-text-extraction}) of $e_{label}$ associated with the context $e_{interactive}$. An example of the two forms is provided in Figure~\ref{fig:html-document-label}.
     
-    \item \textbf{legend} Related children elements of a form element ($E_{form}$) can be grouped together through the use of fieldset element ($E_{fieldset}$). Any $e_{fieldset} \in E_{fieldset}$ can be associated with a textual value defined in a legend element, $e_{legend}$. According to the standard, if $e_{legend}$ is a direct child of $e_{fieldset}$, then it is associated to the parent $e_{fieldset}$. The \textbf{legend} predicate extracts the textual content of a $e_{legend}$ associated to the context $e_{fieldset}$. 
+\begin{figure}[h]
+\centering
+\caption{Extract of HTML document exhibiting label elements}
+\label{fig:html-document-label}
+\begin{minipage}{0.8\linewidth}
+\begin{lstlisting}[language=HTML]
+<div class="example-1">
+    <label for="peas">Subscribe to newsletter</label>
+    <input type="checkbox" name="newsletter" id="newsletter">
+</div>
+<div class="example-2">
+    <label>Subscribe to newsletter
+      <input type="checkbox" name="newsletter">
+    </label>
+</div>
+\end{lstlisting}
+\end{minipage}
+\end{figure}
     
-    \item \textbf{caption} Table elements, $E_{table}$, can be assigned a caption through the use of a caption element $E_{caption}$. According to the standard, if a $e_{caption}$ is a direct child of a $e_{table}$, then it is associated to the parent $e_{table}$. The \textbf{caption} predicate extracts the textual content of a $e_{caption}$ associated to the context $e_{table}$. 
+    \item \textbf{legend:} Related children elements of a form element ($E_{form}$) can be grouped together through the use of fieldset element ($E_{fieldset}$). Any $e_{fieldset} \in E_{fieldset}$ can be associated with a textual value defined in a legend element, $e_{legend}$. According to the standard, if $e_{legend}$ is a direct child of $e_{fieldset}$, then it is associated to the parent $e_{fieldset}$. The \textbf{legend} predicate extracts the textual content of a $e_{legend}$ associated to the context $e_{fieldset}$. An example is provided in Figure~\ref{fig:html-document-legend}.
+
+\begin{figure}[h]
+\centering
+\caption{Extract of HTML document exhibiting legend element}
+\label{fig:html-document-legend}
+\begin{minipage}{0.8\linewidth}
+\begin{lstlisting}[language=HTML]
+<form>
+    <fieldset>
+        <legend>Additional Question</legend>
+        <label for="peas">Subscribe to newsletter</label>
+        <input type="checkbox" name="newsletter" id="newsletter">
+    </fieldset>
+</form>
+\end{lstlisting}
+\end{minipage}
+\end{figure}
     
-    \item \textbf{figcaption} Figure elements, $E_{figure}$, can be assigned a caption through the use of a caption element $E_{figcaption}$. According to the standard, if $e_{figcaption}$ is a direct child of $e_{figure}$, then it is associated to the parent $e_{figure}$. The \textbf{figcaption} predicate extracts the textual content of $e_{figcaption}$ associated to the context $E_{figure}$. 
+    \item \textbf{caption:} Table elements, $E_{table}$, can be assigned a caption through the use of a caption element $E_{caption}$. According to the standard, if a $e_{caption}$ is a direct child of a $e_{table}$, then it is associated to the parent $e_{table}$. The \textbf{caption} predicate extracts the textual content of a $e_{caption}$ associated to the context $e_{table}$. An example is provided in Figure~\ref{fig:html-document-caption}.
+
+\begin{figure}[h]
+\centering
+\caption{Extract of HTML document exhibiting caption element}
+\label{fig:html-document-caption}
+\begin{minipage}{0.8\linewidth}
+\begin{lstlisting}[language=HTML]
+<table>
+    <caption>Locator breakages</caption>
+    <tr>
+        <td>Name</td>
+        <th>HPath</th>
+        <th>XPath</th>
+    </tr>
+</table>
+\end{lstlisting}
+\end{minipage}
+\end{figure}
+
+    \item \textbf{figcaption:} Figure elements, $E_{figure}$, can be assigned a caption through the use of a caption element $E_{figcaption}$. According to the standard, if $e_{figcaption}$ is a direct child of $e_{figure}$, then it is associated to the parent $e_{figure}$. The \textbf{figcaption} predicate extracts the textual content of $e_{figcaption}$ associated to the context $E_{figure}$. An example is provided in Figure~\ref{fig:html-document-figcaption}.
+    
+\begin{figure}[h]
+\centering
+\caption{Extract of HTML document exhibiting figcaption element}
+\label{fig:html-document-figcaption}
+\begin{minipage}{0.8\linewidth}
+\begin{lstlisting}[language=HTML]
+<figure>
+    <img src="locator-length.jpg" alt="Locator Length">
+    <figcaption>Length of the Locators</figcaption>
+</figure>
+\end{lstlisting}
+\end{minipage}
+\end{figure}
+    
 \end{itemize}
 
-If no predicate can be generated to compute the location path, then the resulting path resembles the one that would be generated by the XPath algorithm, i.e., with only positioning predicate and no axis. The difference, however, is that HPath does not compute the path on the actual DOM but on the rendering tree (as described in Section~\ref{sec:hpath-hpath-node-traversal}).
+If no predicate can be generated to compute the location path, then the resulting path resembles the one that would be generated by the XPath algorithm, i.e., with only positioning predicate and no axis. The difference, however, is that HPath does not compute the path on the actual \gls{dom} but on the rendering tree (as described in Section~\ref{sec:hpath-hpath-node-traversal}).
 
 \subsection{Content Extraction}
 \label{sec:hpath-hpath-text-extraction}

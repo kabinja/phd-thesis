@@ -28,10 +28,31 @@
 \usepackage{color}
 \usepackage{listings}
 \usepackage{framed}
+\usepackage{upquote}
 
 \definecolor{keyword}{RGB}{127,0,0}
 \definecolor{block}{RGB}{0,127,0}
 \definecolor{variable}{RGB}{0,0,127}
+\definecolor{editorGray}{rgb}{0.95, 0.95, 0.95}
+\definecolor{editorOcher}{rgb}{1, 0.5, 0} 
+\definecolor{editorGreen}{rgb}{0, 0.5, 0}
+
+\lstdefinelanguage{HTML5}{
+        language=html,
+        sensitive=true, 
+        alsoletter={<>=-},
+        otherkeywords={
+        <html>, <head>, <title>, </title>, <meta, />, </head>, <body>,
+        <canvas, \/canvas>, <script>, </script>, </body>, </html>, <!, html>, <style>, </style>, ><
+        },  
+        ndkeywords={
+        =,
+        charset=, id=, width=, height=,
+        border:, text-align:
+        },  
+        morecomment=[s]{<!--}{-->},
+        tag=[s]
+}
 
 \lstset{
 numbers=left,
@@ -50,6 +71,7 @@ frame=single,
 basicstyle=\ttfamily\footnotesize
 }
 
+\input{glossary}
 
 \addbibresource{references.bib}
 
