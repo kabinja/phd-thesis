@@ -74,49 +74,36 @@ Figure~\ref{fig:html-document-not-rendered} shows an example of a \gls{html} doc
 While computing predicates or any other node filtering mechanism, \gls{dom}-based locators usually rely heavily on implementation-dependent properties of the elements they visit (\emph{e.g.} id or class). However, these attributes can change without affecting the functionality of a page or any of its visible parts. For example, modifying the id of a button, if not affected by a style rule, will not have any effect on its rendering. Thus, HPath defines a few selected predicates relying on rendered properties, which can take the following forms:
 
 \begin{itemize}
-    \item \textbf{label:} Most of the interactive elements $E_{interactive}$ can be associated with a label element, $E_{label}$ to provide a textual clue about their functionality. The HTML standard defines two strategies to link those elements: (1) $e_{label}$ is a direct parent of $e_{interactive}$ or (2) $e_{label}$ is a sibling of $e_{interactive}$ where the value of the attribute \emph{for} of $e_{label}$ equals the value of the attribute \emph{id} of $e_{input}$. The \textbf{label} predicate extracts the textual content (see Section~\ref{sec:hpath-hpath-text-extraction}) of $e_{label}$ associated with the context $e_{interactive}$. An example of the two forms is provided in Figure~\ref{fig:html-document-label}.
+    \item \textbf{label:} Most of the interactive elements $E_{interactive}$ can be associated with a label element, $E_{label}$ to provide a textual clue about their functionality. The HTML standard defines two strategies to link those elements: (1) $e_{label}$ is a direct parent of $e_{interactive}$ or (2) $e_{label}$ is a sibling of $e_{interactive}$ where the value of the attribute \emph{for} of $e_{label}$ equals the value of the attribute \emph{id} of $e_{input}$. The \textbf{label} predicate extracts the textual content (see Section~\ref{sec:hpath-hpath-text-extraction}) of $e_{label}$ associated with the context $e_{interactive}$. An example of the two forms is provided in Figure~\ref{fig:html-document-input}. Here, the query \texttt{//input[label()='City']} retrieves both $e_{input}$.
     
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
-\caption{Extract of HTML document exhibiting label elements}
-\label{fig:html-document-label}
-\begin{minipage}{0.8\linewidth}
-\begin{lstlisting}[language=HTML]
-<div class="example-1">
-    <label for="peas">Subscribe to newsletter</label>
-    <input type="checkbox" name="newsletter" id="newsletter">
-</div>
-<div class="example-2">
-    <label>Subscribe to newsletter
-      <input type="checkbox" name="newsletter">
-    </label>
-</div>
-\end{lstlisting}
-\end{minipage}
-\end{figure}
-    
-    \item \textbf{legend:} Related children elements of a form element ($E_{form}$) can be grouped together through the use of fieldset element ($E_{fieldset}$). Any $e_{fieldset} \in E_{fieldset}$ can be associated with a textual value defined in a legend element, $e_{legend}$. According to the standard, if $e_{legend}$ is a direct child of $e_{fieldset}$, then it is associated to the parent $e_{fieldset}$. The \textbf{legend} predicate extracts the textual content of a $e_{legend}$ associated to the context $e_{fieldset}$. An example is provided in Figure~\ref{fig:html-document-legend}.
-
-\begin{figure}[h]
-\centering
-\caption{Extract of HTML document exhibiting legend element}
-\label{fig:html-document-legend}
+\caption{Extract of HTML document exhibiting input element}
+\label{fig:html-document-input}
 \begin{minipage}{0.8\linewidth}
 \begin{lstlisting}[language=HTML]
 <form>
     <fieldset>
-        <legend>Additional Question</legend>
-        <label for="peas">Subscribe to newsletter</label>
-        <input type="checkbox" name="newsletter" id="newsletter">
+        <legend>Address 1</legend>
+        <label for="city-1">City
+            <input type="text" name="city-1" id="city-1">
+        </label>
+    </fieldset>
+    <fieldset>
+        <legend>Address 2</legend>
+        <label for="city-2">City</label>
+        <input type="text" name="city-2" id="city-2">
     </fieldset>
 </form>
 \end{lstlisting}
 \end{minipage}
 \end{figure}
     
-    \item \textbf{caption:} Table elements, $E_{table}$, can be assigned a caption through the use of a caption element $E_{caption}$. According to the standard, if a $e_{caption}$ is a direct child of a $e_{table}$, then it is associated to the parent $e_{table}$. The \textbf{caption} predicate extracts the textual content of a $e_{caption}$ associated to the context $e_{table}$. An example is provided in Figure~\ref{fig:html-document-caption}.
+    \item \textbf{legend:} Related children elements of a form element ($E_{form}$) can be grouped together through the use of fieldset element ($E_{fieldset}$). Any $e_{fieldset} \in E_{fieldset}$ can be associated with a textual value defined in a legend element, $e_{legend}$. According to the standard, if $e_{legend}$ is a direct child of $e_{fieldset}$, then it is associated to the parent $e_{fieldset}$. The \textbf{legend} predicate extracts the textual content of a $e_{legend}$ associated to the context $e_{fieldset}$. An example is provided in Figure~\ref{fig:html-document-input}. In the example, as shown above, when only relying on $e_{label}$ to select the input retrieve the two $e_{input}$. To refine the selection to the first address, the query can be expressed using $e_{legend}$ as: \texttt{//fieldset[legend()='Address 1']/input[label()='City']}.
+    
+    \item \textbf{caption:} Table elements, $E_{table}$, can be assigned a caption through the use of a caption element $E_{caption}$. According to the standard, if a $e_{caption}$ is a direct child of a $e_{table}$, then it is associated to the parent $e_{table}$. The \textbf{caption} predicate extracts the textual content of a $e_{caption}$ associated to the context $e_{table}$. An example is provided in Figure~\ref{fig:html-document-caption}. Here, the query \texttt{//table[caption()='Locator breakages']/tr[1]} retrieves the first row of the table. 
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
 \caption{Extract of HTML document exhibiting caption element}
 \label{fig:html-document-caption}
@@ -134,9 +121,9 @@ While computing predicates or any other node filtering mechanism, \gls{dom}-base
 \end{minipage}
 \end{figure}
 
-    \item \textbf{figcaption:} Figure elements, $E_{figure}$, can be assigned a caption through the use of a caption element $E_{figcaption}$. According to the standard, if $e_{figcaption}$ is a direct child of $e_{figure}$, then it is associated to the parent $e_{figure}$. The \textbf{figcaption} predicate extracts the textual content of $e_{figcaption}$ associated to the context $E_{figure}$. An example is provided in Figure~\ref{fig:html-document-figcaption}.
+    \item \textbf{figcaption:} Figure elements, $E_{figure}$, can be assigned a caption through the use of a caption element $E_{figcaption}$. According to the standard, if $e_{figcaption}$ is a direct child of $e_{figure}$, then it is associated to the parent $e_{figure}$. The \textbf{figcaption} predicate extracts the textual content of $e_{figcaption}$ associated to the context $E_{figure}$. An example is provided in Figure~\ref{fig:html-document-figcaption}. Here, the query \texttt{//figure[caption()='Length of the Locators']/img} retrieves the image. 
     
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
 \caption{Extract of HTML document exhibiting figcaption element}
 \label{fig:html-document-figcaption}
@@ -152,9 +139,25 @@ While computing predicates or any other node filtering mechanism, \gls{dom}-base
     
 \end{itemize}
 
-If no predicate can be generated to compute the location path, then the resulting path resembles the one that would be generated by the XPath algorithm, i.e., with only positioning predicate and no axis. The difference, however, is that HPath does not compute the path on the actual \gls{dom} but on the rendering tree (as described in Section~\ref{sec:hpath-hpath-node-traversal}).
+If no predicate can be generated to compute the location path, then the resulting path resembles the one that would be generated by the XPath algorithm, i.e., with only positioning predicate and no axis. However, while both expression present the same syntax in such case, the difference is that HPath does not compute the path on the actual \gls{dom} but on the pruned \gls{dom} tree (as described in Section~\ref{sec:hpath-hpath-node-traversal}).
 
 \subsection{Content Extraction}
 \label{sec:hpath-hpath-text-extraction}
 
-In the current implementation of HPath, all predicates (except the positioning predicate) rely on textual information visible on the page. To extract the content of a text under an element, XPath simply extracts the content of the text node, $n_{text}$, which is a direct child of the context element. HPath goes beyond this procedure and analyzes styling information contained in the elements from the Inline Text Semantics category (see Table~\ref{tab:hpath-introduction-html5}). HPath takes advantages of this semantic and filters out any element from this category when extracting text. The resulting $n_{text}$ are then merged together to reconstruct the text that will be used by the predicates for evaluation. For example the "<b>Hello</b> world" is transformed to "Hello world".
+In the current implementation of HPath, all predicates (except the positioning predicate) rely on textual information visible on the page. To extract the content of a text under an element, XPath extracts the content of the text node, $n_{text}$, which is a direct child of the context element. HPath goes beyond this procedure and analyzes styling information contained in the elements from the Inline Text Semantics category (see Table~\ref{tab:hpath-introduction-html5}). HPath takes advantages of this semantic and filters out any element from this category when extracting text. The resulting $n_{text}$ are then merged together to reconstruct the text that will be used by the predicates for evaluation. To query $e_input$ from Figure~\ref{fig:html-document-text}, one can write the following query: \texttt{//input[label()='City']}.
+
+\begin{figure}[h!]
+\centering
+\caption{Extract of HTML document exhibiting inline text semantics elements}
+\label{fig:html-document-text}
+\begin{minipage}{0.8\linewidth}
+\begin{lstlisting}[language=HTML]
+<div>
+    <label for="city-2">
+        <i class="fa fa-home"><b>City</b>
+    </label>
+    <input type="text" name="city-2" id="city-2">
+</div>
+\end{lstlisting}
+\end{minipage}
+\end{figure}

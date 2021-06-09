@@ -1,21 +1,21 @@
 \section{Research Questions}
 \label{sec:hpath-rqs}
 
-HPath makes a strong assumption on the type of web elements it can successfully locate and properly describe. Hence, to enable the evaluation of its capability, we investigate first which web elements are predominantly targeted by \gls{gui}-based tests. Thus, we ask:
+HPath makes the assumption that some type of web elements are typically more targeted than other by SUITs and as such some elements can be removed from the \gls{dom}. Indeed, removing text formatting and non display elements while being a reasonable assumption, might remove interesting elements from the \gls{dom} tree. Thus, we validate this assumption by analyzing which categories of elements are targeted by \gls{dom}-based locators in SUITs and ask:
 
 \begin{description} 
 \item[\textbf{RQ1}:]
 \emph{Which categories of elements are predominantly targeted by \gls{gui}-based test scripts?} 
 \end{description} 
 
-Next, we evaluate our new approach, HPath, and compare its performances in terms of properties of web elements it can leverage. We compare it against two algorithms generating XPath, namely, \emph{absolute XPath} and \emph{Robula+}. This leads to the following research question:
+Next, we evaluate our new approach, HPath, and compare its ability to exploit the properties of web elements through its predicates. The goal is to measure to which extend the query expression can be compressed but also to what extent HPath can generate meaningful predicates. To put these results in perspective, we compare it against two algorithms generating XPath, namely, \emph{absolute XPath} and \emph{Robula+}. This leads to the following research question:
 
 \begin{description} 
 \item[\textbf{RQ2}:]
 \emph{Which element properties are exploited by the different location path strategies?} 
 \end{description} 
         
-Finally, we investigate the resilience against \gls{sut} evolution of HPath and compare it to the two XPath generation algorithms used in RQ2 and express the final research question as follow:
+Finally, we investigate the resilience against \gls{sut} evolution of HPath. The main goal of HPath being to generate query expression resistant to minor structural change in the \gls{sut}. Thus, to assess its robustness to changes, we compare it to the two XPath generation algorithms used in RQ2 and express the final research question as follow:
 
 \begin{description} 
 \item[\textbf{RQ3}:]
