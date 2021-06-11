@@ -167,19 +167,13 @@
 %		setup the first page of a chapter with an abstract and a mini table of contents
 %
 %%%%%%%%%%%%%%%%
-\let\OLDbackmatter\backmatter
 \renewcommand{\backmatter}[0]
 {
 	\part*{}
-	
-	\OLDbackmatter
-	\cleardoublepage
-	
 	\pagenumbering{roman}
 	
 	\ifIFglossary
-		\printglossary[type=main, nonumberlist]
-		\cleardoublepage
+		%\printglossary[type=main, nonumberlist]
 		\printglossary[type=\acronymtype, title={Abbreviations}, nonumberlist]
 		
 	\fi
@@ -205,11 +199,11 @@
 
 \newcommand{\chapterPage}[1]{
 	\setcounter{minitocdepth}{1}
+	\textit{#1}
+	\vspace*{\fill}
 	\begin{samepage}
 	\minitoc
 	\end{samepage}
-	\bigskip
-	\textit{#1}
 	\newpage
 }
 
