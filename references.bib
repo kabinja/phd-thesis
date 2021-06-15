@@ -132,6 +132,21 @@ title = {{Simulation of corrugated horns and exciters for circular corrugated wa
 year = {2001}
 }
 
+@inproceedings{DiLucca2002,
+abstract = {The development of Web sites and applications is increasing dramatically to satisfy the market requests. The software industry is facing the new demand under the pressure of a very short time-to-market and an extremely high competition. As a result, Web sites and applications are usually developed without a disciplined process: Web applications are directly coded and no, or poor, documentation is produced to support the subsequent maintenance and evolution activities, thus compromising the quality of the applications. This paper presents a tool for reverse engineering Web applications. UML diagrams are used to model a set of views that depict several aspects of a Web application at different abstraction levels. The recovered diagrams ease the comprehension of the application and support its maintenance and evolution. A case study, carried out with the aim of assessing the effectiveness of the proposed tool, allowed relevant information about some real Web applications to be successfully recovered and modeled by UML diagrams.},
+author = {{Di Lucca}, G.A. and Fasolino, A.R. and Pace, F. and Tramontana, P. and {De Carlini}, U.},
+booktitle = {Proceedings of the Sixth European Conference on Software Maintenance and Reengineering},
+doi = {10.1109/CSMR.2002.995811},
+isbn = {0-7695-1438-3},
+issn = {15345351},
+keywords = {reverse engineering,uml,web applications,web engineering},
+pages = {241--250},
+publisher = {IEEE},
+title = {{WARE: a tool for the reverse engineering of Web applications}},
+year = {2002}
+}
+
+
 @article{Gottlob2002,
 abstract = {Several important decision problems on conjunctive queries (CQs) are NP-complete in general but become tractable, and actually highly parallelizable, if restricted to acyclic or nearly acyclic queries. Examples are the evaluation of Boolean CQs and query containment. These problems were shown tractable for conjunctive queries of bounded treewidth (Ch. Chekuri and A. Rajaraman, Theoret. Comput. Sci. 239 (2000), 211-229), and of bounded degree of cyclicity (M. Gyssens et al., Artif. Intell. 66 (1994), 57-89; M. Gyssens and J. Paredaens, in "Advances in Database Theory," Vol. 2, pp. 85-122, Plenum Press, New York, 1984). The so far most general concept of nearly acyclic queries was the notion of queries of bounded query-width introduced by Chekuri and Rajaraman (2000). While CQs of bounded query-width are tractable, it remained unclear whether such queries are efficiently recognizable. Chekuri and Rajaraman (2000) stated as an open problem whether for each constant k it can be determined in polynomial time if a query has query-width at most k. We give a negative answer by proving the NP-completeness of this problem (specifically, for k = 4). In order to circumvent this difficulty, we introduce the new concept of hypertree decomposition of a query and the corresponding notion of hypertree-width. We prove: (a) for each k, the class of queries with query-width bounded by k is properly contained in the class of queries whose hypertree-width is bounded by k; (b) unlike query-width, constant hypertree-width is efficiently recognizable; and (c) Boolean queries of bounded hypertree-width can be efficiently evaluated. {\textcopyright} 2002 Elsevier Science (USA).},
 author = {Gottlob, Georg and Leone, Nicola and Scarcello, Francesco},
@@ -154,11 +169,27 @@ title = {{Streaming XPath processing with forward and backward axes}},
 year = {2003}
 }
 
+@inproceedings{Memon2003,
+abstract = {Graphical user interfaces (GUIs) are important parts of today's software and their correct execution is required to ensure the correctness of the overall software. A popular technique to detect defects in GUIs is to test them by executing test cases and checking the execution results. Test cases may either be created manually or generated automatically from a model of the GUI. While manual testingis unacceptably slow for many applications, our experience with GUI testing has shown that creating a model that can be used for automated test case generation is difficult. We describe a new approach to reverse engineer a model represented as structures called a GUI forest, event-flowgraphs and an integration tree directly from the executable GUI. We describe "GUI Ripping", a dynamic process in which the software's GUI is automatically "traversed" by opening all its windows and extracting all their widgets (GUI objects), properties, and values. The extracted information is then verified by the test designer and used to automatically generate test cases. We present algorithms for the ripping process and describe their implementation in a tool suite that operates on Java and Microsoft Windows' GUIs. We present results of case studies which show that our approach requires very little human intervention and is especially useful for regression testing of software that is modified frequently. We have successfully used the "GUI Ripper" in several large experiments and have made it available as a downloadable tool.},
+author = {Memon, Atif and Banerjee, Ishan and Nagarajan, Adithya},
+booktitle = {Proceedings of the 10th Working Conference on Reverse Engineering},
+doi = {10.1109/WCRE.2003.1287256},
+isbn = {0-7695-2027-8},
+issn = {10951350},
+keywords = {Application software,Automatic testing,Computer science,Data mining,Educational institutions,Graphical user interfaces,Humans,Reverse engineering,Software engineering,Software testing},
+pages = {260--269},
+publisher = {IEEE},
+title = {{GUI ripping: reverse engineering of graphical user interfaces for testing}},
+volume = {2003-Janua},
+year = {2003}
+}
+
+
 @inproceedings{Memon2003a,
 abstract = {Although graphical user interfaces (GUIs) constitute a large part of the software being developed today and are typically created using rapid prototyping, there are no effective regression testing techniques for GUIs. The needs of GUI regression testing differ from those of traditional software. When the structure of a GUI is modified, test cases from the original GUI are either reusable or unusable on the modified GUI. Since GUI test case generation is expensive, our goal is to make the unusable test cases usable. The idea of reusing these unusable (a.k.a. obsolete) test cases has not been explored before. In this paper, we show that for GUIs, the unusability of a large number of test cases is a serious problem. We present a novel GUI regression testing technique that first automatically determines the usable and unusable test cases from a test suite after a GUI modification. It then determines which of the unusable test cases can be repaired so they can execute on the modified GUI. The last step is to repair the test cases. Our technique is integrated into a GUI testing framework that, given a test case, automatically executes it on the GUI. We implemented our regression testing technique and demonstrate for two case studies that our approach is effective in that many of the test cases can be repaired, and is practical in terms of its time performance.},
 address = {New York, New York, USA},
 author = {Memon, Atif M. and Soffa, Mary Lou},
-booktitle = {Proceedings of the 9th European software engineering conference held jointly with 10th ACM SIGSOFT international symposium on Foundations of software engineering - ESEC/FSE '03},
+booktitle = {Proceedings of the 9th European software engineering conference held jointly with 10th ACM SIGSOFT international symposium on Foundations of software engineering},
 doi = {10.1145/940071.940088},
 isbn = {1581137435},
 issn = {01635948},
@@ -324,6 +355,21 @@ title = {{On The Detection of Test Smells: A Metrics-Based Approach for General 
 volume = {33},
 year = {2007}
 }
+
+@inproceedings{Yuan2007,
+abstract = {This paper describes a new automated technique to generate test cases for GUIs by using covering arrays (CAs). The key motivation is to generate long GUI event sequences that are systematically sampled at a particular coverage strength. CAs, to date, have not been effectively used in sampling event driven systems such as GUIs which maintain state. We leverage a "stateless" abstraction of GUIs that allows us to use CAs. Once the CAs have been generated, we reuse the abstractions to reinsert ordering relationships between GUI events, thereby creating executable test cases. A feasibility study on a well-studied GUI-based application shows that the new technique is able to detect a large number of previously undetected faults. Copyright 2007 ACM.},
+address = {New York, New York, USA},
+author = {Yuan, Xun and Cohen, Myra and Memon, Atif M.},
+booktitle = {Proceedings of the twenty-second IEEE/ACM international conference on Automated software engineering},
+doi = {10.1145/1321631.1321695},
+isbn = {9781595938824},
+keywords = {GUI testing,covering arrays,event driven software},
+pages = {405},
+publisher = {ACM Press},
+title = {{Covering array sampling of input event sequences for automated gui testing}},
+year = {2007}
+}
+
 
 @incollection{Baker2008,
 author = {Baker, Paul and Dai, Zhen Ru and Grabowski, Jens and {Haugen, Oystein Schieferdecker}, Ina and Williams, Clay},
@@ -596,6 +642,20 @@ title = {{Experience with Maintenance of a Functional GUI Test Suite using IBM R
 year = {2010}
 }
 
+@inproceedings{Amalfitano2011,
+abstract = {As mobile applications become more complex, specific development tools and frameworks as well as cost-effective testing techniques and tools will be essential to assure the development of secure, high-quality mobile applications. This paper addresses the problem of automatic testing of mobile applications developed for the Google Android platform, and presents a technique for rapid crash testing and regression testing of Android applications. The technique is based on a crawler that automatically builds a model of the application GUI and obtains test cases that can be automatically executed. The technique is supported by a tool for both crawling the application and generating the test cases. In the paper we present an example of using the technique and the tool for testing a real small size Android application that preliminary shows the effectiveness and usability of the proposed testing approach.},
+author = {Amalfitano, Domenico and Fasolino, Anna Rita and Tramontana, Porfirio},
+booktitle = {2011 IEEE Fourth International Conference on Software Testing, Verification and Validation Workshops},
+doi = {10.1109/ICSTW.2011.77},
+isbn = {978-1-4577-0019-4},
+month = {3},
+pages = {252--261},
+publisher = {IEEE},
+title = {{A GUI Crawling-Based Technique for Android Mobile Application Testing}},
+year = {2011}
+}
+
+
 @inproceedings{Daniel2011,
 abstract = {To improve the overall user experience, graphical user interfaces (GUIs) of successful software systems evolve continuously. While the evolution is beneficial for end users, it creates several problems for developers and testers. Developers need to manually change the GUI code. Testers need to manually inspect and repair highly fragile test scripts. This is time-consuming and error-prone. The state-of-the-art tools for automatic GUI test repair use a black-box approach: they try to infer the changes between two GUI versions and then apply these changes to the test scripts. However, inferring these changes is challenging. We propose a white-box approach where the GUI changes are automated and knowledge about them is reused to repair the test cases appropriately. We use GUI refactorings as a means to encode the evolution of the GUIs. We envision a smart IDE that will record these refactorings precisely as they happen and will use them to change the GUI code and to repair test cases. We illustrate our approach through an example, discuss challenges that should be overcome to turn our vision into reality, and present a research agenda to address these challenges.},
 address = {New York, New York, USA},
@@ -687,6 +747,21 @@ title = {{Studying the co-evolution of production and test code in open source a
 volume = {16},
 year = {2011}
 }
+
+@inproceedings{Amalfitano2012,
+abstract = {We present AndroidRipper, an automated technique that tests Android apps via their Graphical User Interface (GUI). AndroidRipper is based on a user-interface driven ripper that automatically explores the app's GUI with the aim of exercising the application in a structured manner. We evaluate AndroidRipper on an open-source Android app. Our results show that our GUI-based test cases are able to detect severe, previously unknown, faults in the underlying code, and the structured exploration outperforms a random approach. Copyright 2012 ACM.},
+address = {New York, New York, USA},
+author = {Amalfitano, Domenico and Fasolino, Anna Rita and Tramontana, Porfirio and {De Carmine}, Salvatore and Memon, Atif M.},
+booktitle = {Proceedings of the 27th IEEE/ACM International Conference on Automated Software Engineering},
+doi = {10.1145/2351676.2351717},
+isbn = {9781450312042},
+keywords = {Android,Testing automation,Testing tools},
+pages = {258},
+publisher = {ACM Press},
+title = {{Using GUI ripping for automated testing of Android applications}},
+year = {2012}
+}
+
 
 @article{Chen2012,
 abstract = {Testing the GUI (Graphical User Interface) of a software application is typically accomplished by developing a GUI test script composed of sequences of events and assertions. A GUI test script is in a sense similar to the source code of a program, since events and assertions are like source-code statements, which are executed line by line. Therefore, like source code, a GUI test script may have bad smells, and refactoring is an effective technique that can eradicate bad smells, making the script better and easier to maintain. This paper studies the bad smells a GUI test script may have and the refactoring methods that can be applied to remove the bad smells. A total of 11 bad smells are identified and 16 refactoring methods are proposed. The refactoring methods have been implemented in a GUI testing tool, called GTT, to support the automatic refactoring of GUI test scripts.},
@@ -831,7 +906,6 @@ title = {{Crowdsourced user interface testing for multimedia applications}},
 year = {2012}
 }
 
-
 @inproceedings{Alegroth2013,
 author = {Alegroth, Emil and Feldt, Robert and Olsson, Helena H},
 booktitle = {2013 IEEE Sixth International Conference on Software Testing, Verification and Validation},
@@ -844,6 +918,23 @@ publisher = {IEEE},
 title = {{Transitioning Manual System Test Suites to Automated Testing: An Industrial Case Study}},
 year = {2013}
 }
+
+
+@article{Anand2013,
+abstract = {Test case generation is among the most labour-intensive tasks in software testing. It also has a strong impact on the effectiveness and efficiency of software testing. For these reasons, it has been one of the most active research topics in software testing for several decades, resulting in many different approaches and tools. This paper presents an orchestrated survey of the most prominent techniques for automatic generation of software test cases, reviewed in self-standing sections. The techniques presented include: (a) structural testing using symbolic execution, (b) model-based testing, (c) combinatorial testing, (d) random testing and its variant of adaptive random testing, and (e) search-based testing. Each section is contributed by world-renowned active researchers on the technique, and briefly covers the basic ideas underlying the method, the current state of the art, a discussion of the open research problems, and a perspective of the future development of the approach. As a whole, the paper aims at giving an introductory, up-to-date and (relatively) short overview of research in automatic test case generation, while ensuring a comprehensive and authoritative treatment.},
+author = {Anand, Saswat and Burke, Edmund K. and Chen, Tsong Yueh and Clark, John and Cohen, Myra B. and Grieskamp, Wolfgang and Harman, Mark and Harrold, Mary Jean and McMinn, Phil and Bertolino, Antonia and {Jenny Li}, J. and Zhu, Hong},
+doi = {10.1016/j.jss.2013.02.061},
+issn = {01641212},
+journal = {Journal of Systems and Software},
+keywords = {Adaptive random testing,Combinatorial testing,Model-based testing,Orchestrated survey,Search-based software testing,Software testing,Symbolic execution,Test automation,Test case generation},
+month = {8},
+number = {8},
+pages = {1978--2001},
+title = {{An orchestrated survey of methodologies for automated software test case generation}},
+volume = {86},
+year = {2013}
+}
+
 
 @article{Banerjee2013,
 abstract = {Context GUI testing is system testing of a software that has a graphical-user interface (GUI) front-end. Because system testing entails that the entire software system, including the user interface, be tested as a whole, during GUI testing, test cases - modeled as sequences of user input events - are developed and executed on the software by exercising the GUI's widgets (e.g., text boxes and clickable buttons). More than 230 articles have appeared in the area of GUI testing since 1991. Objective In this paper, we study this existing body of knowledge using a systematic mapping (SM). Method The SM is conducted using the guidelines proposed by Petersen et al. We pose three sets of research questions. We define selection and exclusion criteria. From the initial pool of 230 articles, published in years 1991-2011, our final pool consisted of 136 articles. We systematically develop a classification scheme and map the selected articles to this scheme. Results We present two types of results. First, we report the demographics and bibliometrics trends in this domain, including: top-cited articles, active researchers, top venues, and active countries in this research area. Moreover, we derive the trends, for instance, in terms of types of articles, sources of information to derive test cases, types of evaluations used in articles, etc. Our second major result is a publicly-accessible repository that contains all our mapping data. We plan to update this repository on a regular basis, making it a "live" resource for all researchers. Conclusion Our SM provides an overview of existing GUI testing approaches and helps spot areas in the field that require more attention from the research community. For example, much work is needed to connect academic model-based techniques with commercially available tools. To this end, studies are needed to compare the state-of-the-art in GUI testing in academic techniques and industrial tools. {\textcopyright} 2013 Elsevier B.V. All rights reserved.},
@@ -904,7 +995,7 @@ year = {2013}
 }
 
 @inproceedings{Gomez2013,
-abstract = {Touchscreen-based devices such as smartphones and tablets are gaining popularity, but their rich input capabilities pose new development and testing complications. To alleviate this problem, we present an approach and tool named Reran that permits record-and-replay for the Android smartphone platform. Existing GUI-level record-and-replay approaches are inadequate due to the expressiveness of the smartphone domain, in which applications support sophisticated GUI gestures, depend on inputs from a variety of sensors on the device, and have precise timing requirements among the various input events. We address these challenges by directly capturing the low-level event stream on the phone, which includes both GUI events and sensor events, and replaying it with microsecond accuracy. Moreover, Reran does not require access to app source code, perform any app rewriting, or perform any modifications to the virtual machine or Android platform. We demonstrate RERAN's applicability in a variety of scenarios, including (a) replaying 86 out of the Top-100 Android apps on Google Play; (b) reproducing bugs in popular apps, e.g., Firefox, Facebook, Quickoffice; and (c) fast-forwarding executions. We believe that our versatile approach can help both Android developers and researchers. {\textcopyright} 2013 IEEE.},
+abstract = {Touchscreen-based devices such as smartphones and tablets are gaining popularity, but their rich input capabilities pose new development and testing complications. To alleviate this problem, we present an approach and tool named Reran that permits record-and-replay for the Android smartphone platform. Existing GUI-level record-and-replay approaches are inadequate due to the expressiveness of the smartphone domain, in which applications support sophisticated GUI gestures, depend on inputs from a variety of sensors on the device, and have precise timing requirements among the various input events. We address these challenges by directly capturing the low-level event stream on the phone, which includes both GUI events and sensor events, and replaying it with microsecond accuracy. Moreover, Reran does not require access to app source code, perform any app rewriting, or perform any modifications to the virtual machine or Android platform. We demonstrate RERAN's applicability in a variety of scenarios, including (a) replaying 86 out of the Top-100 Android apps on Google Play; (b) reproducing bugs in popular apps, e.g., Firefox, Facebook, Quickoffice; and (c) fast-forwarding executions. We believe that our versatile approach can help both Android developers and researchers.},
 author = {Gomez, Lorenzo and Neamtiu, Iulian and Azim, Tanzirul and Millstein, Todd},
 booktitle = {2013 35th International Conference on Software Engineering (ICSE)},
 doi = {10.1109/ICSE.2013.6606553},
@@ -1213,6 +1304,22 @@ volume = {20},
 year = {2015}
 }
 
+@inproceedings{Amalfitano2015,
+abstract = {Recent studies have shown a remarkable need for testing automation techniques in the context of mobile applications. The main contributions in literature in the field of testing automation regard techniques such as Capture/Replay, Model Based, Model Learning and Random techniques. Unfortunately, only the last two typologies of techniques are applicable if no previous knowledge about the application under testing is available. Random techniques are able to generate effective test suites (in terms of source code coverage) but they need a remarkable effort in terms of machine time and the tests they generate are quite inefficient due to their redundancy. Model Learning techniques generate more efficient test suites but often they do not not reach good levels of coverage. In order to generate test suites that are both effective and efficient, we propose in this paper AGRippin, a novel Search Based Testing technique founded on the combination of genetic and hill climbing techniques. We carried out a case study involving five open source Android applications that has demonstrated how the proposed technique is able to generate test suites that are more effective and efficient than the ones generated by a Model Learning technique.},
+address = {New York, NY, USA},
+author = {Amalfitano, Domenico and Amatucci, Nicola and Fasolino, Anna Rita and Tramontana, Porfirio},
+booktitle = {Proceedings of the 3rd International Workshop on Software Development Lifecycle for Mobile},
+doi = {10.1145/2804345.2804348},
+isbn = {9781450338158},
+keywords = {Android,Genetic algorithms,Search based testing},
+month = {8},
+pages = {5--12},
+publisher = {ACM},
+title = {{AGRippin: a novel search based testing technique for Android applications}},
+year = {2015}
+}
+
+
 @article{Barr2015,
 abstract = {Testing involves examining the behaviour of a system in order to discover potential faults. Given an input for a system, the challenge of distinguishing the corresponding desired, correct behaviour from potentially incorrect behavior is called the 'test oracle problem'. Test oracle automation is important to remove a current bottleneck that inhibits greater overall test automation. Without test oracle automation, the human has to determine whether observed behaviour is correct. The literature on test oracles has introduced techniques for oracle automation, including modelling, specifications, contract-driven development and metamorphic testing. When none of these is completely adequate, the final source of test oracle information remains the human, who may be aware of informal specifications, expectations, norms and domain specific information that provide informal oracle guidance. All forms of test oracles, even the humble human, involve challenges of reducing cost and increasing benefit. This paper provides a comprehensive survey of current approaches to the test oracle problem and an analysis of trends in this important area of software testing research and practice.},
 author = {Barr, Earl T. and Harman, Mark and McMinn, Phil and Shahbaz, Muzammil and Yoo, Shin},
@@ -1254,6 +1361,22 @@ month = {5},
 title = {{XTreePath: A generalization of XPath to handle real world structural variation}},
 year = {2015}
 }
+
+@inproceedings{Gao2015,
+abstract = {System testing and invariant detection is usually conducted from the user interface perspective when the goal is to evaluate the behavior of an application as a whole. A large number of tools and techniques have been developed to generate and automate this process, many of which have been evaluated in the literature or internally within companies. Typical metrics for determining effectiveness of these techniques include code coverage and fault detection, however, with the assumption that there is determinism in the resulting outputs. In this paper we examine the extent to which a common set of factors such as the system platform, Java version, application starting state and tool harness configurations impact these metrics. We examine three layers of testing outputs: the code layer, the behavioral (or invariant) layer and the external (or user interaction) layer. In a study using five open source applications across three operating system platforms, manipulating several factors, we observe as many as 184 lines of code coverage difference between runs using the same test cases, and up to 96 percent false positives with respect to fault detection. We also see some a small variation among the invariants inferred. Despite our best efforts, we can reduce, but not completely eliminate all possible variation in the output. We use our findings to provide a set of best practices that should lead to better consistency and smaller differences in test outcomes, allowing more repeatable and reliable testing and experimentation.},
+author = {Gao, Zebao and Liang, Yalan and Cohen, Myra B. and Memon, Atif M. and Wang, Zhen},
+booktitle = {2015 IEEE/ACM 37th IEEE International Conference on Software Engineering},
+doi = {10.1109/ICSE.2015.28},
+isbn = {978-1-4799-1934-5},
+issn = {02705257},
+month = {5},
+pages = {55--65},
+publisher = {IEEE},
+title = {{Making System User Interactive Tests Repeatable: When and What Should We Control?}},
+volume = {1},
+year = {2015}
+}
+
 
 
 @inproceedings{Hauptmann2015,
@@ -1323,6 +1446,21 @@ month = {5},
 pages = {36--39},
 publisher = {IEEE},
 title = {{Meta-heuristic Generation of Robust XPath Locators for Web Testing}},
+year = {2015}
+}
+
+@article{Amalfitano2015,
+abstract = {As mobile devices become increasingly smarter and more powerful, so too must the engineering of their software. User-interface-driven system testing of these devices is gaining popularity, with each vendor releasing some automation tool. However, these tools are inappropriate for amateur programmers, an increasing portion of app developers. MobiGUITAR (Mobile GUI Testing Framework) provides automated GUI-driven testing of Android apps. It's based on observation, extraction, and abstraction of GUI widgets' run-time state. The abstraction is a scalable state machine model that, together with test coverage criteria, provides a way to automatically generate test cases. When applied to four open-source Android apps, MobiGUITAR automatically generated and executed 7,711 test cases and reported 10 new bugs. Some bugs were Android-specific, stemming from the event-and activity-driven nature of Android.},
+author = {Amalfitano, Domenico and Fasolino, Anna Rita and Tramontana, Porfirio and Ta, Bryan Dzung and Memon, Atif M.},
+doi = {10.1109/MS.2014.55},
+issn = {0740-7459},
+journal = {IEEE Software},
+keywords = {Android apps,GUI testing,MobiGUITAR,android testing,mobile apps,software engineering,software testing},
+month = {9},
+number = {5},
+pages = {53--59},
+title = {{MobiGUITAR: Automated Model-Based Testing of Mobile Apps}},
+volume = {32},
 year = {2015}
 }
 
@@ -1543,13 +1681,21 @@ year = {2016}
 }
 
 
-@online{W3C2016,
-url={https://www.w3.org/TR/1999/REC-xpath-19991116/},
-title={XML Path Language (XPath)},
-author={World Wide Web Consortium},
-year={1999},
-month={11},
-urldate={2021-01-16}
+
+
+@article{Amalfitano2017,
+abstract = {As an increasing number of new techniques are developed for quality assurance of Android applications (apps), there is a need to evaluate and empirically compare them. Researchers as well as practitioners will be able to use the results of such comparative studies to answer questions such as, “What technique should I use to test my app?” Unfortunately, there is a severe lack of rigorous empirical studies on this subject. In this paper, for the first time, we present an empirical study comparing all existing fully automatic “online” testing techniques developed for the Android platform. We do so by first reformulating each technique within the context of a general framework. We recognize the commonalities between the techniques to develop the framework. We then use the salient features of each technique to develop parameters of the framework. The result is a general recasting of all existing approaches in a plug-in based formulation, allowing us to vary the parameters to create instances of each technique, and empirically evaluate them on a common set of subjects. Our results show that (1) the proposed general framework abstracts all the common characteristics of online testing techniques proposed in the literature, (2) it can be exploited to design experiments aimed at performing objective comparisons among different online testing approaches and (3) some parameters that we have identified influence the performance of the testing techniques.},
+author = {Amalfitano, Domenico and Amatucci, Nicola and Memon, Atif M. and Tramontana, Porfirio and Fasolino, Anna Rita},
+doi = {10.1016/j.jss.2016.12.017},
+issn = {01641212},
+journal = {Journal of Systems and Software},
+keywords = {Android testing,Automated testing,Comparing android testing techniques,Event-based testing,Mobile apps testing,Random testing},
+month = {3},
+pages = {322--343},
+publisher = {Elsevier Inc.},
+title = {{A general framework for comparing automatic testing techniques of Android mobile apps}},
+volume = {125},
+year = {2017}
 }
 
 
@@ -1796,6 +1942,19 @@ volume = {2361},
 year = {2018}
 }
 
+@inproceedings{Riccio2018,
+abstract = {Android is today the world's most popular mobile operating system and the demand for quality to Android mobile apps has grown together with their spread. Testing is a well-known approach for assuring the quality of software applications but Android apps have several peculiarities compared to traditional software applications that have to be taken into account by testers. Several studies have pointed out that mobile apps suffer from issues that can be attributed to Activity lifecycle mishandling, e.g. crashes, hangs, waste of system resources. Therefore the lifecycle of the Activities composing an app should be properly considered by testing approaches. In this paper we propose ALARic, a fully automated Black-Box Event-based testing technique that explores an application under test for detecting issues tied to the Android Activity lifecycle. ALARic has been implemented in a tool. We conducted an experiment involving 15 real Android apps that showed the effectiveness of ALARic in finding GUI failures and crashes tied to the Activity lifecycle. In the study, ALARic proved to be more effective in detecting crashes than Monkey, the state-of-The practice automated Android testing tool.},
+address = {New York, NY, USA},
+author = {Riccio, Vincenzo and Amalfitano, Domenico and Fasolino, Anna Rita},
+booktitle = {Companion Proceedings for the ISSTA/ECOOP 2018 Workshops},
+doi = {10.1145/3236454.3236490},
+isbn = {9781450359399},
+month = {7},
+pages = {68--77},
+publisher = {ACM},
+title = {{Is this the lifecycle we really want?}},
+year = {2018}
+}
 
 
 @inproceedings{Stocco2018,
@@ -1856,6 +2015,22 @@ title = {{The impact of co-evolution of code production and test suites through 
 volume = {9},
 year = {2019}
 }
+
+@article{Amalfitano2019,
+abstract = {Context: Automated GUI Exploration Techniques have been widely adopted in the context of mobile apps for supporting critical engineering tasks such as reverse engineering, testing, and network traffic signature generation. Although several techniques have been proposed in the literature, most of them fail to guarantee the exploration of relevant parts of the applications when GUIs require to be exercised with particular and complex input event sequences. We refer to these GUIs as Gate GUIs and to the sequences required to effectively exercise them as Unlocking GUI Input Event Sequences. Objective: In this paper, we aim at proposing a GUI exploration approach that exploits the human involvement in the automated process to solve the limitations introduced by Gate GUIs, without requiring the preliminary configuration of the technique or the user involvement for the entire duration of the exploration process. Method: We propose juGULAR, a Hybrid GUI Exploration Technique combining Automated GUI Exploration with Capture and Replay. Our approach is able to automatically detect Gate GUIs during the app exploration by exploiting a Machine Learning approach and to unlock them by leveraging input event sequences provided by the user. We implement juGULAR in a modular software architecture that targets the Android mobile platform. We evaluate the performance of juGULAR by an experiment involving 14 real Android apps. Results: The experiment shows that the hybridization introduced by juGULAR allows to improve the exploration capabilities in terms of Covered Activities, Covered Lines of Code, and generated Network Traffic Bytes at a reasonable manual intervention cost. The experimental results also prove that juGULAR is able to outperform the state-of-the-practice tool Monkey. Conclusion: We conclude that the combination of Automated GUI Exploration approaches with Capture and Replay techniques is promising to achieve a thorough app exploration. Machine Learning approaches aid to pragmatically integrate these two techniques.},
+author = {Amalfitano, Domenico and Riccio, Vincenzo and Amatucci, Nicola and Simone, Vincenzo De and Fasolino, Anna Rita},
+doi = {10.1016/j.infsof.2018.08.007},
+issn = {09505849},
+journal = {Information and Software Technology},
+keywords = {Android,Automated GUI Exploration,Automated input generation,Capture and Replay,Dynamic analysis,Machine Learning},
+month = {1},
+number = {August 2018},
+pages = {95--116},
+title = {{Combining Automated GUI Exploration of Android apps with Capture and Replay through Machine Learning}},
+volume = {105},
+year = {2019}
+}
+
 
 
 @inproceedings{Biagiola2019,
@@ -2314,6 +2489,15 @@ urldate={2021-01-16}
   urldate = {2020-07-03}
 }
 
+@online{W3C2016,
+url={https://www.w3.org/TR/1999/REC-xpath-19991116/},
+title={XML Path Language (XPath)},
+author={World Wide Web Consortium},
+year={1999},
+month={11},
+urldate={2021-01-16}
+}
+
 @online{Advolodkin2018,
   author = {Nikolay Advolodkin},
   title = {Top 17 Automated Testing Best Practices (Supported By Data)},
@@ -2517,7 +2701,6 @@ year = 2020,
 url = {http://robotframework.org/},
 urldate = {2021-02-15}
 }
-
 
 @online{WHATWG2021,
 url={https://html.spec.whatwg.org/},
