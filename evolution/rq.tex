@@ -1,29 +1,28 @@
 \section{Research Questions}
 
-In this chapter, we attempt to answer two main questions about KDT test suites at the acceptance testing level: ``\emph{What are the benefits and challenges of adopting KDT?}''  and ``\emph{What kind of changes are performed during the evolution of a KDT test suite?}''. Answers to these questions will enable practitioners to make more informed decisions about KDT and will improve our understanding of KDT test suite evolution. Thus, we pose the following research questions:
+In this chapter, we attempt to answer two main questions about \gls{kdt} test suites at the acceptance testing level: ``\emph{What are the benefits and challenges of adopting \gls{kdt}?}''  and ``\emph{What kind of changes are performed during the evolution of a \gls{kdt} test suite?}''. Answers to these questions will enable practitioners to make more informed decisions about \gls{kdt} and will improve our understanding of \gls{kdt} test suite evolution. Thus, we pose the following research questions:
 
 \begin{description}
-\item[\textbf{RQ1}:] \emph{What types of test code changes are performed during KDT test suite evolution?}
+\item[\textbf{RQ1}:] \emph{What types of test code changes are performed during \gls{kdt} test suite evolution?}
 \end{description}
 
-Analyzing the changes performed by the testers during KDT test suite evolution forms the basis of any automated test refactoring and test repair technique. Although research presents such information in the case of unit testing \cite{Pinto2012}, no previous study has discussed such fine-grained changes in the context of KDT at the acceptance level, to the best of our
+Analyzing the changes performed by the testers during \gls{kdt} test suite evolution forms the basis of any automated test refactoring and test repair technique. Although research presents such information in the case of unit testing \cite{Pinto2012}, no previous study has discussed such fine-grained changes in the context of \gls{kdt} at the acceptance level, to the best of our
 knowledge.
 
 \begin{description}
-\item[\textbf{RQ2}:] \emph{How complex are the KDT test suites and how does this complexity affect their evolution?}
+\item[\textbf{RQ2}:] \emph{How complex are the \gls{kdt} test suites and how does this complexity affect their evolution?}
 \end{description}
 
-As mentioned in Section \ref{sec:evolution-introduction}, one of the advantages of KDT is that it allows the separation of the technical implementation details of test code and its corresponding intention. This fact can lead to test suites having several ``levels of abstraction'' (Figure \ref{fig:robotframework_tree}). To this day, it is not clear how complex the KDT test code is and how this complexity affects its evolution. Answering this question will provide us with a better understanding of the difficulties faced by practitioners when they try to apply KDT and can guide future research directions in ameliorating these problems.
+As mentioned in Section \ref{sec:evolution-introduction}, one of the advantages of \gls{kdt} is that it allows the separation of the technical implementation details of test code and its corresponding intention. This fact can lead to test suites having several ``levels of abstraction'' (Figure \ref{fig:robotframework_tree}). To this day, it is not clear how complex the \gls{kdt} test code is and how this complexity affects its evolution. Answering this question will provide us with a better understanding of the difficulties faced by practitioners when they try to apply \gls{kdt} and can guide future research directions in ameliorating these problems.
 
 \begin{description}
-\item[\textbf{RQ3}:] \emph{Does code duplication exist in KDT test code bases? What is its impact on the evolution of the test code?}
+\item[\textbf{RQ3}:] \emph{Does code duplication exist in \gls{kdt} test codebases? What is its impact on the evolution of the test code?}
 \end{description}
 
-Similar code fragments are known to exist in source code and test code alike \cite{Baker1995, Roy2009, Rattan2013, Lavoie2017}. In RQ3, we investigate whether KDT codebases contain duplicated test code and how these test clones affect the evolution of the test codebase. Answering this research question is important because if such test clones exist, we need to investigate appropriate techniques to detect them, analyze them and monitor their evolution.
+Similar code fragments are known to exist in source code and test code alike \cite{Baker1995, Roy2009, Rattan2013, Lavoie2017}. In RQ3, we investigate whether \gls{kdt} codebases contain duplicated test code and how these test clones affect the evolution of the test codebase. Answering this research question is important because if such test clones exist, we need to investigate appropriate techniques to detect them, analyze them and monitor their evolution.
 
 \begin{description}
-\item[\textbf{RQ4}:] \emph{What are the practitioners' perceptions of the
-    benefits and challenges of KDT in practice?}
+\item[\textbf{RQ4}:] \emph{What are the practitioners' perceptions of the benefits and challenges of \gls{kdt} in practice?}
 \end{description}
 
-RQ4 pertains to documenting and analyzing the practitioners' opinion about the advantages and disadvantages of KDT. Such analysis can help other testers to adopt (or not) KDT. Additionally, this research question gives us the opportunity to ask the practitioners' opinion about our results, validating them and understanding them better.
+RQ4 pertains to documenting and analyzing the practitioners' opinion about the advantages and disadvantages of \gls{kdt}. Such analysis can help other testers to adopt (or not) \gls{kdt}. Additionally, this research question gives us the opportunity to ask the practitioners' opinion about our results, validating them and understanding them better.

@@ -34,7 +34,7 @@
 \scriptsize{\textit{Type III}} & \scriptsize{Superset of Type II clones, ignoring differences of type  \emph{update step}, \emph{add step} and \emph{remove step} if the step belongs to the category \emph{logging}.}
 \tabularnewline
 
-\scriptsize{\textit{Type IV}} & \scriptsize{Keyword performing the same sequence of actions on the SUT, regardless of the internal configuration of the tree. The clone detection algorithm tags a keyword pair as Type IV clones if the sequences of leaf nodes is strictly identical.}
+\scriptsize{\textit{Type IV}} & \scriptsize{Keyword performing the same sequence of actions on the \gls{sut}, regardless of the internal configuration of the tree. The clone detection algorithm tags a keyword pair as Type IV clones if the sequences of leaf nodes is strictly identical.}
 \tabularnewline
 
 \bottomrule
@@ -68,11 +68,11 @@ One of the criteria often linked to maintenance effort is the complexity of a pr
 
 \subsubsection{Keywords Size} The \emph{size} of keyword $k$ (Test Case or User Keyword), is the number of nodes that exist on the subpath(s) from $k$ to all the leaf keywords (Library Keyword).
 
-\subsubsection{Keywords Level} The \emph{level} of keyword $k$ (Test Case or User Keyword), is the maximum number of edges that exist on the subpath(s) from $k$ to a leaf keyword (Library Keyword). According to the philosophy of KDT, the higher the value is, the more abstract the keyword. High level keywords define business processes while low level keywords define concrete way of interacting with the SUT.
+\subsubsection{Keywords Level} The \emph{level} of keyword $k$ (Test Case or User Keyword), is the maximum number of edges that exist on the subpath(s) from $k$ to a leaf keyword (Library Keyword). According to the philosophy of \gls{kdt}, the higher the value is, the more abstract the keyword. High-level keywords define business processes while low-level keywords define a concrete way of interacting with the \gls{sut}.
 
 \subsubsection{Keywords Connectivity} The \emph{connectivity} of a keyword is a metric of re-usability among the keywords. Let keyword $k$ belong to a $graph\; G$, then we calculate the connectivity of $k$ by counting the number of nodes (keywords) in the subpath(s) from the entry points of $G$ to $k$.
 
-\subsubsection{Test Cases Sequence Length} Let a test case $TC$ be the root of a $tree\; T$. The \emph{sequence length} of a test case $TC$ is the number of concrete actions perform by the test, defined as the number of leaf nodes of the $tree\; T$.
+\subsubsection{Test Cases Sequence Length} Let a test case $TC$ be the root of a $tree\; T$. The \emph{sequence length} of a test case $TC$ is the number of concrete actions performed by the test, defined as the number of leaf nodes of the $tree\; T$.
 
 \subsection{Duplicate Test Code Detection}
 
@@ -83,17 +83,17 @@ One of the criteria often linked to maintenance effort is the complexity of a pr
 \label{fig:clones}
 \end{figure}
 
-In Chapter~\ref{chap:evolution-system-user-interactive-test}, we observe a large amount of similar test code, \ie\ clones. We observe that clones composed up to 30 percent of the total amount of keywords, indicating that almost one third of the test code written is duplicated. Clones create several difficulties with inconsistencies during test code evolution generating bugs. Furthermore, we observed that about 50 percent of the strictly similar test code (clone Type I) evolve identically, indicating an added cost in the maintenance cost completely avoidable by refactoring.
+In Chapter~\ref{chap:evolution-system-user-interactive-test}, we observe a large amount of similar test code, \ie\ clones. We observe that clones composed up to 30 percent of the total amount of keywords, indicating that almost one-third of the test code written is duplicated. Clones create several difficulties with inconsistencies during test code evolution generating bugs. Furthermore, we observed that about 50 percent of the strictly similar test code (clone Type I) evolve identically, indicating an added cost in the maintenance cost completely avoidable by refactoring.
 
-The clone detection algorithm is based on the fine grain changed algorithm defined in Section~\ref{sec:evolution-protocol-rq1} which extract the change set between two keywords. The clone detection, ignoring changes impacting the documentation and the name of the keyword, detects the changes between the two keyword and assign a clone categories defined in Table~\ref{table:clones} for each pair of keyword. If a pair does not satisfy any of the definitions, then the keywords are not clones.
+The clone detection algorithm is based on the fine-grained changed algorithm defined in Section~\ref{sec:evolution-protocol-rq1} which extracts the changeset between two keywords. The clone detection, ignoring changes impacting the documentation and the name of the keyword, detect the changes between the two keywords and assign a clone category defined in Table~\ref{table:clones} for each pair of keywords. If a pair does not satisfy any of the definitions, then the keywords are not clones.
 
-\paragraph{Output} In the summary, see Figure~\ref{fig:clones}, and in each of the project pages, statistics about the amount duplicated test code are displayed in order for the tester to evaluate the level of duplication of the test code base. Furthermore, a test code duplication page offers a table containing all the clones, clustered by group of similar keywords. Each row contains information about the location of the keywords duplicated, the type of clones and whether the clones are inter- or intra-application.
+\paragraph{Output} In the summary, see Figure~\ref{fig:clones}, and in each of the project pages, statistics about the amount of duplicated test code are displayed in order for the tester to evaluate the level of duplication of the test codebase. Furthermore, a test code duplication page offers a table containing all the clones, clustered by groups of similar keywords. Each row contains information about the location of the keywords duplicated, the type of clones, and whether the clones are inter- or intra-application.
 
 \subsection{Dead Test Code Detection}
 
-During refactoring and evolution activities, the call graph might generate keywords not called by any other. In this work, we define dead test code any User Keyword or Variable never called in a \emph{step}, in other words not connected to a Test Case, and therefore never executed. While building the graph representation of the test suite, the tool keeps track of all the callers and the callees for each keyword are variable. Therefore, detecting detecting dead test code only consist of flagging User Keywords and Variables for which no callers were detected. 
+During refactoring and evolution activities, the call graph might generate keywords not called by any other. In this work, we define dead test code any User Keyword or Variable never called in a \emph{step}, in other words not connected to a Test Case, and therefore never executed. While building the graph representation of the test suite, the tool keeps track of all the callers and the callees for each keyword are variable. Therefore, detecting dead test code only consists of flagging User Keywords and Variables for which no callers were detected. 
 
-\paragraph{Output} For each project, the percentage of dead test code is presented in term of lines of code, see Figure~\ref{fig:dead-code}. Furthermore, a dead test code page contains a table where each row contains information about the location of the unused User Keywords and Variables in order for the tester to be able to locate them and clean the test code.
+\paragraph{Output} For each project, the percentage of dead test code is presented in terms of lines of code, see Figure~\ref{fig:dead-code}. Furthermore, a dead test code page contains a table where each row contains information about the location of the unused User Keywords and Variables in order for the tester to be able to locate them and clean the test code.
 
 \begin{figure}[t!]
 \centering
@@ -104,16 +104,16 @@ During refactoring and evolution activities, the call graph might generate keywo
 
 \subsection{Bad Practices and Error Detection}
 
-In its current version the tool allow to detect two types of bad practices specific to Robot Framework, 16 smells common to \gls{suit} and two error types. However, conducting an analysis of the typical change patterns and the execution results, we intend to extend the set, specifically to address issues such as weak \emph{locators} and weak \emph{synchronization} points causing false positive and flackiness.
+In its current version the tool allows to detect two types of bad practices specific to Robot Framework, 16 smells common to \gls{suit} and two error types. However, conducting an analysis of the typical change patterns and the execution results, we intend to extend the set, specifically to address issues such as weak \emph{locators} and weak \emph{synchronization} points causing false positive and flakiness.
 
-\subsubsection{Duplicated Keyword Error} If two keywords have the same name in the same scope, it causes the program to crash during runtime. However, since keyword resolution is a dynamic process in Robot Framework, the error might be revealed after a lengthy execution time, reducing the velocity of the team to detect and address such bugs. During the analysis, while resolving names, the tool checks for duplicate names.
+\subsubsection{Duplicated Keyword Error} If two keywords have the same name in the same scope, it causes the program to crash during runtime. However, since keyword resolution is a dynamic process in Robot Framework, the error might be revealed after a long execution time, reducing the velocity of the team to detect and address such bugs. During the analysis, while resolving names, the tool checks for duplicate names.
 
-\subsubsection{Missing Definition} Identifies \emph{steps} for which no keyword is associated or a missing variable, therefore generating an edge in the graph with no target node. Upon analysis of the results, we observe that we have false positive for keywords generated dynamically and therefore invisible during static analysis. This violation constitute the only one generating false positive, however, relying to heavily on dynamic loading might hinder the readability of the test suite and therefore, the results are kept and displayed.
+\subsubsection{Missing Definition} Identifies \emph{steps} for which no keyword is associated or a missing variable, therefore generating an edge in the graph with no target node. Upon analysis of the results, we observe that we have false positives for keywords generated dynamically and therefore invisible during static analysis. This violation constitutes the only one generating false positive, however, relying too heavily on dynamic loading might hinder the readability of the test suite and therefore, the results are kept and displayed.
 
 \subsubsection{Transitive Dependency Warning} We call transitive dependency warning a call to a keyword not defined in the same file or in a direct dependency but in an indirect dependency as explained in Section~\ref{sec:dependency-graph}.
 
-\subsubsection{Duplicated Variable Warning} During the resolution of variable names, if two variables have the same name and are defined in \emph{Variable} blocks, the frameworks loads the first variable it encounters and discards all subsequent definitions. This behavior might lead to unexpected behavior, assigning wrong values to variables.
+\subsubsection{Duplicated Variable Warning} During the resolution of variable names, if two variables have the same name and are defined in \emph{Variable} blocks, the framework loads the first variable it encounters and discards all subsequent definitions. This behavior might lead to unexpected behavior, assigning wrong values to variables.
 
 \subsubsection{SUIT Smells} Relying on the tooling introduced in Chapter~\ref{chap:smells-system-user-interactive-test}, \tool\ is able to detect the number of symptoms present in a test. Relying on rules inserted by the user, whenever this number is exceeded, the test case is flagged as smelly. Because the nature of \tool\ is to offer an overview of the project, the detection of symptoms for SUIT smells is also available as a SonarQube Plugin\footnote{Available at \url{https://github.com/kabinja/sonar-ikora-plugin}}
 
-\paragraph{Output} All these errors and warning are grouped in a single table, giving the level of the violation (warning or error) as well as the location and its reason. Each row of the table contains information about the location of the violation, the cause and its severity.
+\paragraph{Output} All these errors and warnings are grouped in a single table, giving the level of the violation (warning or error) as well as the location and its reason. Each row of the table contains information about the location of the violation, the cause, and its severity.

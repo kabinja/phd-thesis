@@ -1,16 +1,15 @@
 \section{Introduction}
 \label{sec:evolution-introduction}
 
-In Section~\ref{sec:introduction-gui-testing}, we presented different ways to create \gls{suit}s, \ie\ Random GUI Testing, Model-Based Testing, Record \& Replay and test scripting. Among the test scripting approaches, \gls{kdt} is a technique using keywords where each keyword describes a set of actions that are required to perform a specific step. Using keywords, testers can model concepts from the \gls{sut} with different levels of abstraction (e.g. ``Login'' and
-``Click button''); targeting various domains: Web (Selenium), Android (Apium) and Desktop (Sikuli); allowing different formalism such as data driven tests or the gherkins syntax.
+In Section~\ref{sec:introduction-gui-testing}, we presented different ways to create \gls{suit}s, \ie\ Random \gls{gui} Testing, Model-Based Testing, Record \& Replay and test scripting. Among the test scripting approaches, \gls{kdt} is a technique using keywords where each keyword describes a set of actions that are required to perform a specific step. Using keywords, testers can model concepts from the \gls{sut} with different levels of abstraction (\eg\ ``Login'' and ``Click button''); targeting various domains: Web (Selenium), Android (Apium), and Desktop (Sikuli); allowing different formalism such as data-driven tests or the gherkins syntax.
 
-In this chapter, we attempt to answer a fundamental question about \gls{kdt}: ``\emph{What are the practical benefits and challenges of adopting \gls{kdt}?}''.  An answer to this question will have a direct impact on practitioners who want to make an informed decision about adopting a test automation technique and to researchers who want to understand the \gls{kdt} evolution and automate test refactoring and repair. Our study sheds light on this manner by identifying and quantifying the practical gains and losses of this practice. We also look into the way \gls{kdt} test suites are maintained by identifying and categorising the nature of changes performed during the \gls{kdt} evolution. This information is essential to better understand \gls{kdt} maintenance and forms the basis of automated test code refactoring and repair techniques. 
+In this chapter, we attempt to answer a fundamental question about \gls{kdt}: ``\emph{What are the practical benefits and challenges of adopting \gls{kdt}?}''.  An answer to this question will have a direct impact on practitioners who want to make an informed decision about adopting a test automation technique and to researchers who want to understand the \gls{kdt} evolution and automate test refactoring and repair. Our study sheds light on this manner by identifying and quantifying the practical gains and losses of this practice. We also look into the way \gls{kdt} suites are maintained by identifying and categorizing the nature of changes performed during the \gls{kdt} evolution. This information is essential to better understand \gls{kdt} maintenance and forms the basis of automated test code refactoring and repair techniques. 
 
 
-\subsection{Tree representation of Keyword-driven Tests}
+\subsection{Tree representation of KDT}
 \label{sec:tree-representation-KDT}
 
-\gls{kdt} tests can be represented using a tree structure. Figure~\ref{fig:robotframework_tree} shows this structure for the test of Figure~\ref{fig:robot-script}. The root of the tree (purple rectangle) is the \emph{Test Case} that is executed by calling all the keywords contained. The intermediary nodes (white rectangles) are called \emph{User Keywords} since they are created by the tester. Finally, the leaf nodes (green rectangles) are \emph{Library Keywords}. \emph{Library Keywords} are implemented by the system or an external library and responsible for either controlling the control flow of the tests or interacting with the \gls{sut}.
+\gls{kdt} can be represented using a tree structure. Figure~\ref{fig:robotframework_tree} shows this structure for the test of Figure~\ref{fig:robot-script}. The root of the tree (purple rectangle) is the \emph{Test Case} that is executed by calling all the keywords it contains. The intermediary nodes (white rectangles) are called \emph{User Keywords} since they are created by the tester. Finally, the leaf nodes (green rectangles) are \emph{Library Keywords}. \emph{Library Keywords} are implemented by the system or an external library and responsible for either defining the control flow of the tests or interacting with the \gls{sut}.
 
 \begin{figure}
 \centering
@@ -19,7 +18,7 @@ In this chapter, we attempt to answer a fundamental question about \gls{kdt}: ``
 \label{fig:robotframework_tree}
 \end{figure}
 
-We group keywords into seven categories based on their functionality and present them in Table \ref{keywords_categories}. We define a \emph{SYNC} keyword category for keywords dealing with the synchronization between tests and \gls{sut}; e.g., a keyword that waits 10 seconds for a GUI element of the \gls{sut} to become available. In the rest of the paper we use the term keyword to refer to \emph{User Keywords} unless stated otherwise.
+We group keywords into seven categories based on their functionality and present them in Table~\ref{keywords_categories}. For instance, we define a \emph{SYNC} keyword category for keywords dealing with the synchronization between tests and \gls{sut}; \eg a keyword that waits 10 seconds for a \gls{gui} element of the \gls{sut} to become available. Note that where all the categories refer to \emph{Library Keywords}, the category \emph{USER}, on the other hand, target \emph{User Keywords}. Focusing on the evolution of test code, \emph{User Keywords} are the focus of this study, thus, we use the term keyword to refer to \emph{User Keywords} unless stated otherwise.
 
 \begin{table}
 \caption{Keyword categories}
@@ -55,22 +54,18 @@ the \gls{sut}.} \tabularnewline
 \end{tabular}
 \end{table}
 
-
-As mentioned in Section~\ref{sec:introduction-test-scripting}, one of the tools used for the application of \gls{kdt} is Robot Framework \cite{RobotFramework2020}. Robot Framework is a popular framework used world-wide by major companies, including Nokia, KONE, ABB. This is also the tool adopted by our industrial partner and, thus, used in this work. Robot Framework is an open source tool originally developed by Nokia Networks and is mainly used for acceptance testing. The ``Valid Login'' \gls{kdt} test of Figure~\ref{fig:robot-script} was written using this framework.
-
-One of the main advantages of Robot Framework is its high modularity.  Indeed, Robot Framework is platform-agnostic and thanks to its driver plugin architecture, the core framework does not require any knowledge of the \gls{sut}. Another advantage of the framework lies in its simple syntax, which makes it easily accessible to testers, regardless of their background.
-
 \subsection{Industrial Context}
 \label{sec:evolution-introduction-data}
 
-This chapter aims at investigating the evolution of \gls{kdt} test suites at the acceptance testing level based on the industrial practice. To this end, we work together with \BGL\ that has recently (one year prior to this study) adopted \gls{kdt} and uses it in its daily software development work for acceptance testing.
-
+This chapter aims at investigating the evolution of \gls{kdt} suites at the acceptance testing level based on the industrial practice. To this end, we work together with \BGL\ that has recently (one year prior to this study) adopted \gls{kdt} and uses it in its daily software development work for acceptance testing.
 
 Historically, the team relied on manual testing to perform its tasks. However, with the release cycles becoming shorter and the number of tests increasing, the execution burden on the team became unmaintainable. Thus, at the end of 2016, the team started migrating from manual execution of the tests to the execution of automated tests written in Robot Framework. Robot Framework was chosen because of the ease it provides to develop tests targeting applications written in different technologies requiring different modes of interaction.
 
-One other reason why our partner adopted \gls{kdt} is that test cases at this testing level were created by different domain experts (business analysts and automation experts) and the adoption of a common language between the experts was imperative. All the tests used in our study have been created by a team of 3 testers and 2 business analysts working at \BGL\ using Robot Framework.
+One other reason why our partner adopted \gls{kdt} is that test cases at this testing level were created by different domain experts (business analysts and automation experts) and the adoption of a common language between the experts was imperative. All the tests used in our study have been created by a team of 3 testers and 2 business analysts working at \BGL\ using Robot Framework \cite{RobotFramework2020}, one of the tools used for the application of \gls{kdt} (Section~\ref{sec:introduction-test-scripting}).
 
-The project used in our study, hereafter referred to as \emph{SubjectA} for confidentiality reasons, pertains to all the business activities of our partner. The front-end is a web application implemented in AngularJS, and, the back-end is composed of hundreds of services written in various programming languages. These services are managed by different teams, involving more than 100 developers. The \gls{kdt} test suite used in our study, referred to as \emph{TestSuiteA}, is developed by 3 testers working at the Quality Assurance (QA) team of our partner and 2 business analysts.
+Robot Framework is a popular framework used world-wide by major companies, including Nokia, KONE, ABB. It is an open source tool originally developed by Nokia Networks and is mainly used for acceptance testing. The ``Valid Login'' \gls{kdt} test of Figure~\ref{fig:robot-script} was written using this framework. One of the main advantages of Robot Framework is its high modularity.  Indeed, Robot Framework is platform-agnostic and thanks to its driver plugin architecture, the core framework does not require any knowledge of the \gls{sut}. Another advantage of the framework lies in its simple syntax, which makes it easily accessible to testers, regardless of their background.
+
+The project used in this chapter, hereafter referred to as \emph{SubjectA} for confidentiality reasons, pertains to all the business activities of our partner. The front-end is a web application implemented in AngularJS, and, the back-end is composed of hundreds of services written in various programming languages. These services are managed by different teams, involving more than 100 developers. The \gls{kdt} suite used in our study, referred to as \emph{TestSuiteA}, is developed by 3 testers working at the \gls{qa} team of our partner and 2 business analysts.
 
 \begin{figure}[t!]
   \centering
@@ -79,6 +74,6 @@ The project used in our study, hereafter referred to as \emph{SubjectA} for conf
   \label{fig:project_evolution}%\setlength{\tabcolsep}{5.1px} 
 \end{figure}
 
-Figure~\ref{fig:project_evolution} shows the evolution of \emph{TestSuiteA} across the eight-month period studied. The figure depicts the evolution of the number of \emph{Test Cases} comprising the test suite, the number of \emph{User Keywords} and the lines of code of the test suite. As can be seen, our analysis begins with a test suite of 39 test cases, 139 user keywords and 1129 lines of code and ends with 117 test cases, 505 keywords and 4732 lines of code.
+Figure~\ref{fig:project_evolution} shows the evolution of \emph{TestSuiteA} across the eight-month period studied. The figure depicts the evolution of the number of \emph{Test Cases} comprising the test suite, the number of \emph{User Keywords} and the lines of code of the test suite. As can be seen, our analysis begins with a test suite of 39 test cases, 139 user keywords, and 1129 lines of code and ends with 117 test cases, 505 keywords, and 4732 lines of code.
 
-In the time span depicted in Figure~\ref{fig:project_evolution}, we isolated three periods during which we saw an increased test creation activity (shown in grey). After discussing with the QA team, they corroborated that these periods were more focused on test creation and the remaining ones on test maintenance. Thus, we analyze separately these periods (greyed and non-greyed) and refer to them as ``Creation'' and ``Maintenance''.
+In the time span depicted in Figure~\ref{fig:project_evolution}, we isolated three periods during which we saw an increased test creation activity (shown in grey). After discussing with the \gls{qa} team, they corroborated that these periods were more focused on test creation and the remaining ones on test maintenance. Thus, we analyze separately these periods (greyed and non-greyed) and refer to them as ``Creation'' and ``Maintenance''.

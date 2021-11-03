@@ -41,7 +41,7 @@ We compare the different distributions $L_{AXPath}$, $L_{Robula+}$ and $L_{HPath
 
 Asides from the predicates, to other effects contributes to the longer length of HPath when compared to Robula+. First, in its current form, if no predicate is generated, HPath generates an absolute path. However, Robula+, always discards the root node $e_{html}$ and often $e_{body}$ since they are unique in the \gls{html} document. Thus, HPath, can reduce its length the same way with no impact on its performance or changes in its assumption. Furthermore, if a \emph{tag} is unique in the document, Robula+ creates a relative path from it, since it can directly be targeted. However, except for a few elements ($e_{html}$, $e_{body}$, $e_{head}$) the \gls{html} standard does guarantee uniqueness. This can be seen as a limitation regarding robustness against change, where the addition of a second element of the same type can break the locator.
 
-To conclude this discussion on the length of the location paths, we can see that strategies relying on different properties yield locators with different lengths. Relying on element attributes generates the shortest location path and HPath exhibits better performances for OpenOLAT than MISO LIMS, even though the tree is deeper (as shown by the length of the absolute XPath). This is a consequence of OpenOLAT using the HTML5 standard, where MISO LIMS implements HTML4, offering more opportunities for HPath to generate good predicates.
+To conclude this discussion on the length of the location paths, we can see that strategies relying on different properties yield locators with different lengths. Relying on element attributes generates the shortest location path and HPath exhibits better performances for OpenOLAT than MISO LIMS, even though the tree is deeper (as shown by the length of the absolute XPath). This is a consequence of OpenOLAT using the \gls{html}5 standard, where MISO LIMS implements HTML4, offering more opportunities for HPath to generate good predicates.
 
 \begin{table}
 \centering
@@ -122,7 +122,7 @@ In the case of MISO LIMS, most of the failures happened in the position predicat
 \centering
 \caption{Properties causing locator breakages. \emph{Count} is the number of locators breaking because of a property and \emph{\%} is the percentage among all the breaking locators for that strategy.}
 \label{tab:breakage_cause}
-\begin{tabular}{>{\raggedright}m{0.6in}>{\raggedright}m{1.2in}>{\raggedleft}m{0.25in} >{\raggedleft}m{0.4in}>{\raggedleft}m{0.4in} >{\raggedleft}m{0.4in}}
+\begin{tabular}{>{\raggedright}m{0.8in}>{\raggedright}m{1.2in}>{\raggedleft}m{0.25in} >{\raggedleft}m{0.4in}>{\raggedleft}m{0.4in} >{\raggedleft}m{0.4in}}
 \toprule
 \textbf{\scriptsize{Strategy}} & \textbf{\scriptsize{Cause}} & \multicolumn{2}{c}{\textbf{\scriptsize{MISO LIMS}}} & \multicolumn{2}{c}{\textbf{\scriptsize{OpenOLAT}}}\tabularnewline
  &   & \textbf{\scriptsize{Count}} & \textbf{\scriptsize{\%}} & \textbf{\scriptsize{Count}} & \textbf{\scriptsize{\%}}\tabularnewline
